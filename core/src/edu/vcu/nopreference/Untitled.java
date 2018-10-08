@@ -15,13 +15,14 @@ public class Untitled extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 	}
-
+int test = 0;
 	@Override
 	public void render () {
+		test += 1;
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		batch.draw(img, 0, 0);
+		batch.draw(img, test, 0);
 		batch.end();
 	}
 	
