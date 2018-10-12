@@ -1,6 +1,6 @@
 package edu.vcu.nopreference.Objects.base;
 
-import edu.vcu.nopreference.Objects.collisions.Collision;
+import edu.vcu.nopreference.Objects.collisions.hitBox;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 /**
@@ -14,10 +14,18 @@ public class objectBase {
     private int height = 0;
 
     Render render;
-    Collision collision;
+    hitBox hitbox;
 
+    objectBase()
+    {
+
+    }
+    objectBase(Render r, hitBox h)
+    {
+
+    }
     public void Draw() {
-        render.draw();
+        //render.draw();
     }
 
 }
