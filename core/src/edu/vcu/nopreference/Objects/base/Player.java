@@ -11,7 +11,7 @@ public class Player extends objectBase {
     public Player()
     {
         render = new playerRender(this);
-        sprite.setPosition(0,0);
-        sprite.setBounds(100, 100, 1000, 1000);
+        //sprite.setPosition(0,0);
+        sprite.setBounds(100, 0, 200, 200);
     }
 }

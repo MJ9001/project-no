@@ -26,13 +26,14 @@ public class objectManager {
         objects.add(object);
     }
 
-    public void drawObjects(SpriteBatch batch)
-    {
-        for(objectBase obj : objects)
-        {
+    public void drawObjects(SpriteBatch batch) {
+        for (objectBase obj : objects) {
             obj.Draw(batch);
         }
     }
 
+    public void physicsTick()
+    {
 
+    }
 }
