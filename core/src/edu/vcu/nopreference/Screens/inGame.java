@@ -8,6 +8,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import edu.vcu.nopreference.Objects.base.Player;
+import edu.vcu.nopreference.Objects.base.objectBase;
+import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Untitled;
 
 /**
@@ -16,15 +19,14 @@ import edu.vcu.nopreference.Untitled;
 
 public class inGame implements Screen {
     SpriteBatch batch;
-    Texture img;
     boolean hidden = true;
+    objectManager objectman = new objectManager();
 
 
     public inGame()
     {
 
         batch = new SpriteBatch();
-        img = new Texture("badlogic.jpg");
         hidden = false;
     }
 
@@ -34,17 +36,15 @@ public class inGame implements Screen {
     }
     @Override
     public void show() {
+        objectman.addObject(new Player());
     }
-
-    int test = 0;
 
     @Override
     public void render(float delta) {
-        test += 1;
         Gdx.gl.glClearColor(1, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        batch.draw(img, test, 0);
+        objectman.drawObjects(batch);
         batch.end();
     }
 

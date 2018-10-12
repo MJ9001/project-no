@@ -9,8 +9,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import edu.vcu.nopreference.Untitled;
+
 public class mainMenu implements Screen
 {
+    boolean hidden = true;
     SpriteBatch batch;
     Texture menu;
     //BitmapFont font = new BitmapFont();
@@ -20,11 +23,12 @@ public class mainMenu implements Screen
 
     public mainMenu()
     {
+        hidden = false;
         w = Gdx.graphics.getWidth();
         h = Gdx.graphics.getHeight();
-        camera = new OrthographicCamera(w, h);
-        camera.position.set(w/2, h/2, 0);
-        camera.update();
+        //camera = new OrthographicCamera(w, h);
+        //camera.position.set(w/2, h/2, 0);
+        //camera.update();
         batch = new SpriteBatch();
         menu = new Texture("menu.jpg");
 
@@ -35,8 +39,10 @@ public class mainMenu implements Screen
             @Override
             public boolean touchDown(int screenX, int screenY, int pointer, int button) {
 
-                if(playButton.getBoundingRectangle().contains(screenX, screenY))
-                    Gdx.app.log("MyTag", "my informative message"+ screenY);
+                if(playButton.getBoundingRectangle().contains(screenX, screenY)) {
+                    Gdx.app.log("Untitled", "my informative message" + screenY);
+                    Untitled.newScreen = new inGame();
+                }
 
                 return true;
             }
@@ -45,13 +51,13 @@ public class mainMenu implements Screen
     }
     @Override
     public void show() {
-
+        hidden = false;
     }
 
     @Override
     public void render(float delta)
     {
-
+        if(hidden) return;
         Gdx.gl.glClearColor(1, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
@@ -77,7 +83,7 @@ public class mainMenu implements Screen
 
     @Override
     public void hide() {
-
+        hidden = true;
     }
 
     @Override

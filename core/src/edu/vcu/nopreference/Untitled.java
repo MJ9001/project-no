@@ -12,16 +12,28 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import edu.vcu.nopreference.Screens.*;
 
 public class Untitled extends Game {
-	Screen game;
+	private Screen activeScreen;
+	public static Screen newScreen;
 	@Override
 	public void create () {
-		game = new mainMenu();
-		this.setScreen(game);
+		newScreen = new mainMenu();
 	}
 	@Override
 	public void render ()
 	{
+		if(activeScreen != newScreen)
+		{
+			setScreen(newScreen);
+		}
+		//setScreen(new inGame());
 		super.render();
+	}
+	public void setActiveScreen(Screen screen)
+	{
+		Gdx.app.log("Untitled", "Setting screen to " + newScreen.toString());
+		//activeScreen.hide();
+		activeScreen = newScreen;
+		this.setScreen(newScreen);
 	}
 
 	@Override
