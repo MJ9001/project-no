@@ -9,12 +9,10 @@ public class Render {
 
     Render()
     {
-
     }
 
-    public int render()
+    public int draw()
     {
-
         return 0;//Zero on success
     }
 }
