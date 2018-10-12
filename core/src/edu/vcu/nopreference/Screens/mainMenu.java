@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class menu implements Screen
+public class mainMenu implements Screen
 {
     SpriteBatch batch;
     Texture menu;
@@ -18,7 +18,7 @@ public class menu implements Screen
     OrthographicCamera camera;
     private Sprite playButton;
 
-    public menu()
+    public mainMenu()
     {
         w = Gdx.graphics.getWidth();
         h = Gdx.graphics.getHeight();

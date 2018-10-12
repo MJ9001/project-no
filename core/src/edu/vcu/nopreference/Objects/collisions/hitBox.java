@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Mark on 10/8/2018.
  */
 
-public class Collision {
+public class hitBox {
     List<Shape2D> list;
     void test() {
         Shape2D shape = list.get(1);

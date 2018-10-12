@@ -6,4 +6,8 @@ package edu.vcu.nopreference.Objects.base;
 
 public class Player extends objectBase {
 
+    Player()
+    {
+
+    }
 }

@@ -46,7 +46,6 @@ public class inGame implements Screen {
         batch.begin();
         batch.draw(img, test, 0);
         batch.end();
-
     }
 
     @Override
