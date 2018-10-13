@@ -1,7 +1,7 @@
 package edu.vcu.nopreference.Objects.base;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 
-import edu.vcu.nopreference.Objects.renders.playerRender;
+import edu.vcu.nopreference.Objects.renders.Render;
+
 /**
  * Created by Mark on 10/10/2018.
  */
@@ -10,8 +10,14 @@ public class Player extends objectBase {
 
     public Player()
     {
-        render = new playerRender(this);
+        render = new Render(this, "badlogic.jpg");
         //sprite.setPosition(0,0);
-        sprite.setBounds(100, 0, 200, 200);
+        setBounds(100, 0, 200, 200);
+    }
+
+    @Override
+    public void onClick(int x, int y)
+    {
+        physics.Jump();
     }
 }
