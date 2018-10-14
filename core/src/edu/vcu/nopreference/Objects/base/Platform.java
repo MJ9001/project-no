@@ -13,14 +13,14 @@ import edu.vcu.nopreference.Objects.renders.Render;
 public class Platform extends objectBase {
 
     public Platform() {
-        render = new Render(this, "platform.JPG");
+        render = new Render(this, "platform.jpg");
         //sprite.setPosition(0,0);
         Random rand = new Random();
-        setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 0.2f, 500, 200);
+        setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 0.2f, 500, 100);
     }
 
     @Override
-    public void update() {
+        public void update() {
         posX -= 50;
         updatePosition();
     }

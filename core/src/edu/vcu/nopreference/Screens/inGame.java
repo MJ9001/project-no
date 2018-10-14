@@ -7,6 +7,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import edu.vcu.nopreference.Objects.base.*;
@@ -25,28 +26,48 @@ public class inGame implements Screen {
     long cTime = System.currentTimeMillis();
     int fps = 0;
     long fpsTime = System.currentTimeMillis();
+    Sprite pauseButton;
+    //bool value to be used for
+    boolean pauseTest=false;
+    //lastPause is edge detection for the button to make sure that it will not constantly trigger
     public inGame()
     {
 
         player = new Player();
         objectman.addObject(player);
         game = new gameObject();
-        objectman.addObject(game);
+        if(!pauseTest){objectman.addObject(game);}
+
+        //creating a pause button to be pressed
+        pauseButton = new Sprite(new Texture(Gdx.files.internal("pause.jpg")));
 
         batch = new SpriteBatch();
         hidden = false;
-
         Gdx.input.setInputProcessor(new InputAdapter(){
 
             @Override
             public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+                //if the pause button is pressed, calls the pause function
+                if(pauseButton.getBoundingRectangle().contains(screenX, screenY))
+                {
+                    pauseTest=true;
+                    Gdx.app.log("Untitled", "YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+                    while(pauseTest){
+                        //if the pause button is pressed, calls the pause function
+                        if(pauseButton.getBoundingRectangle().contains(screenX, screenY)){pauseTest=false;}
+                    }
 
+                    //pause button doesn't work but its a start I guess. Either way I'm gonna push it because I need to send the assets too
+                }
                 objectman.onClick(screenX, screenY);
 
                 return true;
             }
 
         });
+
+
+
     }
 
     public boolean isHidden()
@@ -74,6 +95,7 @@ public class inGame implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         objectman.drawObjects(batch);
+        batch.draw(pauseButton, 0,Gdx.graphics.getHeight()-100);
         batch.end();
     }
 
