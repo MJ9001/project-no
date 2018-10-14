@@ -1,8 +1,44 @@
 package edu.vcu.nopreference.Objects.base;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.Game;
+
+import edu.vcu.nopreference.Objects.physics.physicsGUI;
+import edu.vcu.nopreference.Objects.renders.Render;
+import edu.vcu.nopreference.Screens.inGame;
+import edu.vcu.nopreference.Screens.mainMenu;
+import edu.vcu.nopreference.Untitled;
+
 /**
  * Created by Mark on 10/14/2018.
  */
 
 public class objectMenu extends objectBase {
+    public objectMenu(){
+        super();
+        render = new Render(this, "pauseMenu.jpg");
+        sprite.setPosition(Gdx.graphics.getWidth()/4, Gdx.graphics.getHeight()- sprite.getHeight());
+    }
+
+    @Override
+    public void update() {
+    }
+    @Override
+    protected void initializePhysics()
+    {
+        physics = new physicsGUI(this);
+    }
+    @Override
+    public void onPressed()
+    {
+        if(inGame.paused){
+            Untitled.newScreen = new mainMenu();
+        }
+        else{
+            physics.Jump();
+        }
+    }
 }
+
+

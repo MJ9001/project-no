@@ -26,12 +26,13 @@ public class inGame implements Screen {
     long cTime = System.currentTimeMillis();
     int fps = 0;
     long fpsTime = System.currentTimeMillis();
-    Sprite pauseButton;
+    objectMenu pauseMenu= new objectMenu();
     //bool value to be used for
     public static boolean paused = false;
 
     public inGame()
     {
+        pauseMenu.setVisibility(false);
 
         //Temporarly manually added objects here
         player = new Player();
@@ -39,6 +40,8 @@ public class inGame implements Screen {
         game = new gameObject();
         objectman.addObject(new objectPause());
         objectman.addObject(game);
+        objectman.addObject(pauseMenu);
+        Gdx.app.log("Untitled", "pause menu vis: " + pauseMenu.getVisibility());
 
         batch = new SpriteBatch();
         hidden = false;
@@ -52,8 +55,6 @@ public class inGame implements Screen {
             }
 
         });
-
-
 
     }
 
@@ -78,6 +79,7 @@ public class inGame implements Screen {
             fps = 0;
             fpsTime = System.currentTimeMillis();
         }
+        pauseMenu.setVisibility(paused);
         fps++;
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);

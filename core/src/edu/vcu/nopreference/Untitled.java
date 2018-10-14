@@ -28,7 +28,7 @@ public class Untitled extends Game {
 		//setScreen(new inGame());
 		super.render();
 	}
-	public void setActiveScreen(Screen screen)
+	public void setActiveScreen()
 	{
 		Gdx.app.log("Untitled", "Setting screen to " + newScreen.toString());
 		//activeScreen.hide();
