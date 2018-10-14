@@ -28,19 +28,17 @@ public class inGame implements Screen {
     long fpsTime = System.currentTimeMillis();
     Sprite pauseButton;
     //bool value to be used for
-    boolean paused = false;
+    public static boolean paused = false;
 
     public inGame()
     {
 
+        //Temporarly manually added objects here
         player = new Player();
         objectman.addObject(player);
         game = new gameObject();
         objectman.addObject(new objectPause());
         objectman.addObject(game);
-
-        //creating a pause button to be pressed
-        pauseButton = new Sprite(new Texture(Gdx.files.internal("pause.jpg")));
 
         batch = new SpriteBatch();
         hidden = false;
@@ -84,8 +82,7 @@ public class inGame implements Screen {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        objectman.drawObjects(batch);
-        //batch.draw(pauseButton, 0,Gdx.graphics.getHeight()-100);
+        objectman.drawObjects(batch); //Draws every object in the game.
         batch.end();
     }
 

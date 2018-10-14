@@ -18,6 +18,7 @@ public class physicsBase {
         this.object = object;
     }
     public void tick() {
+        onGround = false;
         velocityY += gravity;
         object.posX += velocityX;
         object.posY += velocityY;

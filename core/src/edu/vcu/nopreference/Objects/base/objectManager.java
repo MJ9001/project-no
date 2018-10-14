@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 import edu.vcu.nopreference.Objects.physics.Collision;
+import edu.vcu.nopreference.Screens.inGame;
 
 /**
  * Created by Mark on 10/10/2018.
@@ -65,6 +66,7 @@ public class objectManager {
                 }
             }
         }
+        if(!inGame.paused)
         for (objectBase obj : objects) {
             if (obj.sprite.getBoundingRectangle().contains(x, y))
             {

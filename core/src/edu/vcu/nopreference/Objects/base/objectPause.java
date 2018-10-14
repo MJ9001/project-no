@@ -35,7 +35,6 @@ public class objectPause extends objectMenu {
     public void onPressed()
     {
         Gdx.app.log("Untitled", "Game has been paused.");
-
-        Untitled.newScreen = new mainMenu();
+        inGame.paused = !inGame.paused;
     }
 }

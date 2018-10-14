@@ -42,7 +42,7 @@ public class objectBase {
     {
 
     }
-    public void update()
+    public void update() //Called every tick
     {
         physics.tick();
         //posX+= 0.01f;
