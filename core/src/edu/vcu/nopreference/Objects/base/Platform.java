@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx;
 
 import java.util.Random;
 
+import edu.vcu.nopreference.Objects.physics.physicsBase;
+import edu.vcu.nopreference.Objects.physics.physicsPlatform;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 /**
@@ -16,13 +18,18 @@ public class Platform extends objectBase {
         render = new Render(this, "platform.jpg");
         //sprite.setPosition(0,0);
         Random rand = new Random();
-        setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 0.2f, 500, 100);
+        setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 1f, 500, 100);
     }
 
     @Override
         public void update() {
         posX -= 50;
         updatePosition();
+    }
+    @Override
+    protected void initializePhysics()
+    {
+        physics = new physicsPlatform(this);
     }
 }
 

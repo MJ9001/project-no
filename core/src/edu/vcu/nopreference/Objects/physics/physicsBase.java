@@ -22,7 +22,6 @@ public class physicsBase {
         object.posX += velocityX;
         object.posY += velocityY;
         object.updatePosition();
-        onCollision(object.manager.checkCollision(object));
         if(object.posY <= 0)
         {
             onGround = true;
@@ -41,7 +40,8 @@ public class physicsBase {
         if(collision == null)
             return;
         Gdx.app.log("Untitled", "Collided! X: " + collision.collidedX + " Y: " + collision.collidedY);
-        if(collision.collidedY == 1)
+        float percent = object.sprite.getBoundingRectangle().getHeight() * 0.4f;
+        if(collision.collidedY < percent && velocityY <= 0)
         {
             onGround = true;
             object.posY = collision.object2.sprite.getBoundingRectangle().getY() + collision.object2.sprite.getBoundingRectangle().getHeight();

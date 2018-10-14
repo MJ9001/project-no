@@ -44,11 +44,27 @@ public class objectManager {
             if(obj != null)
             obj.update();
         }
+
+        for (objectBase obj : objects) {
+            if(obj instanceof Player)
+                obj.updateCollision();
+        }
         objects.addAll(newObjects);
         newObjects.clear();
     }
     public void onClick(int x, int y)
     {
+        y = Gdx.graphics.getHeight() - y;
+
+        for (objectBase obj : objects) {
+            if (obj instanceof objectMenu) {
+                if (obj.sprite.getBoundingRectangle().contains(x, y))
+                {
+                    obj.onPressed();
+                    return;
+                }
+            }
+        }
         for (objectBase obj : objects) {
             if (obj.sprite.getBoundingRectangle().contains(x, y))
             {
@@ -58,13 +74,14 @@ public class objectManager {
         }
     }
 
+    //This method is a mess, we'll have to fix it up later. --Mark
     public Collision checkCollision(objectBase object)
     {
         for (objectBase obj : objects) {
             if(object.sprite.getBoundingRectangle().overlaps(obj.sprite.getBoundingRectangle()) && object != obj)
             {
-                int xCol = 0;
-                int yCol = 0;
+                float xCol = 0;
+                float yCol = 0;
                 float ax1 = object.sprite.getBoundingRectangle().getX();
                 float ax2 = object.sprite.getBoundingRectangle().getWidth() + object.sprite.getBoundingRectangle().getX();
                 float px1 = obj.sprite.getBoundingRectangle().getX();
@@ -74,16 +91,19 @@ public class objectManager {
                 float ay2 = object.sprite.getBoundingRectangle().getHeight() + object.sprite.getBoundingRectangle().getY();
                 float py1 = obj.sprite.getBoundingRectangle().getY();
                 float py2 = obj.sprite.getBoundingRectangle().getHeight() + obj.sprite.getBoundingRectangle().getY();
+
+
+
                 if(ax1 < px2 && ax2 > px1)
-                    xCol = 1;//right
+                    xCol = px2-ax1;//right
                 else if(ax2 > px1 && ax1 < px2)
-                    xCol = -1; // left
+                    xCol = ax2-px1; // left
 
 
-                if(ay1 < py2 && ay2 > py1)
-                    yCol = 1;//up
+                if(py2 - ay1 > 0 && ay2 > py1)
+                    yCol = py2 - ay1;//up
                 else if(ay2 > py1 && ay1 < py2)
-                    yCol = -1; //down
+                    yCol = ay2-py1; //down
                 return new Collision(object, obj, xCol, yCol, true);
             }
         }

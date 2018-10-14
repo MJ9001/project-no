@@ -1,8 +1,10 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.Screens.Menu;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+
+import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 // NONE OF THIS WORKS JUST FUCKIN IGNORE IT
@@ -22,7 +24,6 @@ public class buttonManager extends objectBase
         //I don't know what is happening because Mark didn't comment his shit
         button = new Sprite(new Texture(Gdx.files.internal(fileName)));
         button.setBounds(posX, posY, width,height);
-        render = new Render(this, fileName);
 
     }
 

@@ -28,15 +28,16 @@ public class inGame implements Screen {
     long fpsTime = System.currentTimeMillis();
     Sprite pauseButton;
     //bool value to be used for
-    boolean pauseTest=false;
-    //lastPause is edge detection for the button to make sure that it will not constantly trigger
+    boolean paused = false;
+
     public inGame()
     {
 
         player = new Player();
         objectman.addObject(player);
         game = new gameObject();
-        if(!pauseTest){objectman.addObject(game);}
+        objectman.addObject(new objectPause());
+        objectman.addObject(game);
 
         //creating a pause button to be pressed
         pauseButton = new Sprite(new Texture(Gdx.files.internal("pause.jpg")));
@@ -47,18 +48,6 @@ public class inGame implements Screen {
 
             @Override
             public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-                //if the pause button is pressed, calls the pause function
-                if(pauseButton.getBoundingRectangle().contains(screenX, screenY))
-                {
-                    pauseTest=true;
-                    Gdx.app.log("Untitled", "YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-                    while(pauseTest){
-                        //if the pause button is pressed, calls the pause function
-                        if(pauseButton.getBoundingRectangle().contains(screenX, screenY)){pauseTest=false;}
-                    }
-
-                    //pause button doesn't work but its a start I guess. Either way I'm gonna push it because I need to send the assets too
-                }
                 objectman.onClick(screenX, screenY);
 
                 return true;
@@ -78,8 +67,9 @@ public class inGame implements Screen {
     public void show() {
     }
     @Override
-    public void render(float delta) {
-        if(System.currentTimeMillis() >= cTime + 40)
+    public void render(float delta)
+    {
+        if(System.currentTimeMillis() >= cTime + 40 && !paused) //Game runs at 25 ticks per second. Todo: Figure out how to increase render() speed.
         {
             cTime = System.currentTimeMillis();
             objectman.logicTick();
@@ -95,7 +85,7 @@ public class inGame implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         objectman.drawObjects(batch);
-        batch.draw(pauseButton, 0,Gdx.graphics.getHeight()-100);
+        //batch.draw(pauseButton, 0,Gdx.graphics.getHeight()-100);
         batch.end();
     }
 

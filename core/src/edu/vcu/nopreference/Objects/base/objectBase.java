@@ -14,15 +14,19 @@ import edu.vcu.nopreference.Objects.renders.Render;
 public class objectBase {
     public Sprite sprite = new Sprite();
     public objectManager manager;
-    public physicsBase physics = new physicsBase(this);
+    public physicsBase physics;
 
     Render render;
     public float posX = 0, posY = 0;
     public objectBase()
     {
-        Gdx.app.log("Untitled", "New object created");
+        //Gdx.app.log("Untitled", "New object created");
+        initializePhysics();
     }
-
+    protected void initializePhysics()
+    {
+        physics = new physicsBase(this);
+    }
     objectBase(Render r)
     {
 
@@ -45,9 +49,13 @@ public class objectBase {
         //updatePosition();
     }
 
-    public void updatePosition()
+    public void updatePosition()//Sets sprites position to local position
     {
         sprite.setPosition(posX, posY);
+    }
+    public void updateCollision()//Check collision
+    {
+        physics.onCollision(manager.checkCollision(this));
     }
 
     public void setBounds(float x, float y, float width, float height)

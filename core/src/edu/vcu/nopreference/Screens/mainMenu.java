@@ -25,8 +25,6 @@ public class mainMenu implements Screen
     {
         //setting up variables to be used
         hidden = false;
-        w = Gdx.graphics.getWidth();
-        h = Gdx.graphics.getHeight();
         //setting up batch to draw sprites
         batch = new SpriteBatch();
         //creating menu as a texture
