@@ -12,16 +12,22 @@ import edu.vcu.nopreference.Objects.base.objectBase;
 
 public class Render {
 
+    public static boolean testing = false;
     objectBase object;
     public Render(objectBase object, String asset)
     {
-        this.object = object;
-        this.object.sprite = new Sprite(new Texture(Gdx.files.internal(asset)));
+        if(!testing) {
+            this.object = object;
+            this.object.sprite = new Sprite(new Texture(Gdx.files.internal(asset)));
+        }
     }
 
     public int draw(SpriteBatch batch)
     {
-        object.sprite.draw(batch);
-        return 0;//Zero on success
+        if(!testing) {
+            object.sprite.draw(batch);
+            return 0;//Zero on success
+        }
+        return 0;
     }
 }

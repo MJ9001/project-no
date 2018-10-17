@@ -15,10 +15,19 @@ import edu.vcu.nopreference.Untitled;
  */
 
 public class objectMenu extends objectBase {
+    boolean menuVisible = false;
     public objectMenu(){
         super();
         render = new Render(this, "pauseMenu.jpg");
-        sprite.setPosition(Gdx.graphics.getWidth()/4, Gdx.graphics.getHeight()- sprite.getHeight());
+        menuVisible = true;
+        //anything with sprites ruins unit tests, because libgdx was never designed to be unit tested, so this ugly stuff is what you get
+        //until the next iteration when we centralize all sprite manipulation
+        if(!Render.testing){sprite.setPosition(Gdx.graphics.getWidth()/4, Gdx.graphics.getHeight()- sprite.getHeight());}
+
+    }
+
+    public boolean getVisible(){
+        return menuVisible;
     }
 
     @Override
