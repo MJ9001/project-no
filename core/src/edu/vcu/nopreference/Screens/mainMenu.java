@@ -94,4 +94,8 @@ public class mainMenu implements Screen
     public void dispose() {
 
     }
+
+    public boolean isShown() {
+        return hidden;
+    }
 }
