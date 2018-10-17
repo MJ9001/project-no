@@ -44,6 +44,7 @@ public class mainMenu implements Screen
                     //Gdx.app.log("Untitled", "my informative message" + screenY); //test message
                     //creates a new screen which just launches the game
                     Untitled.newScreen = new inGame();
+                    hidden = true;
                 }
 
                 return true;
@@ -97,5 +98,11 @@ public class mainMenu implements Screen
 
     public boolean isShown() {
         return hidden;
+    }
+
+
+    public void fakePress(){
+        Untitled.newScreen = new inGame();
+        hidden = true;
     }
 }
