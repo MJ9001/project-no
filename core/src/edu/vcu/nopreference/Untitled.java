@@ -39,4 +39,8 @@ public class Untitled extends Game {
 	@Override
 	public void dispose () {
 	}
+
+	public Screen getActiveScreen(){
+		return activeScreen;
+	}
 }

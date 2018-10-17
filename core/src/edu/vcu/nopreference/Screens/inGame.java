@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 
 import edu.vcu.nopreference.Objects.base.*;
 import edu.vcu.nopreference.Untitled;
@@ -27,6 +28,7 @@ public class inGame implements Screen {
     int fps = 0;
     long fpsTime = System.currentTimeMillis();
     objectMenu pauseMenu= new objectMenu();
+    objectPause pauseButton = new objectPause();
     //bool value to be used for
     public static boolean paused = false;
 
@@ -38,7 +40,8 @@ public class inGame implements Screen {
         player = new Player();
         objectman.addObject(player);
         game = new gameObject();
-        objectman.addObject(new objectPause());
+        objectman.addObject(pauseButton);
+
         objectman.addObject(game);
         objectman.addObject(pauseMenu);
         Gdx.app.log("Untitled", "pause menu vis: " + pauseMenu.getVisibility());
@@ -111,4 +114,13 @@ public class inGame implements Screen {
     @Override
     public void dispose() {
     }
+
+    public objectPause getPauseButton(){
+        return pauseButton;
+    }
+
+    public boolean isPaused(){
+        return paused;
+    }
+
 }
