@@ -1,4 +1,4 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.tests;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationListener;

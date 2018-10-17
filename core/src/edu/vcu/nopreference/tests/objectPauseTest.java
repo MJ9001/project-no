@@ -1,31 +1,30 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.tests;
 
 import org.junit.Test;
 
 import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Screens.mainMenu;
 import edu.vcu.nopreference.Untitled;
+import edu.vcu.nopreference.tests.GameTest;
 
 import static org.junit.Assert.*;
 
-public class objectPauseTest extends GameTest{
+public class objectPauseTest{
 
     private Untitled game;
     private inGame stage;
 
     @org.junit.Before
     public void setUp() throws Exception {
-        game = new Untitled();
-        stage = new inGame();
+
 
     }
 
     @Test
     public void testPause(){
-        game.render();
         inGame.paused = true;
 
-        assertTrue(game.getActiveScreen() instanceof mainMenu);
+        assertTrue(inGame.paused);
     }
 
     @org.junit.After
