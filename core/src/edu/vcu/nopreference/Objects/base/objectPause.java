@@ -18,9 +18,10 @@ import edu.vcu.nopreference.Untitled;
 public class objectPause extends objectMenu {
 
     public objectPause() {
-        super();
+        //super();
         render = new Render(this, "pause.jpg");
-        sprite.setPosition(0, Gdx.graphics.getHeight() - sprite.getHeight());
+
+        if(!Render.testing){sprite.setPosition(0, Gdx.graphics.getHeight() - sprite.getHeight());}
     }
 
     @Override
@@ -34,7 +35,8 @@ public class objectPause extends objectMenu {
     @Override
     public void onPressed()
     {
-        Gdx.app.log("Untitled", "Game has been paused.");
+        //Gdx.app.log("Untitled", "Game has been paused.");
         inGame.paused = !inGame.paused;
     }
+
 }
