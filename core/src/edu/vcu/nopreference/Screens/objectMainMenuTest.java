@@ -22,7 +22,18 @@ public class objectMainMenuTest /*extends GameTest*/ {
         mainMenu mockMenu = Mockito.mock(mainMenu.class);
         assertFalse(mockMenu.isShown());
     }
-
+    @Test
+    public void testMainMenuStart(){
+        mainMenu mockMenu = Mockito.mock(mainMenu.class);
+        mockMenu.fakePress();
+        assertFalse(mockMenu.isShown());
+    }
+    @Test
+    public void testQuitToMenu(){
+        mainMenu mockMenu = Mockito.mock(mainMenu.class);
+        mockMenu.fakePress();
+        assertFalse(mockMenu.isShown());
+    }
     @org.junit.After
     public void tearDown() throws Exception {
     }
