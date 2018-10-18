@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 
 import edu.vcu.nopreference.Objects.base.*;
+import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Untitled;
 
 /**
@@ -37,6 +38,7 @@ public class inGame implements Screen {
         pauseMenu.setVisibility(false);
 
         //Temporarly manually added objects here
+        //declaring objects to be used for game stuff
         player = new Player();
         objectman.addObject(player);
         game = new gameObject();
@@ -48,6 +50,7 @@ public class inGame implements Screen {
 
         batch = new SpriteBatch();
         hidden = false;
+        //tests for user input
         Gdx.input.setInputProcessor(new InputAdapter(){
 
             @Override
@@ -61,10 +64,12 @@ public class inGame implements Screen {
 
     }
 
+    //returns the boolean hidden which describes whether this screen is hidden or not
     public boolean isHidden()
     {
         return hidden;
     }
+
     @Override
     public void show() {
     }
@@ -73,6 +78,7 @@ public class inGame implements Screen {
     {
         if(System.currentTimeMillis() >= cTime + 40 && !paused) //Game runs at 25 ticks per second. Todo: Figure out how to increase render() speed.
         {
+            //cTime is the current time, this will update it
             cTime = System.currentTimeMillis();
             objectman.logicTick();
         }
@@ -84,8 +90,11 @@ public class inGame implements Screen {
         }
         pauseMenu.setVisibility(paused);
         fps++;
+
+
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         batch.begin();
         objectman.drawObjects(batch); //Draws every object in the game.
         batch.end();

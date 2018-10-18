@@ -16,8 +16,10 @@ import edu.vcu.nopreference.Untitled;
 
 public class objectMenu extends objectBase {
     boolean menuVisible = false;
+    //constructor of objectMenu
     public objectMenu(){
         super();
+
         render = new Render(this, "pauseMenu.jpg");
         menuVisible = true;
         //anything with sprites ruins unit tests, because libgdx was never designed to be unit tested, so this ugly stuff is what you get
@@ -26,6 +28,7 @@ public class objectMenu extends objectBase {
 
     }
 
+    //getter for visibility of menu
     public boolean getVisible(){
         return menuVisible;
     }
@@ -34,18 +37,31 @@ public class objectMenu extends objectBase {
     public void update() {
     }
     @Override
-    protected void initializePhysics()
-    {
+    protected void initializePhysics() {
+        //line of code that prevents object from falling
         physics = new physicsGUI(this);
     }
+
     @Override
-    public void onPressed()
-    {
+    public void onPressed() {
+        //if the game is paused, you can interact with the menu, else you do what you normally do, jump.
         if(inGame.paused){
             Untitled.newScreen = new mainMenu();
         }
         else{
             physics.Jump();
+        }
+    }
+
+    //method used for testing, since mainMenu is litered with libgdx code, and since that cant run on unit tests,
+    //this method will return a boolean true for if the game is paused, and you click the menu,
+    //and a boolean false if the game is not paused and you click the menu. Simulating jump vs go back to main menu.
+    public boolean fakePress(){
+        if(inGame.paused){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 }
