@@ -23,25 +23,41 @@ public class objectPauseTest{
 
     }
 
-    @Test
-    public void testMainMenuVisibility(){
-        //mainMenu mainMenuTest = new mainMenu();
-        //assert(true);
-    }
 
-    //Testing if inGame pause returns pause
+
+    //Testing if inGame pause returns pause and if pressing the pause button actually pauses the game
     @Test
     public void testPause(){
         Render.testing=true;
         objectPause tester = new objectPause();
+
+        //presses button, then asserts pause state of inGame
         tester.onPressed();
         assertTrue(inGame.paused);
+
         tester.onPressed();
         assertFalse(inGame.paused);
     }
 
+    //testing if the pause button will bring up the pause menu, instead of testing the inGame function,
+    //the same code that runs the pause button functionality was inserted here.
     @Test
     public void testPauseButton(){
+
+        Render.testing=true;
+        objectMenu tester=new objectMenu();
+
+        inGame.paused=true;
+        tester.setVisibility(inGame.paused);
+        assertTrue(tester.getVisibility());
+
+        inGame.paused=false;
+        tester.setVisibility(inGame.paused);
+        assertFalse(tester.getVisibility());
+    }
+
+    @Test
+    public void testPauseQuit(){
 
     }
 
