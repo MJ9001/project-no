@@ -16,9 +16,10 @@ import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Platform extends objectBase {
     private static Random rand = new Random();  // Create a random number generator so that we have a random height for the height.
-    private static int PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class. It's pretty wicked fast broh.
+    private int PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class. It's pretty wicked fast broh.
 
-    public int getPlatformSpeed() {return PLATFORM_SPEED;}
+    public void setPlatformSpeed(int speed) { PLATFORM_SPEED = speed; }
+    public int  getPlatformSpeed()          { return  PLATFORM_SPEED; }
 
     public Platform() {
         // TODO: MARK! PLEASE EXPLAIN!!!
@@ -35,9 +36,6 @@ public class Platform extends objectBase {
         updatePosition();
     }
 
-    public void setPlatformSpeed(int speed){
-        PLATFORM_SPEED = speed;
-    }
     @Override
     // This sets up the physics for the platform to be of type physicsPlatform
     protected void initializePhysics()

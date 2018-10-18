@@ -20,6 +20,7 @@ public class doesItPlatform {
     public void doesItMove() {
         Render.testing = true;
         Platform tempPlat = new Platform();
+        tempPlat.setPlatformSpeed(50);
         tempPlat.posX = 500;
         tempPlat.update();
         assertEquals(500 - tempPlat.getPlatformSpeed(), tempPlat.posX, 1.0);
