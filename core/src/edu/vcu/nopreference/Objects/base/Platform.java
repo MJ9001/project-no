@@ -13,17 +13,19 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class Platform extends objectBase {
+    private static int PLATFORM_SPEED = 50;
+    public int getPlatformSpeed() {return PLATFORM_SPEED;}
 
     public Platform() {
         render = new Render(this, "platform.jpg");
         //sprite.setPosition(0,0);
         Random rand = new Random();
-        setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 1f, 500, 100);
+        if (!Render.testing) setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 1f, 500, 100);
     }
 
     @Override
         public void update() {
-        posX -= 50;
+        posX -= PLATFORM_SPEED;
         updatePosition();
     }
     @Override
