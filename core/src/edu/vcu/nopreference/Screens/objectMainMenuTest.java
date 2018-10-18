@@ -24,7 +24,9 @@ public class objectMainMenuTest {
 
     @Test
     public void testQuitToMenu(){//tests to see if main menu is being shown currently
-        objectMenu.fakeOnPress();
-        assertTrue(objectMenu.returnToMain());
+        //objectMenu mockObjectMenu = Mockito.mock(objectMenu.class);
+        inGame.paused = true;
+        objectMenu.fakePress();
+        assertTrue(objectMenu.fakePress());
     }
 }
