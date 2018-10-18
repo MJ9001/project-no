@@ -8,7 +8,7 @@ import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Screens.mainMenu;
 import edu.vcu.nopreference.Untitled;
-import edu.vcu.nopreference.tests.GameTest;
+
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -25,6 +25,8 @@ public class objectPauseTest{
 
 
 
+    //Given that I am in-game, when I press the pause button, a menu should prompt
+    //the user to quit the game and return to the main menu.
     //Testing if inGame pause returns pause and if pressing the pause button actually pauses the game
     @Test
     public void testPause(){
@@ -39,6 +41,8 @@ public class objectPauseTest{
         assertFalse(inGame.paused);
     }
 
+    //Given that I am in game, when I look at the top left corner of the screen, I should
+    //see a pause button, and when I press the pause button, then a menu should open
     //testing if the pause button will bring up the pause menu, instead of testing the inGame function,
     //the same code that runs the pause button functionality was inserted here.
     @Test
@@ -58,6 +62,8 @@ public class objectPauseTest{
     }
 
     //Tests that pressing the menu when paused will cause a return to the main menu
+    //Given that I am in-game, when I press the pause button, a menu should prompt
+    //the user to quit the game and return to the main menu.
     @Test
     public void testPauseQuit(){
         Render.testing = true;

@@ -44,12 +44,9 @@ public class objectMenu extends objectBase {
 
     @Override
     public void onPressed() {
-        //if the game is paused, you can interact with the menu, else you do what you normally do, jump.
+        //if the game is paused, you can interact with the menu
         if(inGame.paused){
             Untitled.newScreen = new mainMenu();
-        }
-        else{
-            physics.Jump();
         }
     }
 

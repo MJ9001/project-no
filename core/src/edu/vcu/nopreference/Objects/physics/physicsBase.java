@@ -3,6 +3,7 @@ package edu.vcu.nopreference.Objects.physics;
 import com.badlogic.gdx.Gdx;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
+import edu.vcu.nopreference.Objects.renders.Render;
 
 /**
  * Created by Mark on 10/10/2018.
@@ -40,7 +41,7 @@ public class physicsBase {
     {
         if(collision == null)
             return;
-        Gdx.app.log("Untitled", "Collided! X: " + collision.collidedX + " Y: " + collision.collidedY);
+        if(!Render.testing) Gdx.app.log("Untitled", "Collided! X: " + collision.collidedX + " Y: " + collision.collidedY);
         float percent = object.sprite.getBoundingRectangle().getHeight() * 0.4f;
         if(collision.collidedY < percent && velocityY <= 0)
         {
