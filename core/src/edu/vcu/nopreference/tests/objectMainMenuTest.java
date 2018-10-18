@@ -1,9 +1,11 @@
-package edu.vcu.nopreference.Screens;
+package edu.vcu.nopreference.tests;
 
 import org.junit.Test;
 import org.mockito.Mockito;
 
 import edu.vcu.nopreference.Objects.base.objectMenu;
+import edu.vcu.nopreference.Screens.inGame;
+import edu.vcu.nopreference.Screens.mainMenu;
 
 
 import static org.junit.Assert.*;
