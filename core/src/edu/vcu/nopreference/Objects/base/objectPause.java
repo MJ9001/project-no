@@ -17,20 +17,27 @@ import edu.vcu.nopreference.Untitled;
 
 public class objectPause extends objectMenu {
 
+    //constructor for objectPause
     public objectPause() {
         super();
+        //renders the pause icon in the top corner of the screen
         render = new Render(this, "pause.jpg");
 
+        //0, the height of the screen, minus the height of the image
         if(!Render.testing){sprite.setPosition(0, Gdx.graphics.getHeight() - sprite.getHeight());}
     }
 
     @Override
     public void update() {
     }
+
+    //prevents the pause button object from being affected by gravity and colissions
     @Override
     protected void initializePhysics() {
         physics = new physicsGUI(this);
     }
+
+    //Pauses the game by changing the pause value inGame
     @Override
     public void onPressed() {
         //Gdx.app.log("Untitled", "Game has been paused.");
