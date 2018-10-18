@@ -25,7 +25,7 @@ public class Platform extends objectBase {
         render = new Render(this, "platform.jpg");
         // TODO: do not set the bounds for the object in the constructor because then during testing we have to Render.testing = true to prevent libgdx call.
         if (!Render.testing) setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 1f, 500, 100);
-        else posY = rand.nextFloat();
+        else setBounds(500, rand.nextFloat(), 500, 100);
     }
 
     @Override

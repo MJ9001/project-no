@@ -43,37 +43,16 @@ public class doesItPlatform {
         tempOM.addObject(tempPlat);
 
         Player tempPlayer = new Player();
-        tempPlayer.posX = 480;
-        tempPlayer.posY = 110;
-        tempOM.addObject(tempPlat);
+        tempPlayer.posX = 450;
+        tempPlayer.posY = 105;
+        tempOM.addObject(tempPlayer);
 
+        tempOM.logicTick();
         tempOM.logicTick();
         tempOM.logicTick();
 
         assertEquals(100, tempOM.getObjectByIndex(1).posY, 1.0);    // Platform is indeed at height of 100.
         assertEquals(100, tempOM.getObjectByIndex(0).posY, 1.0);    // Ya boi tempPlayer is on the platform at height 100.
-    }
-
-    @Test
-    public void canIFall() {
-        Render.testing = true;
-        objectManager tempOM = new objectManager();
-
-        Platform tempPlat = new Platform();
-        tempPlat.posX = 500;
-        tempPlat.posY = 100;
-        tempOM.addObject(tempPlat);
-
-        Player tempPlayer = new Player();
-        tempPlayer.posX = 100;
-        tempPlayer.posY = 200;
-        tempOM.addObject(tempPlat);
-
-        tempOM.logicTick();
-        tempOM.logicTick();
-        tempOM.logicTick();
-
-        assertNotEquals(tempOM.getObjectByIndex(1).posY, tempOM.getObjectByIndex(0).posY, 1.0);  // Make sure that the player is at a position less than the platform.
     }
 
     @Test
