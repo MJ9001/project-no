@@ -53,6 +53,17 @@ public class objectMenu extends objectBase {
         }
     }
 
+    //method used for testing, since mainMenu is litered with libgdx code, and since that cant run on unit tests,
+    //this method will return a boolean true for if the game is paused, and you click the menu,
+    //and a boolean false if the game is not paused and you click the menu. Simulating jump vs go back to main menu.
+    public boolean fakePress(){
+        if(inGame.paused){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
 
 
