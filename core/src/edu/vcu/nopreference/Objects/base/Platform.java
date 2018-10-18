@@ -35,6 +35,9 @@ public class Platform extends objectBase {
         updatePosition();
     }
 
+    public void setPlatformSpeed(int speed){
+        PLATFORM_SPEED = speed;
+    }
     @Override
     // This sets up the physics for the platform to be of type physicsPlatform
     protected void initializePhysics()

@@ -93,12 +93,30 @@ public class doesItPlatform {
     /* Scenario: Given that I am in game and a platform is above me, when I tap the screen, then I
     should move upwards and will land on the platform */
     @Test
-    public void canIJump(){
+    public void canIJump() {
         Render.testing = true;
-        Player player = new Player();
-        player.update();
-        player.physics.Jump();
-        System.out.println(player.physics.velocityY);
-        assertTrue(player.physics.velocityY > 0.1);
+        objectManager tempOM = new objectManager();
+
+        Platform tempPlat = new Platform();
+        tempPlat.posX = 500;
+        tempPlat.posY = 100;
+        tempPlat.setPlatformSpeed(0);
+        tempOM.addObject(tempPlat);
+
+        Player tempPlayer = new Player();
+        tempPlayer.posX = 500;
+        tempPlayer.posY = 0;
+        tempOM.addObject(tempPlayer);
+
+        tempPlayer.update();
+        tempPlayer.physics.Jump();
+        assertTrue(tempPlayer.physics.velocityY > 0.1);//Jump successful
+
+        int i = 0;
+        while(1000 > i++){
+            tempOM.logicTick();
+        }
+        assertEquals(tempPlayer.posY, tempPlat.posY+tempPlat.sprite.getHeight(), 1);
+
     }
 }
