@@ -40,12 +40,15 @@ public class inGame implements Screen {
     //pause menu and the pause button
     objectMenu pauseMenu= new objectMenu();
     objectPause pauseButton = new objectPause();
+    backgroundObject background = new backgroundObject("inGameBackground.jpg");;
+    //render variable used to handle libgdx functions
+    Render render = new Render();
     //bool value to be used for controlling all pause states throughout the program
     public static boolean paused = false;
 
     public inGame() {
         //set the visibility of the menu to false because when drawing in a sprite, there is no way to draw it in without making it visible
-        pauseMenu.setVisibility(false);
+        render.setVisibility(false, pauseMenu);
 
         //Temporarly manually added objects here
         //declaring objects to be used for game stuff
@@ -54,8 +57,10 @@ public class inGame implements Screen {
         game = new gameObject();
         objectman.addObject(pauseButton);
 
+
         objectman.addObject(game);
         objectman.addObject(pauseMenu);
+        //objectman.addObject(background);
         //Gdx.app.log("Untitled", "pause menu vis: " + pauseMenu.getVisibility());
 
         batch = new SpriteBatch();
@@ -99,12 +104,11 @@ public class inGame implements Screen {
             fps = 0;
             fpsTime = System.currentTimeMillis();
         }
-        pauseMenu.setVisibility(paused);
+        render.setVisibility(paused, pauseMenu);
         fps++;
 
 
-        Gdx.gl.glClearColor(1, 1, 1, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        render.clearScreen();
 
         batch.begin();
         objectman.drawObjects(batch); //Draws every object in the game.

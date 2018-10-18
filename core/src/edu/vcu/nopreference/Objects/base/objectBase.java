@@ -35,16 +35,7 @@ public class objectBase {
     public void Draw(SpriteBatch batch) {
         render.draw(batch);
     }
-    public void toggleVisibility(){
-        if(visible){
-            this.sprite.setAlpha(0);
-            visible=false;
-        }
-        else{
-            this.sprite.setAlpha(1);
-            visible=true;
-        }
-    }
+
     public void onClick(int x, int y)
     {
 
@@ -73,19 +64,9 @@ public class objectBase {
     {
         posX = x;
         posY = y;
-        sprite.setBounds(x, y, width, height);
+        if(!Render.testing){sprite.setBounds(x, y, width, height);}
     }
-    public void setVisibility(boolean vis){
-        visible=vis;
-        if(vis){
-            this.sprite.setAlpha(1);
-        }
-        else{
-            this.sprite.setAlpha(0);
-        }
-    }
-    public boolean getVisibility(){
-        return visible;
-    }
+
+
 
 }

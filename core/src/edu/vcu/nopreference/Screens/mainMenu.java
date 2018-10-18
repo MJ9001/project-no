@@ -9,17 +9,23 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import edu.vcu.nopreference.Objects.base.backgroundObject;
+import edu.vcu.nopreference.Objects.base.objectManager;
+import edu.vcu.nopreference.Objects.base.playButton;
+import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Untitled;
 
 public class mainMenu implements Screen
 {
-    boolean hidden = true;
+    public static boolean hidden;
     SpriteBatch batch;
-    Texture menu;
     //BitmapFont font = new BitmapFont();
-    float w,h;
-    OrthographicCamera camera;
-    private Sprite playButton;
+    playButton play = new playButton();
+    //render for controling libgdx
+    Render render = new Render();
+    backgroundObject background;
+    //manager for all sprites, backrounds and buttons
+    objectManager objectman = new objectManager();
 
     public mainMenu()
     {
@@ -28,25 +34,17 @@ public class mainMenu implements Screen
         //setting up batch to draw sprites
         batch = new SpriteBatch();
         //creating menu as a texture
-        menu = new Texture("menu.jpg");
+        background = new backgroundObject("menu.jpg");
+        objectman.addObject(background);
+        objectman.addObject(play);
+        objectman.updateList();
 
-        //creates a sprite play button, then sets the bounds so that the hitbox of clicking lines up with the sprite itself
-        playButton = new Sprite(new Texture(Gdx.files.internal("playButton.jpg")));
-        playButton.setBounds(800, 687, 1124,460);
         //testing for touching the play  button
         Gdx.input.setInputProcessor(new InputAdapter(){
 
             @Override
             public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-
-                //if the play buttons bounded rectangle contains the XY coordinates of the touch location, then a new screen will be launched. In this case, the game screen.
-                if(playButton.getBoundingRectangle().contains(screenX, screenY)) {
-                    //Gdx.app.log("Untitled", "my informative message" + screenY); //test message
-                    //creates a new screen which just launches the game
-                    Untitled.newScreen = new inGame();
-                    hidden = true;
-                }
-
+                objectman.onClick(screenX, screenY);
                 return true;
             }
 
@@ -63,11 +61,11 @@ public class mainMenu implements Screen
         //if the screen is hidden, then no render will occur.
         if(hidden) return;
         //using batch to draw the assets
-        Gdx.gl.glClearColor(1, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        render.clearScreen();
+
         batch.begin();
-        batch.draw(menu, 0, 0);
-        batch.draw(playButton, 800, 300);
+        objectman.drawObjects(batch);
         batch.end();
     }
 

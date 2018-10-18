@@ -49,16 +49,17 @@ public class objectPauseTest{
     public void testPauseButton(){
 
         Render.testing = true;
+        Render render = new Render();
         objectMenu tester = new objectMenu();
         objectPause testa = new objectPause();
 
         testa.onPressed();
-        tester.setVisibility(inGame.paused);
-        assertTrue(tester.getVisibility());
+        render.setVisibility(inGame.paused, tester);
+        assertTrue(render.getVisibility(tester));
 
         testa.onPressed();
-        tester.setVisibility(inGame.paused);
-        assertFalse(tester.getVisibility());
+        render.setVisibility(inGame.paused, tester);
+        assertFalse(render.getVisibility(tester));
     }
 
     //Tests that pressing the menu when paused will cause a return to the main menu

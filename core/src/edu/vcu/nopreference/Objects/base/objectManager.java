@@ -34,6 +34,11 @@ public class objectManager {
         object.manager = this;
     }
 
+    //method used to force an update of the list, used for main menu creation, as there are no ticks used there
+    public void updateList(){
+        objects.addAll(newObjects);
+    }
+
     public void drawObjects(SpriteBatch batch) {
         for (objectBase obj : objects) {
             obj.Draw(batch);
