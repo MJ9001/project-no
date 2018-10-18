@@ -1,5 +1,7 @@
 package edu.vcu.nopreference.Objects.base;
 
+import com.badlogic.gdx.Game;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import edu.vcu.nopreference.Untitled;
@@ -34,4 +36,13 @@ public class doesItPlatform {
         assert(true);
     }
 
+    @Test
+    public void canIJump(){
+        Render.testing = true;
+        Player player = new Player();
+        player.update();
+        player.physics.Jump();
+        System.out.println(player.physics.velocityY);
+        assertTrue(player.physics.velocityY > 0.1);
+    }
 }
