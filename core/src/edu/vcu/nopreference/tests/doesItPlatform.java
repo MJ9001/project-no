@@ -1,9 +1,11 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.tests;
 
 import com.badlogic.gdx.Game;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import edu.vcu.nopreference.Objects.base.Player;
 import edu.vcu.nopreference.Untitled;
 import edu.vcu.nopreference.Objects.base.Platform;
 import edu.vcu.nopreference.Objects.physics.physicsPlatform;
