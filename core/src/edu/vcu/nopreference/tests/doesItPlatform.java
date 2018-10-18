@@ -40,19 +40,20 @@ public class doesItPlatform {
     @Test
     public void canIStep() {
         Render.testing = true;
-        objectManager tempOM = new objectManager();
+        objectManager tempOM = new objectManager(); // Dummy objectManager to run the game simulation
 
         Platform tempPlat = new Platform();
         tempPlat.posX = 500;
         tempPlat.posY = 100;
-        tempOM.addObject(tempPlat);
+        tempOM.addObject(tempPlat);     // Add platform to object manager.
 
         Player tempPlayer = new Player();
-        tempPlayer.posX = 450;
-        tempPlayer.posY = 215;
-        tempOM.addObject(tempPlayer);
+        tempPlayer.posX = 450;          // Player is not quite above the platform, is slightly to the left.
+        tempPlayer.posY = 215;          // By the time the player falls onto the platform, ya boi will be squarely on the platform.
+        tempOM.addObject(tempPlayer);   // Add player to object manager.
 
-        tempOM.logicTick();
+        // Run the game for two ticks.
+        tempOM.logicTick(); // The first tick adds the new objects to the object lists.
         tempOM.logicTick();
         tempOM.logicTick();
 
@@ -66,19 +67,20 @@ public class doesItPlatform {
     @Test
     public void canIMiss() {
         Render.testing = true;
-        objectManager tempOM = new objectManager();
+        objectManager tempOM = new objectManager(); // Dummy objectManager to run the game simulation
 
         Platform tempPlat = new Platform();
         tempPlat.posX = 500;
         tempPlat.posY = 100;
-        tempOM.addObject(tempPlat);
+        tempOM.addObject(tempPlat);     // Add platform to objectManager
 
         Player tempPlayer = new Player();
-        tempPlayer.posX = 950;
-        tempPlayer.posY = 215;
-        tempOM.addObject(tempPlayer);
+        tempPlayer.posX = 950;          // Player is currently 50 units overlapping at end of platform
+        tempPlayer.posY = 215;          // By the time the player reaches the platform height, the platform has moved 100 units to the left and should not collide.
+        tempOM.addObject(tempPlayer);   // Add player to objectManager
 
-        tempOM.logicTick();
+        // Run the game for five ticks
+        tempOM.logicTick(); // The first tick adds newObjects to Objects and does not count.
         tempOM.logicTick();
         tempOM.logicTick();
         tempOM.logicTick();
