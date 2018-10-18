@@ -27,6 +27,7 @@ public class objectManager {
 
     }
 
+    public objectBase getObjectByIndex(int i) {return objects.get(i);}
     public void addObject(objectBase object)
     {
         newObjects.add(object);
