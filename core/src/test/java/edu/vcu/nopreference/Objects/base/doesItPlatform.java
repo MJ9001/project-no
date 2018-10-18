@@ -30,7 +30,8 @@ public class doesItPlatform {
 
     @Test
     public void canIStep(){
-
+        Render.testing = true;
+        assert(true);
     }
 
 }

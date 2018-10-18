@@ -15,12 +15,10 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class Platform extends objectBase {
-    //  The platform speed can be set here and referenced using the getter if needed outside of the class. It's pretty wicked fast broh.
-    private static int PLATFORM_SPEED = 50;
-    public int getPlatformSpeed() {return PLATFORM_SPEED;}
+    private static Random rand = new Random();  // Create a random number generator so that we have a random height for the height.
+    private static int PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class. It's pretty wicked fast broh.
 
-    // Create a random number generator so that we have a random height for the height.
-    private static Random rand = new Random();
+    public int getPlatformSpeed() {return PLATFORM_SPEED;}
 
     public Platform() {
         // TODO: MARK! PLEASE EXPLAIN!!!
