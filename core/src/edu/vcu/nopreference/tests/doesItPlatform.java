@@ -1,15 +1,17 @@
 package edu.vcu.nopreference.tests;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import com.badlogic.gdx.utils.Logger;
 
+import org.junit.Test;
+
+import edu.vcu.nopreference.Objects.base.Platform;
 import edu.vcu.nopreference.Objects.base.Player;
 import edu.vcu.nopreference.Objects.base.objectManager;
-import edu.vcu.nopreference.Untitled;
-import edu.vcu.nopreference.Objects.base.Platform;
-import edu.vcu.nopreference.Objects.physics.physicsPlatform;
 import edu.vcu.nopreference.Objects.renders.Render;
-import sun.rmi.runtime.Log;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class doesItPlatform {
@@ -44,15 +46,15 @@ public class doesItPlatform {
 
         Player tempPlayer = new Player();
         tempPlayer.posX = 450;
-        tempPlayer.posY = 105;
+        tempPlayer.posY = 215;
         tempOM.addObject(tempPlayer);
 
         tempOM.logicTick();
         tempOM.logicTick();
         tempOM.logicTick();
 
-        assertEquals(100, tempOM.getObjectByIndex(1).posY, 1.0);    // Platform is indeed at height of 100.
-        assertEquals(100, tempOM.getObjectByIndex(0).posY, 1.0);    // Ya boi tempPlayer is on the platform at height 100.
+        assertEquals(100, tempOM.getObjectByIndex(0).posY, 1.0);    // Platform is indeed at height of 100.
+        assertEquals(200, tempOM.getObjectByIndex(1).posY, 1.0);    // Ya boi tempPlayer is on the platform at height 100.
     }
 
     @Test
