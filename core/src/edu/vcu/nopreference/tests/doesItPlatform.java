@@ -76,4 +76,13 @@ public class doesItPlatform {
         assertNotEquals(tempOM.getObjectByIndex(1).posY, tempOM.getObjectByIndex(0).posY, 1.0);  // Make sure that the player is at a position less than the platform.
     }
 
+    @Test
+    public void canIJump(){
+        Render.testing = true;
+        Player player = new Player();
+        player.update();
+        player.physics.Jump();
+        System.out.println(player.physics.velocityY);
+        assertTrue(player.physics.velocityY > 0.1);
+    }
 }
