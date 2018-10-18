@@ -16,6 +16,7 @@ import edu.vcu.nopreference.Untitled;
 
 public class objectMenu extends objectBase {
     boolean menuVisible = false;
+    boolean backToMain = false;
     public objectMenu(){
         super();
         render = new Render(this, "pauseMenu.jpg");
@@ -43,11 +44,24 @@ public class objectMenu extends objectBase {
     {
         if(inGame.paused){
             Untitled.newScreen = new mainMenu();
+            //backToMain = true;
         }
         else{
             physics.Jump();
         }
     }
+
+   public void fakeOnPress(){
+        backToMain = true;
+        Untitled.newScreen = new mainMenu();
+
+    }
+
+
+     public boolean returnToMain(){
+        return backToMain;
+    }
+
 }
 
 
