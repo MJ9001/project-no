@@ -25,7 +25,6 @@ public class objectMainMenuTest {
     @Test
     public void testQuitToMenu(){//tests to see if main menu is being shown currently
         inGame.paused = true;
-        objectMenu.fakePress();
         assertTrue(objectMenu.fakePress());
     }
 }
