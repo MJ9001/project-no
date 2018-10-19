@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -40,6 +42,7 @@ public class objectManager {
     }
 
     public void drawObjects(SpriteBatch batch) {
+
         for (objectBase obj : objects) {
             obj.Draw(batch);
         }
@@ -86,7 +89,7 @@ public class objectManager {
     public Collision checkCollision(objectBase object)
     {
         for (objectBase obj : objects) {
-            if(object.sprite.getBoundingRectangle().overlaps(obj.sprite.getBoundingRectangle()) && object != obj)
+            if(object.sprite.getBoundingRectangle().overlaps(obj.sprite.getBoundingRectangle()) && object != obj && !obj.GUIAsset)
             {
                 float xCol = 0;
                 float yCol = 0;
@@ -117,4 +120,10 @@ public class objectManager {
         }
         return null;
     }
+    public void sortObjectList(){
+        //objects.sort(Comparator.comparing(objects::getDrawOrder));
+        Collections.sort(objects, new objectComparator());
+    }
+
+    //Collections.sort
 }

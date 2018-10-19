@@ -34,6 +34,7 @@ public class objectPause extends objectMenu {
     //prevents the pause button object from being affected by gravity and colissions
     @Override
     protected void initializePhysics() {
+        GUIAsset=true;
         physics = new physicsGUI(this);
     }
 

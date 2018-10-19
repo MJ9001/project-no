@@ -12,10 +12,9 @@ public class backgroundObject extends objectBase {
 
     public backgroundObject(String backName){
         super();
-        texture = new Texture("menu.jpg");
+        texture = new Texture(backName);
         render.renderBackground(this);
         sprite.setPosition(0,0);
-
     }
     @Override
     public void Draw(SpriteBatch batch) {
@@ -30,6 +29,7 @@ public class backgroundObject extends objectBase {
     //prevents the pause button object from being affected by gravity and colissions
     @Override
     protected void initializePhysics() {
+        GUIAsset=true;
         physics = new physicsGUI(this);
     }
 

@@ -39,6 +39,7 @@ public class objectMenu extends objectBase {
     @Override
     protected void initializePhysics() {
         //line of code that prevents object from falling
+        GUIAsset=true;
         physics = new physicsGUI(this);
     }
 

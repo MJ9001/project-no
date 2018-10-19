@@ -11,6 +11,7 @@ public class levelSelectInner extends objectBase {
 
     @Override
     protected void initializePhysics() {
+        GUIAsset=true;
         physics = new physicsGUI(this);
     }
 }

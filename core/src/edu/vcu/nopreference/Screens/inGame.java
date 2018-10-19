@@ -53,14 +53,18 @@ public class inGame implements Screen {
         //Temporarly manually added objects here
         //declaring objects to be used for game stuff
         player = new Player();
+        player.setDrawOrder(1);
         objectman.addObject(player);
         game = new gameObject();
         objectman.addObject(pauseButton);
+        pauseButton.setDrawOrder(2);
 
 
         objectman.addObject(game);
         objectman.addObject(pauseMenu);
-        //objectman.addObject(background);
+        pauseMenu.setDrawOrder(3);
+        background.setDrawOrder(1000);
+        objectman.addObject(background);
         //Gdx.app.log("Untitled", "pause menu vis: " + pauseMenu.getVisibility());
 
         batch = new SpriteBatch();
@@ -100,12 +104,13 @@ public class inGame implements Screen {
         }
         if(System.currentTimeMillis() >= fpsTime + 1000)
         {
-            //Gdx.app.log("Untitled", "Fps: " + fps);
+            Gdx.app.log("Untitled", "Fps: " + fps);
             fps = 0;
             fpsTime = System.currentTimeMillis();
         }
         render.setVisibility(paused, pauseMenu);
         fps++;
+        objectman.sortObjectList();
 
 
         render.clearScreen();

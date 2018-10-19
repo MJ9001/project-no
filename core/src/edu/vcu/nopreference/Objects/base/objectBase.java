@@ -16,12 +16,20 @@ public class objectBase {
     public objectManager manager;
     public physicsBase physics;
     public boolean visible=true;
+    public boolean GUIAsset=false;
+    //float that determines what is drawn first, lowest to highest. by default the object is set to lowest
+    public int drawOrder = 999;
 
     Render render;
     public float posX = 0, posY = 0;
     public objectBase()
     {
         //Gdx.app.log("Untitled", "New object created");
+        initializePhysics();
+    }
+
+    public objectBase(int setDrawNum){
+        drawOrder=setDrawNum;
         initializePhysics();
     }
     protected void initializePhysics()
@@ -67,6 +75,13 @@ public class objectBase {
         if(!Render.testing){sprite.setBounds(x, y, width, height);}
     }
 
+    //method used to set drawOrder, which is then used by object manager to
+    public void setDrawOrder(int drawNum){
+        drawOrder=drawNum;
+    }
 
+    public int getDrawOrder(){
+        return drawOrder;
+    }
 
 }

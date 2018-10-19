@@ -15,6 +15,7 @@ public class playButton extends objectBase {
 
     @Override
     protected void initializePhysics() {
+        GUIAsset=true;
         physics = new physicsGUI(this);
     }
 

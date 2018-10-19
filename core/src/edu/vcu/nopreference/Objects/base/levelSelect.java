@@ -53,6 +53,7 @@ public class levelSelect extends objectBase {
     //prevents the object from being affected by gravity and colissions
     @Override
     protected void initializePhysics() {
+        GUIAsset=true;
         physics = new physicsGUI(this);
     }
     @Override
