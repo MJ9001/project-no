@@ -120,10 +120,10 @@ public class objectManager {
         }
         return null;
     }
+
+    //method that uses comparators to sort the list of objects based on draw order. Because of how large this list gets,
+    //we will probably have to introduce some garbage collection if we want this solution to continue working
     public void sortObjectList(){
-        //objects.sort(Comparator.comparing(objects::getDrawOrder));
         Collections.sort(objects, new objectComparator());
     }
-
-    //Collections.sort
 }

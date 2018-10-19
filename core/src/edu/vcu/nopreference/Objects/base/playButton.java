@@ -7,6 +7,7 @@ import edu.vcu.nopreference.Screens.mainMenu;
 import edu.vcu.nopreference.Untitled;
 
 public class playButton extends objectBase {
+    //object for play button on main menu
 
     public playButton(){
         render = new Render(this, "playButton.jpg");

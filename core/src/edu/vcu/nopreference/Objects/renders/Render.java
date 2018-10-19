@@ -42,6 +42,7 @@ public class Render {
         return 0;
     }
 
+    //seperate methods because the backgrounds are textures rather than sprites
     public void renderBackground(backgroundObject back){
         if(!testing){
             this.back = back;
