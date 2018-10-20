@@ -63,8 +63,8 @@ public class inGame implements Screen {
         objectman.addObject(game);
         objectman.addObject(pauseMenu);
         pauseMenu.setDrawOrder(3);
-        background.setDrawOrder(1000);
-        objectman.addObject(background);
+        //background.setDrawOrder(1000);
+        //objectman.addObject(background);
         //Gdx.app.log("Untitled", "pause menu vis: " + pauseMenu.getVisibility());
 
         batch = new SpriteBatch();
@@ -110,7 +110,7 @@ public class inGame implements Screen {
         }
         render.setVisibility(paused, pauseMenu);
         fps++;
-        objectman.sortObjectList();
+        //objectman.sortObjectList();
 
 
         render.clearScreen();

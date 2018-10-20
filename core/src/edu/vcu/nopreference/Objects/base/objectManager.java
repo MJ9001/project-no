@@ -123,7 +123,7 @@ public class objectManager {
 
     //method that uses comparators to sort the list of objects based on draw order. Because of how large this list gets,
     //we will probably have to introduce some garbage collection if we want this solution to continue working
-    public void sortObjectList(){
+    /*public void sortObjectList(){
         Collections.sort(objects, new objectComparator());
-    }
+    }*/
 }
