@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import edu.vcu.nopreference.Objects.base.backgroundObject;
+import edu.vcu.nopreference.Objects.base.inputHandler;
 import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.base.playButton;
 import edu.vcu.nopreference.Objects.renders.Render;
@@ -20,15 +21,18 @@ public class mainMenu implements Screen
     public static boolean hidden;
     SpriteBatch batch;
     //BitmapFont font = new BitmapFont();
-    playButton play = new playButton();
+    playButton play ;
     //render for controling libgdx
     Render render = new Render();
     backgroundObject background;
     //manager for all sprites, backrounds and buttons
     objectManager objectman = new objectManager();
+    inputHandler input;
 
-    public mainMenu()
+    public mainMenu(inputHandler input)
     {
+        this.input = input;
+        play = new playButton(input);
         //setting up variables to be used
         hidden = false;
         //setting up batch to draw sprites
@@ -39,16 +43,10 @@ public class mainMenu implements Screen
         objectman.addObject(play);
         objectman.updateList();
 
+        input.updateObjectManager(objectman);
+
         //testing for touching the play  button
-        Gdx.input.setInputProcessor(new InputAdapter(){
-
-            @Override
-            public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-                objectman.onClick(screenX, screenY);
-                return true;
-            }
-
-        });
+        input.inputHandling();
     }
     @Override
     public void show() {
@@ -100,7 +98,7 @@ public class mainMenu implements Screen
 
 
     public void fakePress(){
-        Untitled.newScreen = new inGame();
+        Untitled.newScreen = new inGame(input);
         hidden = true;
     }
 }

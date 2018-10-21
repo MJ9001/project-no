@@ -16,10 +16,12 @@ import edu.vcu.nopreference.Untitled;
 
 public class objectMenu extends objectBase {
     boolean menuVisible = false;
+    inputHandler input;
     //constructor of objectMenu
-    public objectMenu(){
+    public objectMenu(inputHandler input){
         super();
 
+        this.input=input;
         render = new Render(this, "pauseMenu.jpg");
         menuVisible = true;
         //anything with sprites ruins unit tests, because libgdx was never designed to be unit tested, so this ugly stuff is what you get
@@ -47,7 +49,8 @@ public class objectMenu extends objectBase {
     public void onPressed() {
         //if the game is paused, you can interact with the menu
         if(inGame.paused){
-            Untitled.newScreen = new mainMenu();
+            Untitled.newScreen = new mainMenu(input);
+            inGame.paused = false;
         }
     }
 

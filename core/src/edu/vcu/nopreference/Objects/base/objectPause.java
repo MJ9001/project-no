@@ -15,7 +15,7 @@ import edu.vcu.nopreference.Untitled;
  * Created by Mark on 10/14/2018.
  */
 
-public class objectPause extends objectMenu {
+public class objectPause extends objectBase {
 
     //constructor for objectPause
     public objectPause() {

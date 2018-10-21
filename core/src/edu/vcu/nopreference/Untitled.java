@@ -9,14 +9,16 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import edu.vcu.nopreference.Objects.base.inputHandler;
 import edu.vcu.nopreference.Screens.*;
 
 public class Untitled extends Game {
 	private Screen activeScreen;
 	public static Screen newScreen;
+	inputHandler input = new inputHandler();
 	@Override
 	public void create () {
-		newScreen = new mainMenu();
+		newScreen = new mainMenu(input);
 	}
 	@Override
 	public void render ()

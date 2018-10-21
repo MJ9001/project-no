@@ -8,8 +8,10 @@ import edu.vcu.nopreference.Untitled;
 
 public class playButton extends objectBase {
     //object for play button on main menu
+    inputHandler input;
 
-    public playButton(){
+    public playButton(inputHandler input){
+        this.input = input;
         render = new Render(this, "playButton.jpg");
         setBounds(800, 300, 1124,460);
     }
@@ -21,7 +23,7 @@ public class playButton extends objectBase {
     }
 
     public void onPressed() {
-        Untitled.newScreen = new inGame();
+        Untitled.newScreen = new inGame(input);
         mainMenu.hidden = true;
     }
 }

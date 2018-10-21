@@ -2,6 +2,7 @@ package edu.vcu.nopreference.tests;
 
 import org.junit.Test;
 
+import edu.vcu.nopreference.Objects.base.inputHandler;
 import edu.vcu.nopreference.Objects.base.objectMenu;
 import edu.vcu.nopreference.Objects.base.objectPause;
 import edu.vcu.nopreference.Objects.renders.Render;
@@ -50,7 +51,8 @@ public class objectPauseTest{
 
         Render.testing = true;
         Render render = new Render();
-        objectMenu tester = new objectMenu();
+        inputHandler input = new inputHandler();
+        objectMenu tester = new objectMenu(input);
         objectPause testa = new objectPause();
 
         testa.onPressed();
@@ -68,7 +70,8 @@ public class objectPauseTest{
     @Test
     public void testPauseQuit(){
         Render.testing = true;
-        objectMenu tester = new objectMenu();
+        inputHandler input = new inputHandler();
+        objectMenu tester = new objectMenu(input);
         objectPause testa = new objectPause();
 
         testa.onPressed();

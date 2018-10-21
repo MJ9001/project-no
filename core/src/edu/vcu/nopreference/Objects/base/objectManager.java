@@ -67,7 +67,7 @@ public class objectManager {
         y = Gdx.graphics.getHeight() - y;
 
         for (objectBase obj : objects) {
-            if (obj instanceof objectMenu) {
+            if (obj instanceof objectMenu || obj instanceof playButton) {
                 if (obj.sprite.getBoundingRectangle().contains(x, y))
                 {
                     obj.onPressed();

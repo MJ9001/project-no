@@ -38,16 +38,19 @@ public class inGame implements Screen {
     //time used for calculating fps
     long fpsTime = System.currentTimeMillis();
     //pause menu and the pause button
-    objectMenu pauseMenu= new objectMenu();
+    objectMenu pauseMenu;
     objectPause pauseButton = new objectPause();
     backgroundObject background = new backgroundObject("inGameBackground.jpg");;
     //render variable used to handle libgdx functions
     Render render = new Render();
     //bool value to be used for controlling all pause states throughout the program
     public static boolean paused = false;
+    inputHandler input;
 
-    public inGame() {
+    public inGame(inputHandler input) {
+        this.input = input;
         //set the visibility of the menu to false because when drawing in a sprite, there is no way to draw it in without making it visible
+        pauseMenu =  new objectMenu(input);
         render.setVisibility(false, pauseMenu);
 
         //Temporarly manually added objects here
@@ -58,7 +61,6 @@ public class inGame implements Screen {
         game = new gameObject();
         objectman.addObject(pauseButton);
         pauseButton.setDrawOrder(2);
-
 
         objectman.addObject(game);
         objectman.addObject(pauseMenu);
