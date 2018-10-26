@@ -8,6 +8,9 @@ import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Player extends objectBase {
 
+    float score=255;
+    final float maxScore=255;
+
     //default constructor creates player as a default image
     public Player()
     {
@@ -16,7 +19,15 @@ public class Player extends objectBase {
         setBounds(100, 0, 200, 200);
     }
 
-    //for future character selection support
+    //makes it such that the players score decreases by 0.1 every tick
+    //this effects the jump height alone currently, but in the future it will effect other factors as well
+    @Override
+    public void updateCollision(){
+        score-=0.1;
+        physics.onCollision(manager.checkCollision(this));
+    }
+
+    //for possible future character selection support
     public Player(String characterModel, float modelWidth, float modelHeight, float modelX, float modelY){
         render = new Render(this, characterModel);
         setBounds(modelX, modelY, modelWidth, modelHeight);
@@ -25,6 +36,8 @@ public class Player extends objectBase {
     @Override
     public void onClick(int x, int y)
     {
-        physics.Jump();
+        physics.Jump((score/maxScore));
     }
+
+
 }

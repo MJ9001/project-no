@@ -112,7 +112,7 @@ public class doesItPlatform {
         tempOM.addObject(tempPlayer);
 
         tempPlayer.update();
-        tempPlayer.physics.Jump();
+        tempPlayer.physics.Jump(1);
         assertTrue(tempPlayer.physics.velocityY > 0.1);//Jump successful
 
         int i = 0;

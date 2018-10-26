@@ -51,11 +51,11 @@ public class physicsBase {
         }
     }
 
-    public void Jump()
+    public void Jump(float speed)
     {
         if(onGround)
         {
-            velocityY = 100;
+            velocityY = 100 * speed;
             onGround = false;
         }
     }
