@@ -3,15 +3,14 @@ package edu.vcu.nopreference.Objects.base;
 import edu.vcu.nopreference.Objects.physics.physicsGUI;
 import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Screens.inGame;
+import edu.vcu.nopreference.Screens.levelSelectMenu;
 import edu.vcu.nopreference.Screens.mainMenu;
 import edu.vcu.nopreference.Untitled;
 
 public class playButton extends objectBase {
     //object for play button on main menu
-    inputHandler input;
 
-    public playButton(inputHandler input){
-        this.input = input;
+    public playButton(){
         render = new Render(this, "playButton.jpg");
         setBounds(800, 300, 1124,460);
     }
@@ -23,7 +22,7 @@ public class playButton extends objectBase {
     }
 
     public void onPressed() {
-        Untitled.newScreen = new inGame(input);
+        Untitled.newScreen = new levelSelectMenu();
         mainMenu.hidden = true;
     }
 }

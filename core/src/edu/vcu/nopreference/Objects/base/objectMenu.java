@@ -18,7 +18,7 @@ public class objectMenu extends objectBase {
     boolean menuVisible = false;
     inputHandler input;
     //constructor of objectMenu
-    public objectMenu(inputHandler input){
+    public objectMenu(){
         super();
 
         this.input=input;
@@ -49,7 +49,7 @@ public class objectMenu extends objectBase {
     public void onPressed() {
         //if the game is paused, you can interact with the menu
         if(inGame.paused){
-            Untitled.newScreen = new mainMenu(input);
+            Untitled.newScreen = new mainMenu();
             inGame.paused = false;
         }
     }

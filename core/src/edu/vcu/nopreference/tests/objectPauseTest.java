@@ -51,8 +51,7 @@ public class objectPauseTest{
 
         Render.testing = true;
         Render render = new Render();
-        inputHandler input = new inputHandler();
-        objectMenu tester = new objectMenu(input);
+        objectMenu tester = new objectMenu();
         objectPause testa = new objectPause();
 
         testa.onPressed();
@@ -71,7 +70,7 @@ public class objectPauseTest{
     public void testPauseQuit(){
         Render.testing = true;
         inputHandler input = new inputHandler();
-        objectMenu tester = new objectMenu(input);
+        objectMenu tester = new objectMenu();
         objectPause testa = new objectPause();
 
         testa.onPressed();

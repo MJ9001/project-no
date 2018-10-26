@@ -27,12 +27,12 @@ public class mainMenu implements Screen
     backgroundObject background;
     //manager for all sprites, backrounds and buttons
     objectManager objectman = new objectManager();
-    inputHandler input;
 
-    public mainMenu(inputHandler input)
+
+    public mainMenu()
     {
-        this.input = input;
-        play = new playButton(input);
+
+        play = new playButton();
         //setting up variables to be used
         hidden = false;
         //setting up batch to draw sprites
@@ -43,10 +43,24 @@ public class mainMenu implements Screen
         objectman.addObject(play);
         objectman.updateList();
 
-        input.updateObjectManager(objectman);
+        //this is unnecessary and I will get rid of it eventually, I am
+        //a little busy right now just trying to get some other functionality done
+        //but it won't be here forever I promise
+        //input.updateObjectManager(objectman);
+
+        Gdx.input.setInputProcessor(new InputAdapter(){
+
+            @Override
+            public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+                objectman.onClick(screenX, screenY);
+
+                return true;
+            }
+
+        });
 
         //testing for touching the play  button
-        input.inputHandling();
+        //input.inputHandling();
     }
     @Override
     public void show() {
@@ -98,7 +112,6 @@ public class mainMenu implements Screen
 
 
     public void fakePress(){
-        Untitled.newScreen = new inGame(input);
         hidden = true;
     }
 }

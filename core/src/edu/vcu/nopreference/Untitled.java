@@ -15,10 +15,9 @@ import edu.vcu.nopreference.Screens.*;
 public class Untitled extends Game {
 	private Screen activeScreen;
 	public static Screen newScreen;
-	inputHandler input = new inputHandler();
 	@Override
 	public void create () {
-		newScreen = new mainMenu(input);
+		newScreen = new mainMenu();
 	}
 	@Override
 	public void render ()

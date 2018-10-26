@@ -45,12 +45,13 @@ public class inGame implements Screen {
     Render render = new Render();
     //bool value to be used for controlling all pause states throughout the program
     public static boolean paused = false;
-    inputHandler input;
 
-    public inGame(inputHandler input) {
-        this.input = input;
+
+    //the next thing to implement in terms of this inGame is to have level modifiers that vary speed of things passing,
+    //frequency of obstacles and frequency of power ups
+    public inGame() {
         //set the visibility of the menu to false because when drawing in a sprite, there is no way to draw it in without making it visible
-        pauseMenu =  new objectMenu(input);
+        pauseMenu =  new objectMenu();
         render.setVisibility(false, pauseMenu);
 
         //Temporarly manually added objects here
