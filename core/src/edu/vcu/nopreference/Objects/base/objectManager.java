@@ -58,6 +58,7 @@ public class objectManager {
         for (objectBase obj : objects) {
             if(obj instanceof Player)
                 obj.updateCollision();
+
         }
         objects.addAll(newObjects);
         newObjects.clear();

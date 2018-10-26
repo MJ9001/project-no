@@ -83,6 +83,14 @@ public class Render {
         }
     }
 
+    public float getScreenSizeY(){
+        return Gdx.graphics.getHeight();
+    }
+
+    public float getScreenSizeX(){
+        return Gdx.graphics.getWidth();
+    }
+
     public void clearScreen(){
         if(!testing){
             Gdx.gl.glClearColor(1, 1, 1, 1);

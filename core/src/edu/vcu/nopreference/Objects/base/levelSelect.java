@@ -37,8 +37,11 @@ public class levelSelect extends objectBase {
         levelUnlocked = true;
     }
 
-    public void constructInner(String innerAsset){
-        inner = new levelSelectInner(innerAsset, insideX, insideY);
+    public boolean getUnlocked(){ return levelUnlocked;}
+
+    public levelSelectInner constructInner(String innerAsset){
+        inner = new levelSelectInner(innerAsset, insideX, insideY, this);
+        return inner;
     }
 
     //methods used for getting the inside bounds of each level select
@@ -60,7 +63,7 @@ public class levelSelect extends objectBase {
     public void onPressed() {
         //Gdx.app.log("Untitled", "Game has been paused.");
         if(levelUnlocked){
-            //Untitled.newScreen = new inGame(input);
+            Untitled.newScreen = new inGame();
         }
         else{
 
