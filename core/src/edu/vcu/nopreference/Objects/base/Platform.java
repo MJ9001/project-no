@@ -14,10 +14,10 @@ import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Platform extends objectBase {
     private static Random rand = new Random();  // Create a random number generator so that we have a random height for the height.
-    private int PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class. It's pretty wicked fast broh.
+    private float PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class. It's pretty wicked fast broh.
 
-    public void setPlatformSpeed(int speed) { PLATFORM_SPEED = speed; }
-    public int  getPlatformSpeed()          { return  PLATFORM_SPEED; }
+    public void   setPlatformSpeed(float speed) { PLATFORM_SPEED = speed; }
+    public float  getPlatformSpeed()          { return  PLATFORM_SPEED; }
 
     public Platform() {
         // TODO: MARK! PLEASE EXPLAIN!!!
@@ -25,6 +25,12 @@ public class Platform extends objectBase {
         // TODO: do not set the bounds for the object in the constructor because then during testing we have to Render.testing = true to prevent libgdx call.
         if (!Render.testing) setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 1f, 500, 100);
         else setBounds(500, rand.nextFloat(), 500, 100);
+    }
+
+    public Platform(float platformSpeed_) {
+        render = new Render(this, "platform.jpg");
+        setBounds(0,-1000, 500, 100);
+        PLATFORM_SPEED = platformSpeed_;
     }
 
     @Override
