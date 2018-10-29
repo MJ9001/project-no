@@ -3,8 +3,6 @@ package edu.vcu.nopreference.Objects.base;
 import com.badlogic.gdx.Gdx;
 
 import java.util.Random;
-
-import edu.vcu.nopreference.Objects.physics.physicsBase;
 import edu.vcu.nopreference.Objects.physics.physicsPlatform;
 import edu.vcu.nopreference.Objects.renders.Render;
 

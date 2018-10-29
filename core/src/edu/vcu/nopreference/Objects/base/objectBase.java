@@ -59,6 +59,17 @@ public class objectBase {
         //updatePosition();
     }
 
+    public void setPosX(float posX_) {
+        posX = posX_;
+    }
+    public void setPosY(float posY_) {
+        posY = posY_;
+    }
+    public void setPosition(float posX_,float posY_) {   // Setter for setting X and Y position at the same time.
+        posX = posX_;
+        posY = posY_;
+    }
+
     public void updatePosition()//Sets sprites position to local position
     {
         sprite.setPosition(posX, posY);

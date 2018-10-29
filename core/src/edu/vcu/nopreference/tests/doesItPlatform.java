@@ -49,7 +49,7 @@ public class doesItPlatform {
         tempOM.addObject(tempPlat);     // Add platform to object manager.
 
         Player tempPlayer = new Player();
-        tempPlayer.posX = 450;          // Player is not quite above the platform, is slightly to the left.
+        tempPlayer.posX = 470;          // Player is not quite above the platform, is slightly to the left.
         tempPlayer.posY = 215;          // By the time the player falls onto the platform, ya boi will be squarely on the platform.
         tempOM.addObject(tempPlayer);   // Add player to object manager.
 
