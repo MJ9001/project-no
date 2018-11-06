@@ -14,7 +14,7 @@ public class Player extends objectBase {
     //default constructor creates player as a default image
     public Player()
     {
-        render = new Render(this, "badlogic.jpg");
+        render = new Render(this, "player_temporary_asset.png");
         //sprite.setPosition(0,0);
         setBounds(100, 0, 200, 200);
     }
