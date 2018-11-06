@@ -20,7 +20,7 @@ public class Platform extends objectBase {
     public float  getPlatformSpeed()          { return  PLATFORM_SPEED; }
 
     public Platform() {
-        // TODO: MARK! PLEASE EXPLAIN!!!
+        // Creates the renderer to draw the object at it's location
         render = new Render(this, "platform.jpg");
         // TODO: do not set the bounds for the object in the constructor because then during testing we have to Render.testing = true to prevent libgdx call.
         if (!Render.testing) setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 1f, 500, 100);

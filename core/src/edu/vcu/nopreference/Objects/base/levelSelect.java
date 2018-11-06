@@ -53,7 +53,7 @@ public class levelSelect extends objectBase {
         return insideY;
     }
 
-    //prevents the object from being affected by gravity and colissions
+    //prevents the object from being affected by gravity and collisions
     @Override
     protected void initializePhysics() {
         GUIAsset=true;
