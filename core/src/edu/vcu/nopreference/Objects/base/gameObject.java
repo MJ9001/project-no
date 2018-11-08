@@ -7,17 +7,17 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 
 public class gameObject extends objectBase{
-    public gameObject()
-    {
-
+    public gameObject() {
     }
+
     int ticks = 0;
     @Override
-    public void update()
-    {
-        if((ticks % 30) == 0)
-        {
+    public void update() {
+        if((ticks % 30) == 0) {
             manager.addObject(new Platform());
+        }
+        if(((ticks % 120) == 0)||((ticks % 90) == 0)){
+            manager.addObject(new Obstacle());
         }
         ticks++;
     }

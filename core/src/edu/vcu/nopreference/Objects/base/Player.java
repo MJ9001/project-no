@@ -1,5 +1,7 @@
 package edu.vcu.nopreference.Objects.base;
 
+import com.badlogic.gdx.Gdx;
+
 import edu.vcu.nopreference.Objects.renders.Render;
 
 /**
@@ -10,6 +12,7 @@ public class Player extends objectBase {
 
     float score=255;
     final float maxScore=255;
+    boolean takingDamage=false;
 
     //default constructor creates player as a default image
     public Player()
@@ -23,7 +26,6 @@ public class Player extends objectBase {
     //this effects the jump height alone currently, but in the future it will effect other factors as well
     @Override
     public void updateCollision(){
-        score-=0.1;
         physics.onCollision(manager.checkCollision(this));
     }
 
@@ -31,6 +33,28 @@ public class Player extends objectBase {
     public Player(String characterModel, float modelWidth, float modelHeight, float modelX, float modelY){
         render = new Render(this, characterModel);
         setBounds(modelX, modelY, modelWidth, modelHeight);
+    }
+
+    public void takeDamage(){
+        takingDamage=true;
+    }
+
+    int ticks = 0;
+    @Override
+    public void update() {
+        score-=0.1;
+        //Gdx.app.log("Untitled", "score: "+score);
+        if(takingDamage){
+            if((ticks%2)==0){
+                render.toggleVisibility(this);
+            }
+            ticks++;
+            if(ticks==20){
+                ticks=0;
+                takingDamage=false;
+            }
+        }
+        physics.tick();
     }
 
     @Override

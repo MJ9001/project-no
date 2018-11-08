@@ -56,7 +56,7 @@ public class objectManager {
         }
 
         for (objectBase obj : objects) {
-            if(obj instanceof Player)
+            if(obj instanceof Player || obj instanceof Obstacle)
                 obj.updateCollision();
 
         }
@@ -76,13 +76,14 @@ public class objectManager {
                 }
             }
         }
-        if(!inGame.paused)
+
         for (objectBase obj : objects) {
-            if (obj.sprite.getBoundingRectangle().contains(x, y))
-            {
-                obj.onPressed();
+            if(!inGame.paused || obj instanceof objectPause) {
+                if (obj.sprite.getBoundingRectangle().contains(x, y)) {
+                    obj.onPressed();
+                }
+                obj.onClick(x, y);
             }
-            obj.onClick(x, y);
         }
     }
 
