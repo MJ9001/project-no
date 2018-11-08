@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -28,7 +29,7 @@ public class inGame implements Screen {
     //the objectManager is the object that manages other objects, and draws them on the screen.
     objectManager objectman = new objectManager();
     //player object
-    Player player;
+    public Player player;
     //game object
     gameObject game;
     //current time
@@ -45,6 +46,7 @@ public class inGame implements Screen {
     Render render = new Render();
     //bool value to be used for controlling all pause states throughout the program
     public static boolean paused = false;
+    public static Music music = Gdx.audio.newMusic(Gdx.files.internal("songFull.wav"));
 
 
     //the next thing to implement in terms of this inGame is to have level modifiers that vary speed of things passing,
@@ -54,6 +56,7 @@ public class inGame implements Screen {
         pauseMenu =  new objectMenu();
         render.setVisibility(false, pauseMenu);
 
+        music.play();
         //Temporarly manually added objects here
         //declaring objects to be used for game stuff
         player = new Player();

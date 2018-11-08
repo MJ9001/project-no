@@ -22,6 +22,7 @@ public class playButton extends objectBase {
     }
 
     public void onPressed() {
+        mainMenu.music.dispose();
         Untitled.newScreen = new levelSelectMenu();
         mainMenu.hidden = true;
     }

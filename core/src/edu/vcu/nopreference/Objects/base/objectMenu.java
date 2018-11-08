@@ -49,6 +49,7 @@ public class objectMenu extends objectBase {
     public void onPressed() {
         //if the game is paused, you can interact with the menu
         if(inGame.paused){
+            inGame.music.dispose();
             Untitled.newScreen = new mainMenu();
             inGame.paused = false;
         }
