@@ -62,6 +62,7 @@ public class inGame implements Screen {
         player = new Player();
         player.setDrawOrder(1);
         objectman.addObject(player);
+        objectman.addObject(player.getScoreObj());
         game = new gameObject();
         objectman.addObject(pauseButton);
         pauseButton.setDrawOrder(2);

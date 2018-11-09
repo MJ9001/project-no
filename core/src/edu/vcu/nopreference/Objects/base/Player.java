@@ -9,10 +9,8 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class Player extends objectBase {
-
-    float score=255;
-    final float maxScore=255;
     boolean takingDamage=false;
+    Score score = new Score();
 
     //default constructor creates player as a default image
     public Player()
@@ -36,13 +34,20 @@ public class Player extends objectBase {
     }
 
     public void takeDamage(){
+        //this makes the player invincible after taking the initial hit of damage
+        if(!takingDamage){
+            score.takeDamage();
+        }
         takingDamage=true;
+    }
+
+    public Score getScoreObj(){
+        return score;
     }
 
     int ticks = 0;
     @Override
     public void update() {
-        score-=0.1;
         //Gdx.app.log("Untitled", "score: "+score);
         if(takingDamage){
             if((ticks%2)==0){
@@ -60,7 +65,7 @@ public class Player extends objectBase {
     @Override
     public void onClick(int x, int y)
     {
-        physics.Jump((score/maxScore));
+        physics.Jump(score.getModifier());
     }
 
 
