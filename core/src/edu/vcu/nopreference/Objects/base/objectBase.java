@@ -22,7 +22,7 @@ public class objectBase {
     //float that determines what is drawn first, lowest to highest. by default the object is set to lowest
     public int drawOrder = 999;
 
-    Render render;
+    public Render render;
     public float posX = 0, posY = 0;
     public objectBase()
     {
@@ -85,7 +85,7 @@ public class objectBase {
     {
         posX = x;
         posY = y;
-        if(!Render.testing){sprite.setBounds(x, y, width, height);}
+        sprite.setBounds(x, y, width, height);
     }
 
     //method used to set drawOrder, which is then used by object manager to
