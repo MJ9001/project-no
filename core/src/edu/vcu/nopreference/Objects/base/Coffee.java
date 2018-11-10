@@ -1,6 +1,8 @@
 package edu.vcu.nopreference.Objects.base;
 
 import com.badlogic.gdx.Gdx;
+
+import edu.vcu.nopreference.Objects.physics.physicsCoffee;
 import edu.vcu.nopreference.Objects.physics.physicsPlatform;
 import edu.vcu.nopreference.Objects.renders.Render;
 
@@ -12,18 +14,18 @@ public class Coffee extends objectBase {
     public Coffee()
     {
         // Creates the renderer to draw the object at it's location
-        render = new Render(this, "badlogic.jpg");
-        setBounds(render.getWidth(), render.getHeight() * rand.nextFloat() * 1f, 500, 100);
+        render = new Render(this, "coffeeasset1.jpg");
+        setBounds(render.getWidth()+250, render.getHeight() * rand.nextFloat() * 1f, 100, 200);
 
     }
 
     public Coffee(Platform platform) {
         Gdx.app.log("Untitled", "Starting new coffee");
         // Creates the renderer to draw the object at it's location
-        render = new Render(this, "badlogic.jpg");
-        setBounds(render.getWidth(), render.getHeight() * rand.nextFloat() * 1f, 500, 100);
-        this.posX = platform.posX;
-        this.posY = (float)(platform.posY + sprite.getHeight()*1.1);
+        render = new Render(this, "coffeeasset1.jpg");
+        setBounds(0, 0, 100, 200);
+        this.posX = platform.posX+250;
+        this.posY = (float)(platform.posY + sprite.getHeight());
         updatePosition();
         Gdx.app.log("Untitled", "Created new coffee");
     }
@@ -33,12 +35,13 @@ public class Coffee extends objectBase {
     // The updates that happen per tick. Update() is called by the object manager.
     public void update()
     {
+        posX -= 50;
         updatePosition();
     }
 
     public void coffeeGrabbed()
     {
-        manager.sendIntent("+score", "100");
+        manager.sendIntent("+score", "20");
         toBeDeleted = true;
     }
 
@@ -46,6 +49,6 @@ public class Coffee extends objectBase {
     // This sets up the physics for the platform to be of type physicsPlatform
     protected void initializePhysics()
     {
-        physics = new physicsPlatform(this);
+        physics = new physicsCoffee(this);
     }
 }

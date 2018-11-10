@@ -56,7 +56,7 @@ public class objectManager {
         }
 
         for (objectBase obj : objects) {
-            if(obj instanceof Player || obj instanceof Obstacle)
+            //if(obj instanceof Player || obj instanceof Obstacle)
                 obj.updateCollision();
 
         }
