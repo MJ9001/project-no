@@ -14,7 +14,7 @@ public class physicsCoffee extends physicsBase {
     public void onCollision(Collision collision)
     {
         if(collision != null)
-        if(collision.getObject2() instanceof Player && collision.getObject1() instanceof Coffee)
-        ((Coffee)object).coffeeGrabbed();
+            if(collision.getObject1() instanceof Player || collision.getObject2() instanceof Player)
+                ((Coffee)object).coffeeGrabbed();
     }
 }

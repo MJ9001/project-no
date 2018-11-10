@@ -51,7 +51,7 @@ public class Player extends objectBase {
         //Gdx.app.log("Untitled", "score: "+score);
         if(takingDamage){
             if((ticks%2)==0){
-                render.toggleVisibility(this);
+                render.toggleVisibility();
             }
             ticks++;
             if(ticks==20){

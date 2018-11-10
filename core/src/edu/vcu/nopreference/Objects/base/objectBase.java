@@ -1,6 +1,5 @@
 package edu.vcu.nopreference.Objects.base;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -100,5 +99,9 @@ public class objectBase {
     public boolean recieveIntent(String Intent, String args)
     {
         return false;
+    }
+
+    public String requestIntent(String request) {
+        return null;
     }
 }

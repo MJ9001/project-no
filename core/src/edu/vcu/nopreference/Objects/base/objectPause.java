@@ -24,7 +24,7 @@ public class objectPause extends objectBase {
         render = new Render(this, "pause.jpg");
 
         //0, the height of the screen, minus the height of the image
-        if(!Render.testing){sprite.setPosition(0, Gdx.graphics.getHeight() - sprite.getHeight());}
+        sprite.setPosition(0, render.getHeight() - sprite.getHeight());
     }
 
     @Override
@@ -42,7 +42,7 @@ public class objectPause extends objectBase {
     @Override
     public void onPressed() {
         //Gdx.app.log("Untitled", "Game has been paused.");
-        inGame.paused = !inGame.paused;
+        manager.sendIntent("togglepause", "");
     }
 
 }

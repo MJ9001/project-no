@@ -39,13 +39,12 @@ public class inGame implements Screen {
     //time used for calculating fps
     long fpsTime = System.currentTimeMillis();
     //pause menu and the pause button
-    objectMenu pauseMenu;
-    objectPause pauseButton = new objectPause();
-    backgroundObject background = new backgroundObject("inGameBackground.jpg");;
+    //objectMenu pauseMenu;
+    //objectPause pauseButton = new objectPause();
+    //backgroundObject background = new backgroundObject("inGameBackground.jpg");;
     //render variable used to handle libgdx functions
     Render render = new Render();
     //bool value to be used for controlling all pause states throughout the program
-    public static boolean paused = false;
     public static Music music = Gdx.audio.newMusic(Gdx.files.internal("songFull.wav"));
 
 
@@ -53,27 +52,14 @@ public class inGame implements Screen {
     //frequency of obstacles and frequency of power ups
     public inGame() {
         //set the visibility of the menu to false because when drawing in a sprite, there is no way to draw it in without making it visible
-        pauseMenu =  new objectMenu();
-        render.setVisibility(false, pauseMenu);
 
         music.play();
         //Temporarly manually added objects here
         //declaring objects to be used for game stuff
-        player = new Player();
-        player.setDrawOrder(1);
-        objectman.addObject(player);
-        objectman.addObject(player.getScoreObj());
-        game = new gameObject();
-        objectman.addObject(pauseButton);
-        pauseButton.setDrawOrder(2);
-
-        objectman.addObject(game);
-        objectman.addObject(pauseMenu);
-        pauseMenu.setDrawOrder(3);
         //background.setDrawOrder(1000);
         //objectman.addObject(background);
         //Gdx.app.log("Untitled", "pause menu vis: " + pauseMenu.getVisibility());
-
+        objectman.initializeObjects();
         batch = new SpriteBatch();
         hidden = false;
         //tests for user input, if input, then call object manager, which then goes through all objects and tests their input.
@@ -103,7 +89,7 @@ public class inGame implements Screen {
     //loop that handles most of the interaction such as time keeping, testing for pause, and drawing objects
     @Override
     public void render(float delta) {
-        if(System.currentTimeMillis() >= cTime + 40 && !paused) //Game runs at 25 ticks per second. Todo: Figure out how to increase render() speed.
+        if(System.currentTimeMillis() >= cTime + 40 && !objectman.paused) //Game runs at 25 ticks per second. Todo: Figure out how to increase render() speed.
         {
             //cTime is the current time, this will update it
             cTime = System.currentTimeMillis();
@@ -115,7 +101,7 @@ public class inGame implements Screen {
             fps = 0;
             fpsTime = System.currentTimeMillis();
         }
-        render.setVisibility(paused, pauseMenu);
+        //render.setVisibility(paused, pauseMenu);
         fps++;
         //objectman.sortObjectList();
 
@@ -151,12 +137,7 @@ public class inGame implements Screen {
     public void dispose() {
     }
 
-    public objectPause getPauseButton(){
-        return pauseButton;
-    }
-
-    public boolean isPaused(){
-        return paused;
-    }
-
+    //public objectPause getPauseButton(){
+    //    return pauseButton;
+    //}
 }

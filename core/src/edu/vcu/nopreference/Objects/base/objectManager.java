@@ -20,7 +20,8 @@ import edu.vcu.nopreference.Screens.inGame;
 
 public class objectManager {
 
-    private List<objectBase> objects = new ArrayList<objectBase>();
+    public boolean paused = false;
+    public List<objectBase> objects = new ArrayList<objectBase>();
 
     private List<objectBase> newObjects = new ArrayList<objectBase>();
 
@@ -47,7 +48,21 @@ public class objectManager {
             obj.Draw(batch);
         }
     }
-
+    public void initializeObjects()
+    {
+        Player player = new Player();
+        player.setDrawOrder(1);
+        addObject(player);
+        addObject(player.getScoreObj());
+        addObject(new gameObject());
+        objectPause objPaus = new objectPause();
+        objPaus.setDrawOrder(2);
+        addObject(objPaus);
+        objectBase pauseMenu =  new objectPauseMenu();
+        pauseMenu.render.setVisibility(false);
+        addObject(pauseMenu);
+        pauseMenu.setDrawOrder(3);
+    }
     public void logicTick()
     {
         for (objectBase obj : objects) {
@@ -96,13 +111,24 @@ public class objectManager {
         }
 
         for (objectBase obj : objects) {
-            if(!inGame.paused || obj instanceof objectPause) {
+            if(!paused || obj instanceof objectPause) {
                 if (obj.sprite.getBoundingRectangle().contains(x, y)) {
                     obj.onPressed();
                 }
                 obj.onClick(x, y);
             }
         }
+    }
+
+    public String requestIntent(String request)
+    {
+        for (objectBase obj : objects) {
+            String response = obj.requestIntent(request);
+            if(response != null)
+                return response;
+        }
+
+        return null;
     }
 
     //This method is a mess, we'll have to fix it up later. --Mark

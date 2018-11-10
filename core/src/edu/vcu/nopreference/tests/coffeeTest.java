@@ -6,6 +6,7 @@ import org.junit.Test;
 import edu.vcu.nopreference.Objects.base.Platform;
 import edu.vcu.nopreference.Objects.base.Player;
 import edu.vcu.nopreference.Objects.base.Score;
+import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 
@@ -22,24 +23,33 @@ public class coffeeTest {
         Render.testing = true;
         objectManager tempOM = new objectManager();
         Platform tempPlat = new Platform();
+        tempPlat.setPlatformSpeed(0);
         tempOM.addObject(tempPlat);
         tempPlat.posX = 500;
         tempPlat.posY = 100;
 
-        tempPlat.setPlatformSpeed(0);
         tempPlat.update();
 
         Player tempPlayer = new Player();
-        tempPlayer.posX = 470;          // Player is not quite above the platform, is slightly to the left.
-        tempPlayer.posY = 215;          // By the time the player falls onto the platform, ya boi will be squarely on the platform.
-        tempOM.addObject(tempPlayer);   // Add player to object manager.
+        tempPlayer.posX = 750;
+        tempPlayer.posY = 300;
+        tempOM.addObject(tempPlayer);
+        tempOM.addObject(tempPlayer.getScoreObj());
 
-
+        tempOM.logicTick();
         int i = 0;
+        boolean scoreEverIncreased = false;
         while(1000 > i++){
+            float prevScore = Float.parseFloat(tempOM.requestIntent("score"));
             tempOM.logicTick();
+            float newScore = Float.parseFloat(tempOM.requestIntent("score"));
+            if(newScore > prevScore)
+                scoreEverIncreased = true;
+            //System.out.println("Coffee score:" + prevScore +":" + newScore + "--" + tempPlayer.sprite.getX());
+
+            //System.out.println(tempOM.objects.get(1).posX);
         }
-        assertEquals(tempPlayer.posY, tempPlat.posY+tempPlat.sprite.getHeight(), 1);
+        assertEquals(true, scoreEverIncreased);
     }
 
     }

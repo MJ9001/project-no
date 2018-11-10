@@ -20,7 +20,7 @@ public class Score extends objectBase {
     public void update() {
 
         score -=0.05;
-        Gdx.app.log("Untitled", "score: "+score);
+        //Gdx.app.log("Untitled", "score: "+score);
         if(score < 0){score=0;}
         scorePercentage = score/maxScore;
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255*scorePercentage, 128);
@@ -52,11 +52,18 @@ public class Score extends objectBase {
     @Override
     public boolean recieveIntent(String Intent, String Argument)
     {
-        if(Intent=="+score" && score < 255)
+        if(Intent=="+score" && score < 1000)
         {
             score+= Integer.parseInt(Argument);
             return true;
         }
     return false;
+    }
+
+    @Override
+    public String requestIntent(String request) {
+        if(request == "score")
+            return String.valueOf(score);
+        return super.requestIntent(request);
     }
 }

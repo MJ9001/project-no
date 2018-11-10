@@ -56,7 +56,7 @@ public class Render {
     }
 
     //sets the visibility of a given object
-    public void setVisibility(boolean vis, objectBase object){
+    public void setVisibility(boolean vis){
         object.visible=vis;
         if(vis){
             object.sprite.setAlpha(1);
@@ -67,12 +67,12 @@ public class Render {
     }
 
     //returns the visibility of a given object
-    public boolean getVisibility(objectBase object){
+    public boolean getVisibility(){
         return object.visible;
     }
 
     //toggles the visibility back and forth of a given object
-    public void toggleVisibility(objectBase object){
+    public void toggleVisibility(){
         if(object.visible){
             object.sprite.setAlpha(0);
             object.visible=false;
