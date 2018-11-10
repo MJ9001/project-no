@@ -120,6 +120,5 @@ public class doesItPlatform {
             tempOM.logicTick();
         }
         assertEquals(tempPlayer.posY, tempPlat.posY+tempPlat.sprite.getHeight(), 1);
-
     }
 }

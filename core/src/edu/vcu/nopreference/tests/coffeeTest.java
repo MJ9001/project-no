@@ -26,7 +26,7 @@ public class coffeeTest {
         tempPlat.posX = 500;
         tempPlat.posY = 100;
 
-        tempPlat.setPlatformSpeed(50);
+        tempPlat.setPlatformSpeed(0);
         tempPlat.update();
 
         Player tempPlayer = new Player();
@@ -34,9 +34,12 @@ public class coffeeTest {
         tempPlayer.posY = 215;          // By the time the player falls onto the platform, ya boi will be squarely on the platform.
         tempOM.addObject(tempPlayer);   // Add player to object manager.
 
-        tempPlayer.update();
-        tempPlayer.update();
-        tempPlayer.update();
+
+        int i = 0;
+        while(1000 > i++){
+            tempOM.logicTick();
+        }
+        assertEquals(tempPlayer.posY, tempPlat.posY+tempPlat.sprite.getHeight(), 1);
     }
 
     }

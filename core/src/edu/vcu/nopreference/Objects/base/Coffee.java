@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class Coffee extends objectBase {
     private static Random rand = new Random();
-
+    int speed = 50;
     public Coffee()
     {
         // Creates the renderer to draw the object at it's location
@@ -20,14 +20,13 @@ public class Coffee extends objectBase {
     }
 
     public Coffee(Platform platform) {
-        Gdx.app.log("Untitled", "Starting new coffee");
         // Creates the renderer to draw the object at it's location
         render = new Render(this, "coffeeasset1.jpg");
         setBounds(0, 0, 100, 200);
         this.posX = platform.posX+250;
         this.posY = (float)(platform.posY + sprite.getHeight());
+        speed = (int)platform.getPlatformSpeed();
         updatePosition();
-        Gdx.app.log("Untitled", "Created new coffee");
     }
 
 
@@ -35,13 +34,13 @@ public class Coffee extends objectBase {
     // The updates that happen per tick. Update() is called by the object manager.
     public void update()
     {
-        posX -= 50;
+        posX -= speed;
         updatePosition();
     }
 
     public void coffeeGrabbed()
     {
-        manager.sendIntent("+score", "20");
+        manager.sendIntent("+score", "5");
         toBeDeleted = true;
     }
 
