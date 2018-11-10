@@ -51,7 +51,7 @@ public class Score extends objectBase {
     @Override
     public boolean recieveIntent(String Intent, String Argument)
     {
-        if(Intent=="+score")
+        if(Intent=="+score" && score < 255)
         {
             score+= Integer.parseInt(Argument);
             return true;
