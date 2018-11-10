@@ -17,6 +17,8 @@ public class objectBase {
     public physicsBase physics;
     public boolean visible=true;
     public boolean GUIAsset=false;
+    public boolean toBeDeleted = false; //Set to true to be removed from game.
+
     //float that determines what is drawn first, lowest to highest. by default the object is set to lowest
     public int drawOrder = 999;
 
@@ -95,4 +97,8 @@ public class objectBase {
         return drawOrder;
     }
 
+    public boolean recieveIntent(String Intent, String args)
+    {
+        return false;
+    }
 }

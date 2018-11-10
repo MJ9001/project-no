@@ -23,7 +23,9 @@ public class Platform extends objectBase {
         // Creates the renderer to draw the object at it's location
         render = new Render(this, "platform.jpg");
         // TODO: do not set the bounds for the object in the constructor because then during testing we have to Render.testing = true to prevent libgdx call.
-        setBounds(Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * rand.nextFloat() * 1f, 500, 100);
+        setBounds(Render.getWidth(), Render.getHeight() * rand.nextFloat() * 1f, 500, 100);
+        Coffee coffee = new Coffee(this);
+        //manager.addObject(coffee);
     }
 
     public Platform(float platformSpeed_) {

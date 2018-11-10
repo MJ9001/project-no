@@ -6,7 +6,7 @@ import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Score extends objectBase {
     final static float maxScore=255;
-    static float score;
+    float score;
     float scorePercentage;
     float barWidth;
 
@@ -48,4 +48,14 @@ public class Score extends objectBase {
         score +=15;
     }
 
+    @Override
+    public boolean recieveIntent(String Intent, String Argument)
+    {
+        if(Intent=="+score")
+        {
+            score+= Integer.parseInt(Argument);
+            return true;
+        }
+    return false;
+    }
 }

@@ -46,7 +46,7 @@ public class Render {
     public void renderBackground(backgroundObject back){
         if(!testing){
             this.back = back;
-            this.back.sprite = new Sprite(back.texture, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            this.back.sprite = new Sprite(back.texture, getWidth(), getHeight());
         }
     }
 
@@ -84,13 +84,22 @@ public class Render {
     }
 
     public float getScreenSizeY(){
-        return Gdx.graphics.getHeight();
+        return getHeight();
     }
 
     public float getScreenSizeX(){
-        return Gdx.graphics.getWidth();
+        return getWidth();
     }
 
+
+    public static int getHeight()
+    {
+        return testing ? 500 : Gdx.graphics.getHeight();
+    }
+    public static int getWidth()
+    {
+        return testing ? 500 : Gdx.graphics.getWidth();
+    }
     public void clearScreen(){
         if(!testing){
             Gdx.gl.glClearColor(1, 1, 1, 1);

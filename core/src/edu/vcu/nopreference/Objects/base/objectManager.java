@@ -20,9 +20,9 @@ import edu.vcu.nopreference.Screens.inGame;
 
 public class objectManager {
 
-    List<objectBase> objects = new ArrayList<objectBase>();
+    private List<objectBase> objects = new ArrayList<objectBase>();
 
-    List<objectBase> newObjects = new ArrayList<objectBase>();
+    private List<objectBase> newObjects = new ArrayList<objectBase>();
 
     public objectManager()
     {
@@ -60,9 +60,27 @@ public class objectManager {
                 obj.updateCollision();
 
         }
+
+        //Delete Objects
+        List<objectBase> delete_objects = new ArrayList<objectBase>();
+        for (objectBase obj : objects) {
+                if(obj.toBeDeleted)
+                    delete_objects.add(obj);
+        }
+        objects.removeAll(delete_objects);
+
         objects.addAll(newObjects);
         newObjects.clear();
     }
+
+    public void sendIntent(String Intent, String Argument)
+    {
+        for (objectBase obj : objects) {
+        obj.recieveIntent(Intent, Argument);
+        }
+
+    }
+
     public void onClick(int x, int y)
     {
         y = Gdx.graphics.getHeight() - y;
