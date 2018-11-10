@@ -16,6 +16,7 @@ import static org.junit.Assert.assertTrue;
 
 public class coffeeTest {
 
+    
     @Test
     public void coffeeAddsScore() {
         Render.testing = true;

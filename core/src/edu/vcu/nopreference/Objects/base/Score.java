@@ -11,7 +11,7 @@ public class Score extends objectBase {
     float barWidth;
 
     public Score(){
-        score = 255;
+        score = 230;
         render = new Render(this, "coffeeBar.png");
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255, 64);
     }
@@ -33,6 +33,7 @@ public class Score extends objectBase {
     public float getMaxScore(){
         return maxScore;
     }
+
     public float getModifier(){
         return scorePercentage;
     }
