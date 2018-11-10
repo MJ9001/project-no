@@ -17,7 +17,7 @@ public class Obstacle extends objectBase {
     public Obstacle(){
         render = new Render(this, "spike.png");
         if (!Render.testing){
-            setBounds(Gdx.graphics.getWidth(), 0, 119, 259);
+            setBounds(Gdx.graphics.getWidth(), 0, 119, 230);
 
         }
         else {setBounds(500, rand.nextFloat(), 500, 100);}

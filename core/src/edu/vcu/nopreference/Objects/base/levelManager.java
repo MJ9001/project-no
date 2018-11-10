@@ -35,7 +35,7 @@ public class levelManager extends objectManager {
 
                 levelSelect level = new levelSelect(nextX, nextY, locked);
                 addObject(level);
-                levelSelectInner inner = level.constructInner("unlocked.jpg");
+                levelSelectInner inner = level.constructInner("unlock.jpg");
                 addObject(inner);
 
                 nextX += startX;

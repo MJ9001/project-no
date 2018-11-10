@@ -12,7 +12,7 @@ public class levelSelectInner extends objectBase {
         else{
             render = new Render(this, "lock.jpg");
         }
-        setBounds(posX, posY, 120, 180);
+        //setBounds(posX, posY, 120, 108);
         sprite.setPosition(posX, posY);
     }
 

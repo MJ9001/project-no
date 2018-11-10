@@ -6,7 +6,7 @@ import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Score extends objectBase {
     final static float maxScore=255;
-    float score;
+    static float score;
     float scorePercentage;
     float barWidth;
 
@@ -16,10 +16,10 @@ public class Score extends objectBase {
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255, 64);
     }
 
-    //
     @Override
     public void update() {
-        score -=0.1;
+
+        score -=0.05;
         Gdx.app.log("Untitled", "score: "+score);
         if(score < 0){score=0;}
         scorePercentage = score/maxScore;
