@@ -1,14 +1,7 @@
 package edu.vcu.nopreference.Objects.base;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.Game;
 
 import edu.vcu.nopreference.Objects.physics.physicsGUI;
-import edu.vcu.nopreference.Objects.renders.Render;
-import edu.vcu.nopreference.Screens.inGame;
-import edu.vcu.nopreference.Screens.mainMenu;
-import edu.vcu.nopreference.Untitled;
 
 /**
  * Created by Mark on 10/14/2018.

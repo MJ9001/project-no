@@ -3,7 +3,6 @@ package edu.vcu.nopreference.Objects.physics;
 import com.badlogic.gdx.Gdx;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
-import edu.vcu.nopreference.Objects.renders.Render;
 
 /**
  * Created by Mark on 10/10/2018.

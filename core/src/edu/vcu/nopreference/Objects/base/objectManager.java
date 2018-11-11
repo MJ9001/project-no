@@ -69,7 +69,6 @@ public class objectManager {
         }
 
         for (objectBase obj : objects) {
-            //if(obj instanceof Player || obj instanceof Obstacle)
                 obj.updateCollision();
 
         }
@@ -101,10 +100,8 @@ public class objectManager {
 
         for (objectBase obj : objects) {
             if (obj instanceof objectMenu || obj instanceof playButton) {
-                //System.out.println(obj);
                 if (obj.sprite.getBoundingRectangle().contains(x, y))
                 {
-                   // System.out.println(x + ":" + origY);
                     obj.onPressed();
                     return;
                 }
@@ -114,7 +111,6 @@ public class objectManager {
         for (objectBase obj : objects) {
             if(!paused || obj instanceof objectPause) {
                 if (obj.sprite.getBoundingRectangle().contains(x, y)) {
-                    //System.out.println(x + ":" + origY);
                     obj.onPressed();
                 }
                 obj.onClick(x, y);

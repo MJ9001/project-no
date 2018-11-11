@@ -1,16 +1,10 @@
 package edu.vcu.nopreference.Objects.base.inGameObjects;
 
-import com.badlogic.gdx.Gdx;
 
-import java.util.Random;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsGUI;
-import edu.vcu.nopreference.Objects.physics.physicsPlatform;
 import edu.vcu.nopreference.Objects.renders.Render;
-import edu.vcu.nopreference.Screens.inGame;
-import edu.vcu.nopreference.Screens.mainMenu;
-import edu.vcu.nopreference.Untitled;
 
 /**
  * Created by Mark on 10/14/2018.
@@ -42,7 +36,6 @@ public class objectPause extends objectBase {
     //Pauses the game by changing the pause value inGame
     @Override
     public void onPressed() {
-        //Gdx.app.log("Untitled", "Game has been paused.");
         manager.sendIntent("togglepause", "");
     }
 

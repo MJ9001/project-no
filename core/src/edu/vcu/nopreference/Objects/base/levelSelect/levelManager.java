@@ -38,20 +38,11 @@ public class levelManager extends objectManager {
                 addObject(inner);
 
                 nextX += startX;
-                //Gdx.app.log("Untitled", "X: " + nextX + "Y: " + nextY);
             }
             nextX = startX;
             nextY += startY;
         }
     }
-
-    /*@Override
-    public void drawObjects(SpriteBatch batch){
-        for(int i=0; i<10;i++){
-
-        }
-    }*/
-
 
     @Override
     public Collision checkCollision(objectBase object){

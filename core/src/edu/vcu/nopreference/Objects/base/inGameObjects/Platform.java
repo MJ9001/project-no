@@ -2,7 +2,6 @@ package edu.vcu.nopreference.Objects.base.inGameObjects;
 
 import java.util.Random;
 
-import edu.vcu.nopreference.Objects.base.inGameObjects.Coffee;
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsPlatform;
 import edu.vcu.nopreference.Objects.renders.Render;
@@ -26,8 +25,6 @@ public class Platform extends objectBase {
         render = new Render(this, "platform.jpg");
         // TODO: do not set the bounds for the object in the constructor because then during testing we have to Render.testing = true to prevent libgdx call.
         setBounds(Render.getWidth(), Render.getHeight() * rand.nextFloat() * 1f, 500, 100);
-        Coffee coffee = new Coffee(this);
-        //manager.addObject(coffee);
     }
 
     public Platform(float platformSpeed_) {

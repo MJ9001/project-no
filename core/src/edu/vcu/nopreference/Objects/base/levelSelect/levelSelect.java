@@ -62,7 +62,6 @@ public class levelSelect extends objectBase {
     }
     @Override
     public void onPressed() {
-        //Gdx.app.log("Untitled", "Game has been paused.");
         if(levelUnlocked){
             Untitled.newScreen = new inGame();
         }

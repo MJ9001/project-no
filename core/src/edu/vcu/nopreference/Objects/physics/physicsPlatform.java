@@ -1,6 +1,5 @@
 package edu.vcu.nopreference.Objects.physics;
 
-import com.badlogic.gdx.Gdx;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 

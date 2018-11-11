@@ -6,7 +6,6 @@ import java.util.Random;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsObstacle;
-import edu.vcu.nopreference.Objects.physics.physicsPlatform;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 //My motivation to do anything is at an all time low so this hacky class is what yall get for now

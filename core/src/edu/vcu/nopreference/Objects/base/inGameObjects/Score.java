@@ -10,7 +10,6 @@ public class Score extends objectBase {
 
     float score;
     float scorePercentage;
-    float barWidth;
 
     public Score(){
         score = START_SCORE;
@@ -21,7 +20,6 @@ public class Score extends objectBase {
     @Override
     public void update() {
         score -= SCORE_DECAY;
-        //Gdx.app.log("Untitled", "score: "+score);
         if(score < 0){score=0;}
         scorePercentage = score/ MAX_SCORE;
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255*scorePercentage, 128);
@@ -43,7 +41,6 @@ public class Score extends objectBase {
     //such that different amounts of damage is done.
     public void takeDamage(){
         score-=5;
-        //Gdx.app.log("Untitled", "score: "+score);
     }
 
     public void getCoffee(){
