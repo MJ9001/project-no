@@ -1,21 +1,13 @@
 package edu.vcu.nopreference.tests;
 
-import com.badlogic.gdx.Application;
-import com.badlogic.gdx.ApplicationListener;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.backends.headless.HeadlessApplication;
-import com.badlogic.gdx.graphics.GL20;
-
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.base.playButton;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.mockito.Mockito;
 
-import edu.vcu.nopreference.Objects.base.objectMenu;
+
+
 import edu.vcu.nopreference.Objects.renders.Render;
-import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Screens.mainMenu;
 
 
@@ -46,9 +38,14 @@ public class objectMainMenuTest {
     //Given that I am in the main menu, when I press the start game button, then the game should start.
     @Test
     public void testMainMenuStart(){//tests to see if when the start button is clicked on the main menu then the menu is hidden and the game is displayed
-        mainMenu mockMenu = Mockito.mock(mainMenu.class);
-        mockMenu.fakePress();
-        assertFalse(mockMenu.isShown());
+            Render.testing = true;
+            boolean testGood = false;
+            float x = 0;
+            float y = 0;
+            mainMenu mMenu = new mainMenu();
+            playButton pButton = new playButton();
+            pButton.onPressed();
+            assertTrue(testGood);
     }
 
     //Given that I am playing the game, when I press quit, then the main menu should appear
