@@ -27,24 +27,37 @@ public class mainMenu implements Screen
     Render render = new Render();
     backgroundObject background;
     //manager for all sprites, backrounds and buttons
-    objectManager objectman = new objectManager();
-    public static Music music = Gdx.audio.newMusic(Gdx.files.internal("songIntro.wav"));
+    public objectManager objectman = new objectManager();
+    public static Music music;
+
+
 
 
     public mainMenu()
     {
-        music.play();
+        if(!Render.testing)
+            initalizeGdxStuff();
         play = new playButton();
         //setting up variables to be used
         hidden = false;
-        //setting up batch to draw sprites
-        batch = new SpriteBatch();
         //creating menu as a texture
-        background = new backgroundObject("menu.jpg");
+        background = new backgroundObject();
         objectman.addObject(background);
         objectman.addObject(play);
         objectman.updateList();
 
+
+
+        //testing for touching the play  button
+        //input.inputHandling();
+    }
+
+    void initalizeGdxStuff()
+    {
+        //setting up batch to draw sprites
+        batch = new SpriteBatch();
+        Gdx.audio.newMusic(Gdx.files.internal("songIntro.wav"));
+        music.play();
         //this is unnecessary and I will get rid of it eventually, I am
         //a little busy right now just trying to get some other functionality done
         //but it won't be here forever I promise
@@ -60,9 +73,6 @@ public class mainMenu implements Screen
             }
 
         });
-
-        //testing for touching the play  button
-        //input.inputHandling();
     }
     @Override
     public void show() {

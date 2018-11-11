@@ -10,11 +10,14 @@ public class backgroundObject extends objectBase {
     public Texture texture;
     Render render = new Render();
 
-    public backgroundObject(String backName){
+    public backgroundObject(){
         super();
-        texture = new Texture(backName);
-        render.renderBackground(this);
-        sprite.setPosition(0,0);
+        if(!render.testing)
+        {
+            texture = new Texture("menu.jpg");
+            render.renderBackground(this);
+            sprite.setPosition(0, 0);
+        }
     }
     @Override
     public void Draw(SpriteBatch batch) {
