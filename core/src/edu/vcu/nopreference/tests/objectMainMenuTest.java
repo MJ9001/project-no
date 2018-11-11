@@ -2,7 +2,7 @@ package edu.vcu.nopreference.tests;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.base.playButton;
-import edu.vcu.nopreference.Screens.inGame;
+import edu.vcu.nopreference.Screens.levelSelectMenu;
 
 import org.junit.Test;
 
@@ -42,8 +42,10 @@ public class objectMainMenuTest {
         Render.testing = true;
         boolean testGood = false;
         mainMenu mMenu = new mainMenu();
-        mMenu.objectman.onClick(800+1124/2, 300+460/2);
-        assertTrue(Untitled.newScreen instanceof inGame);
+        mMenu.objectman.onClick(1487,865);
+        mMenu.objectman.onClick(800,240);
+        assertTrue(Untitled.newScreen instanceof levelSelectMenu);
+
     }
 
     //Given that I am playing the game, when I press quit, then the main menu should appear
