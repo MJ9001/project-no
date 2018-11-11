@@ -96,11 +96,11 @@ public class Render {
 
     public static int getHeight()
     {
-        return testing ? 500 : Gdx.graphics.getHeight();
+        return testing ? 1000 : Gdx.graphics.getHeight();
     }
     public static int getWidth()
     {
-        return testing ? 500 : Gdx.graphics.getWidth();
+        return testing ? 1000 : Gdx.graphics.getWidth();
     }
     public void clearScreen(){
         if(!testing){
