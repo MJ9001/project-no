@@ -34,13 +34,10 @@ public class objectPauseTest{
     public void testPause(){
         Render.testing=true;
         objectPause tester = new objectPause();
-
-        //presses button, then asserts pause state of inGame
-        tester.onPressed();
-        assertTrue(tester.visible);
-
-        //tester.onPressed();
-        //assertFalse(inGame.paused);
+        objectManager tempOM = new objectManager();
+        assertFalse(tempOM.paused);
+        tempOM.onClick(53,1390);
+        assertTrue(tempOM.paused);
     }
 
     //Given that I am in game, when I look at the top left corner of the screen, I should
