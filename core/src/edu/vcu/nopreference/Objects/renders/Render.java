@@ -57,6 +57,7 @@ public class Render {
 
     //sets the visibility of a given object
     public void setVisibility(boolean vis){
+        if(testing) return; //REMOVE
         object.visible=vis;
         if(vis){
             object.sprite.setAlpha(1);

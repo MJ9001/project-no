@@ -3,6 +3,7 @@ package edu.vcu.nopreference.tests;
 import org.junit.Test;
 
 import edu.vcu.nopreference.Objects.base.inputHandler;
+import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.base.objectMenu;
 import edu.vcu.nopreference.Objects.base.objectPause;
 import edu.vcu.nopreference.Objects.renders.Render;
@@ -80,15 +81,11 @@ public class objectPauseTest{
     @Test
     public void testPauseQuit(){
         Render.testing = true;
-        objectMenu tester = new objectMenu();
-        objectPause testa = new objectPause();
-
-        testa.onPressed();
-        //assertTrue(tester.fakePress());
-
-        testa.onPressed();
-        //assertFalse(tester.fakePress());
-
+        objectManager OMTest = new objectManager();
+        OMTest.initializeObjects();
+        OMTest.logicTick();
+        OMTest.onClick(60,Render.getHeight()-60);//Click topleft corner.
+        assertTrue(OMTest.paused);
     }
 
     @org.junit.After

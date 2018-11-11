@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 import edu.vcu.nopreference.Objects.physics.Collision;
+import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Screens.inGame;
 
 /**
@@ -98,7 +99,7 @@ public class objectManager {
 
     public void onClick(int x, int y)
     {
-        y = Gdx.graphics.getHeight() - y;
+        y = Render.getHeight() - y;
 
         for (objectBase obj : objects) {
             if (obj instanceof objectMenu || obj instanceof playButton) {
