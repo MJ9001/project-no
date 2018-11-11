@@ -44,7 +44,6 @@ public class objectManager {
     }
 
     public void drawObjects(SpriteBatch batch) {
-
         for (objectBase obj : objects) {
             obj.Draw(batch);
         }
@@ -66,6 +65,7 @@ public class objectManager {
     }
     public void logicTick()
     {
+        if(paused){return;}
         for (objectBase obj : objects) {
             if(obj != null)
             obj.update();

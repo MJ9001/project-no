@@ -18,7 +18,6 @@ public class Score extends objectBase {
 
     @Override
     public void update() {
-
         score -=0.05;
         //Gdx.app.log("Untitled", "score: "+score);
         if(score < 0){score=0;}
