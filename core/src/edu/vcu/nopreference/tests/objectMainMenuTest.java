@@ -44,7 +44,6 @@ public class objectMainMenuTest {
         Render.testing = true;
         boolean testGood = false;
         mainMenu mMenu = new mainMenu();
-        mMenu.objectman.onClick(1487,865);
         mMenu.objectman.onClick(800,240);
         assertTrue(Untitled.newScreen instanceof levelSelectMenu);
 
