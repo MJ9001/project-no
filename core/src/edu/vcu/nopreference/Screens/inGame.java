@@ -89,7 +89,7 @@ public class inGame implements Screen {
     //loop that handles most of the interaction such as time keeping, testing for pause, and drawing objects
     @Override
     public void render(float delta) {
-        if(System.currentTimeMillis() >= cTime + 40 && !objectman.paused) //Game runs at 25 ticks per second. Todo: Figure out how to increase render() speed.
+        if(System.currentTimeMillis() >= cTime + 40) //Game runs at 25 ticks per second. Todo: Figure out how to increase render() speed.
         {
             //cTime is the current time, this will update it
             cTime = System.currentTimeMillis();
