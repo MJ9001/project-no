@@ -58,30 +58,18 @@ public class objectPauseTest{
     //testing if the pause button will bring up the pause menu, instead of testing the inGame function,
     //the same code that runs the pause button functionality was inserted here.
     @Test
-    public void testPauseButton(){
-/*
+    public void testUnpaseButton(){
+
         Render.testing = true;
-        Render render = new Render();
-        objectMenu tester = new objectMenu();
-        objectPause testa = new objectPause();
+        objectManager OMTest = new objectManager();
+        OMTest.initializeObjects();
+        OMTest.logicTick();
+        objectPause fakePause = new objectPause();
 
-        testa.onPressed();
-        render.setVisibility(inGame.paused, tester);
-        assertTrue(render.getVisibility(tester));
-
-        testa.onPressed();
-        render.setVisibility(inGame.paused, tester);
-        assertFalse(render.getVisibility(tester));
-        */
-        Render.testing = true;
-        objectPause pause = new objectPause();
-        assertTrue(pause.visible);
-
-
-
-
-        //pause.onPressed();
-        //assertTrue(pause.pauseCheck());
+        OMTest.onClick((int)(50),50);//Click topleft corner.
+        assertTrue(OMTest.paused);
+        OMTest.onClick((int)(50),50);//Click topleft corner.
+        assertFalse(OMTest.paused);
     }
 
     //Tests that pressing the menu when paused will cause a return to the main menu
