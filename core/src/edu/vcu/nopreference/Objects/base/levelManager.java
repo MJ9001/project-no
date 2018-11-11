@@ -1,8 +1,5 @@
 package edu.vcu.nopreference.Objects.base;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
 import edu.vcu.nopreference.Objects.physics.Collision;
 import edu.vcu.nopreference.Objects.renders.Render;
 
@@ -11,7 +8,7 @@ public class levelManager extends objectManager {
     public levelManager(){
 
         //start x and y are just the size with which the loop will add to nextX and nextY
-        //after one completed inner loop, the nextX will reset
+        //after one completed inner loop, the next  will reset
         float startX = ((render.getScreenSizeX())/6);
         float startY = ((render.getScreenSizeY())/4);
         float nextX = startX;
