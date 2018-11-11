@@ -48,7 +48,7 @@ public class objectMainMenuTest {
 
     }
 
-    //Given that I am playing the game, when I press quit, then the main menu should appear
+    //Given that I am playing the game, when I press pause, objects should stop moving
     @Test
     public void testQuitToMenu(){//tests to go back to main menu from pause menu
         Render.testing = true;
