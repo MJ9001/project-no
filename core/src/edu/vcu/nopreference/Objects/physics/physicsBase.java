@@ -10,7 +10,7 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class physicsBase {
-    public static final float JUMP_VELOCITY = 200;
+    public static final float JUMP_VELOCITY = 150;
 
     float gravity = (float) -10;
     objectBase object;
