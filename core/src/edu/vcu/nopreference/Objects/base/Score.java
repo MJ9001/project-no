@@ -47,7 +47,7 @@ public class Score extends objectBase {
 
     public void getCoffee(){
         score +=15;
-    } 
+    }
 
     @Override
     public boolean recieveIntent(String Intent, String Argument)

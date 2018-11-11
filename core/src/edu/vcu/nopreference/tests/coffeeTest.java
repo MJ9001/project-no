@@ -86,6 +86,7 @@ public class coffeeTest {
         assertTrue( scoreEverIncreased);
     }
 
+    @Test
     public void jumpOverCoffee() {
         Render.testing = true;
         objectManager tempOM = new objectManager();
