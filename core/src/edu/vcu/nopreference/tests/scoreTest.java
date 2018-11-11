@@ -57,10 +57,4 @@ public class scoreTest {
         float testScore = tempPlayer.getScoreObj().getScore();
         assertEquals(230, testScore,0);
     }
-
-    @Test
-    public void testShit() {
-        int shit = 777;
-        assertEquals(777, shit);
-    }
 }
