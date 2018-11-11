@@ -41,9 +41,6 @@ public class obstacleTest {
             float newScore = Float.parseFloat(tempOM.requestIntent("score"));
             if(newScore < prevScore)
                 scoreEverDecreased = true;
-            //System.out.println("Coffee score:" + prevScore +":" + newScore + "--" + tempPlayer.sprite.getX());
-
-            //System.out.println(tempOM.objects.get(1).posX);
         }
         assertTrue(scoreEverDecreased);
     }
@@ -75,9 +72,6 @@ public class obstacleTest {
             float newScore = Float.parseFloat(tempOM.requestIntent("score"));
             if(newScore < prevScore)
                 scoreEverDecreased = true;
-            //System.out.println("Coffee score:" + prevScore +":" + newScore + "--" + tempPlayer.sprite.getX());
-
-            //System.out.println(tempOM.objects.get(1).posX);
         }
         assertTrue( scoreEverDecreased);
     }

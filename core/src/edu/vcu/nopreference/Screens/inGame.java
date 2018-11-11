@@ -17,7 +17,6 @@ import edu.vcu.nopreference.Objects.renders.Render;
 public class inGame implements Screen {
     //Spritebatch is the buffer for the display
     SpriteBatch batch;
-
     //boolean that shows whether this screen is shown or not
     boolean hidden = true;
     //the objectManager is the object that manages other objects, and draws them on the screen.
@@ -32,10 +31,6 @@ public class inGame implements Screen {
     int fps = 0;
     //time used for calculating fps
     long fpsTime = System.currentTimeMillis();
-    //pause menu and the pause button
-    //objectMenu pauseMenu;
-    //objectPause pauseButton = new objectPause();
-    //backgroundObject background = new backgroundObject("inGameBackground.jpg");;
     //render variable used to handle libgdx functions
     Render render = new Render();
     //bool value to be used for controlling all pause states throughout the program
@@ -50,11 +45,6 @@ public class inGame implements Screen {
             music = Gdx.audio.newMusic(Gdx.files.internal("songFull.wav"));
             music.play();
         }
-        //Temporarly manually added objects here
-        //declaring objects to be used for game stuff
-        //background.setDrawOrder(1000);
-        //objectman.addObject(background);
-        //Gdx.app.log("Untitled", "pause menu vis: " + pauseMenu.getVisibility());
         objectman.initializeObjects();
         batch = new SpriteBatch();
         hidden = false;
@@ -97,10 +87,7 @@ public class inGame implements Screen {
             fps = 0;
             fpsTime = System.currentTimeMillis();
         }
-        //render.setVisibility(paused, pauseMenu);
         fps++;
-        //objectman.sortObjectList();
-
 
         render.clearScreen();
 

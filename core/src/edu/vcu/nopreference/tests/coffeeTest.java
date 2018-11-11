@@ -11,7 +11,6 @@ import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 
@@ -45,9 +44,6 @@ public class  coffeeTest {
             float newScore = Float.parseFloat(tempOM.requestIntent("score"));
             if(newScore > prevScore)
                 scoreEverIncreased = true;
-            //System.out.println("Coffee score:" + prevScore +":" + newScore + "--" + tempPlayer.sprite.getX());
-
-            //System.out.println(tempOM.objects.get(1).posX);
         }
         assertTrue( scoreEverIncreased);
     }
@@ -79,9 +75,6 @@ public class  coffeeTest {
             float newScore = Float.parseFloat(tempOM.requestIntent("score"));
             if(newScore > prevScore)
                 scoreEverIncreased = true;
-            //System.out.println("Coffee score:" + prevScore +":" + newScore + "--" + tempPlayer.sprite.getX());
-
-            //System.out.println(tempOM.objects.get(1).posX);
         }
         assertTrue( scoreEverIncreased);
     }

@@ -40,10 +40,6 @@ public class mainMenu implements Screen
         objectman.addObject(play);
         objectman.updateList();
 
-
-
-        //testing for touching the play  button
-        //input.inputHandling();
     }
 
     void initalizeGdxStuff()
@@ -55,7 +51,6 @@ public class mainMenu implements Screen
         //this is unnecessary and I will get rid of it eventually, I am
         //a little busy right now just trying to get some other functionality done
         //but it won't be here forever I promise
-        //input.updateObjectManager(objectman);
 
         Gdx.input.setInputProcessor(new InputAdapter(){
 

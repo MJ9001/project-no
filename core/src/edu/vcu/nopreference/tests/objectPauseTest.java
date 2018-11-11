@@ -31,7 +31,6 @@ public class objectPauseTest{
         objectManager OMTest = new objectManager();
         OMTest.initializeObjects();
         OMTest.logicTick();
-        objectPause fakePause = new objectPause();
 
         OMTest.onClick((int)(50),50);//Click topleft corner.
         assertTrue(OMTest.paused);
@@ -49,7 +48,6 @@ public class objectPauseTest{
         objectManager OMTest = new objectManager();
         OMTest.initializeObjects();
         OMTest.logicTick();
-        objectPause fakePause = new objectPause();
 
         OMTest.onClick((int)(50),50);//Click topleft corner.
         assertTrue(OMTest.paused);
@@ -68,7 +66,6 @@ public class objectPauseTest{
         Platform tempPlat = new Platform();
         tempPlat.posX = 500;
 
-        objectPause fakePause = new objectPause();
         OMTest.onClick((int)(50),50);//Click topleft corner.
 
         OMTest.logicTick();

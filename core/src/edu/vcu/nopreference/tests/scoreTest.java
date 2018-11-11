@@ -8,7 +8,6 @@ import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 public class scoreTest {
@@ -17,7 +16,6 @@ public class scoreTest {
     @Test
     public void startGameScore(){
         Render.testing = true;
-        objectManager tempOM = new objectManager();
         Player tempPlayer = new Player();
         float testScore = tempPlayer.getScoreObj().getScore();
         assertEquals(230, testScore,0);
@@ -46,7 +44,6 @@ public class scoreTest {
         Render.testing = true;
         objectManager tempOM = new objectManager();
         Player tempPlayer = new Player();
-        objectPause tempPause = new objectPause();
         tempOM.initializeObjects();
 
         tempOM.onClick((int)(50),50);//Click topleft corner.

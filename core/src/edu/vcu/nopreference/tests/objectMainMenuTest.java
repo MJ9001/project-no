@@ -42,7 +42,6 @@ public class objectMainMenuTest {
     @Test
     public void testMainMenuStart(){//tests to see if when the start button is clicked on the main menu then the menu is hidden and the game is displayed
         Render.testing = true;
-        boolean testGood = false;
         mainMenu mMenu = new mainMenu();
         mMenu.objectman.onClick(800,240);
         assertTrue(Untitled.newScreen instanceof levelSelectMenu);
@@ -56,7 +55,6 @@ public class objectMainMenuTest {
         objectManager OMTest = new objectManager();
         OMTest.initializeObjects();
         OMTest.logicTick();
-        objectPause fakePause = new objectPause();
 
         OMTest.onClick((int)(50),50);//Click topleft corner.
         OMTest.logicTick();
