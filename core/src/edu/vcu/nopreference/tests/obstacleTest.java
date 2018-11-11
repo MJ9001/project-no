@@ -109,5 +109,4 @@ public class obstacleTest {
         }
         assertEquals(Score.START_SCORE - (1001 * Score.SCORE_DECAY), tempPlayer.getScoreObj().getScore(), 0.01);
     }
-
 }
