@@ -1,27 +1,28 @@
 package edu.vcu.nopreference.Objects.base;
 
-import com.badlogic.gdx.Gdx;
-
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Score extends objectBase {
-    final static float maxScore=255;
+    public final static float MAX_SCORE   = 255;
+    public final static float START_SCORE = 230;
+    public final static float SCORE_DECAY = 0.05f;
+
     float score;
     float scorePercentage;
     float barWidth;
 
     public Score(){
-        score = 230;
+        score = START_SCORE;
         render = new Render(this, "coffeeBar.png");
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255, 64);
     }
 
     @Override
     public void update() {
-        score -=0.05;
+        score -= SCORE_DECAY;
         //Gdx.app.log("Untitled", "score: "+score);
         if(score < 0){score=0;}
-        scorePercentage = score/maxScore;
+        scorePercentage = score/ MAX_SCORE;
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255*scorePercentage, 128);
     }
 
@@ -30,7 +31,7 @@ public class Score extends objectBase {
     }
 
     public float getMaxScore(){
-        return maxScore;
+        return MAX_SCORE;
     }
 
     public float getModifier(){
