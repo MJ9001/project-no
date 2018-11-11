@@ -24,7 +24,7 @@ public class objectPause extends objectBase {
         render = new Render(this, "pause.jpg");
 
         //0, the height of the screen, minus the height of the image
-        sprite.setPosition(0, render.getHeight() - sprite.getHeight());
+        setBounds(0, render.getHeight() - sprite.getHeight(), 100, 100);
     }
 
     @Override

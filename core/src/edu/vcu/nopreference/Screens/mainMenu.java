@@ -56,7 +56,7 @@ public class mainMenu implements Screen
     {
         //setting up batch to draw sprites
         batch = new SpriteBatch();
-        Gdx.audio.newMusic(Gdx.files.internal("songIntro.wav"));
+        music = Gdx.audio.newMusic(Gdx.files.internal("songIntro.wav"));
         music.play();
         //this is unnecessary and I will get rid of it eventually, I am
         //a little busy right now just trying to get some other functionality done
