@@ -20,6 +20,7 @@ public class Obstacle extends objectBase {
 
     }
 
+    public void setObstacleSpeed(float speed) { OBSTACLE_SPEED = speed; }
     @Override
     // The updates that happen per tick. Update() is called by the object manager.
     public void update() {

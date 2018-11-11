@@ -29,9 +29,6 @@ public class objectPauseTest{
     private Untitled game;
     private inGame stage;
 
-
-
-
     @org.junit.Before
     public void setUp() throws Exception {
 

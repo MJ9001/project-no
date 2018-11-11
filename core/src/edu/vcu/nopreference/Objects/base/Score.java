@@ -41,7 +41,7 @@ public class Score extends objectBase {
     //such that different amounts of damage is done.
     public void takeDamage(){
         score-=5;
-        Gdx.app.log("Untitled", "score: "+score);
+        //Gdx.app.log("Untitled", "score: "+score);
     }
 
     public void getCoffee(){

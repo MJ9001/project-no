@@ -74,13 +74,14 @@ public class Render {
 
     //toggles the visibility back and forth of a given object
     public void toggleVisibility(){
-        if(object.visible){
-            object.sprite.setAlpha(0);
-            object.visible=false;
-        }
-        else{
-            object.sprite.setAlpha(1);
-            object.visible=true;
+        if(!testing) {
+            if (object.visible) {
+                object.sprite.setAlpha(0);
+                object.visible = false;
+            } else {
+                object.sprite.setAlpha(1);
+                object.visible = true;
+            }
         }
     }
 
