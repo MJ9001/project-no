@@ -34,7 +34,7 @@ public class objectMainMenuTest {
         {
             if(obj instanceof playButton)
             {
-                System.out.println(obj.posX + ":"+obj.posY);
+                System.out.println(obj.posX + ":"+ obj.posY);
                 if(obj.posX >= 0 && obj.posX < obj.render.getScreenSizeX())
                     if(obj.posY >= 0 && obj.posY < obj.render.getScreenSizeY())
                         testGood = true;

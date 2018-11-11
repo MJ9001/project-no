@@ -110,7 +110,7 @@ public class objectPauseTest{
         assertTrue(OMTest.paused);
     }
 
-    @org.junit.After
+    /*@org.junit.After
     public void tearDown() throws Exception {
     }
 
@@ -131,5 +131,5 @@ public class objectPauseTest{
         // Use Mockito to mock the OpenGL methods since we are running headlessly
         Gdx.gl20 = Mockito.mock(GL20.class);
         Gdx.gl = Gdx.gl20;
-    }
+    }*/
 }
