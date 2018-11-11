@@ -1,6 +1,8 @@
 package edu.vcu.nopreference.tests;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
+import edu.vcu.nopreference.Objects.base.objectManager;
+import edu.vcu.nopreference.Objects.base.objectPause;
 import edu.vcu.nopreference.Objects.base.playButton;
 
 import org.junit.Test;
@@ -9,7 +11,7 @@ import org.junit.Test;
 
 import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Screens.mainMenu;
-
+import edu.vcu.nopreference.Untitled;
 
 
 import static org.junit.Assert.*;
@@ -51,8 +53,17 @@ public class objectMainMenuTest {
     //Given that I am playing the game, when I press quit, then the main menu should appear
     @Test
     public void testQuitToMenu(){//tests to go back to main menu from pause menu
-        //manager.paused = true;
-        //assertTrue(objectMenu.fakePress());
+        Render.testing = true;
+        objectManager OMTest = new objectManager();
+        OMTest.initializeObjects();
+        OMTest.logicTick();
+        objectPause fakePause = new objectPause();
+
+        OMTest.onClick((int)(50),50);//Click topleft corner.
+        OMTest.logicTick();
+
+        OMTest.onClick(Render.getWidth()/2, Render.getHeight()/2);//Click topleft corner.
+        assertTrue(Untitled.newScreen instanceof mainMenu);
 
     }
 }
