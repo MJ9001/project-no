@@ -22,8 +22,6 @@ public class objectPauseTest{
 
     }
 
-
-
     //Given that I am in-game, when I press the pause button, a menu should prompt
     //the user to quit the game and return to the main menu.
     //Testing if inGame pause returns pause and if pressing the pause button actually pauses the game
