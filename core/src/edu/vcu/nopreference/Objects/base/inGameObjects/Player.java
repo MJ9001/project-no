@@ -1,7 +1,7 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.Objects.base.inGameObjects;
 
-import com.badlogic.gdx.Gdx;
-
+import edu.vcu.nopreference.Objects.base.inGameObjects.Score;
+import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 /**

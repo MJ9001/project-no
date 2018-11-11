@@ -1,10 +1,7 @@
 package edu.vcu.nopreference.Objects.physics;
 
-import com.badlogic.gdx.Gdx;
-
-import edu.vcu.nopreference.Objects.base.Player;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
 import edu.vcu.nopreference.Objects.base.objectBase;
-import edu.vcu.nopreference.Screens.inGame;
 
 public class physicsObstacle extends physicsBase {
     public physicsObstacle(objectBase object){

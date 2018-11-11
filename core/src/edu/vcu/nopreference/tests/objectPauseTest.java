@@ -2,9 +2,9 @@ package edu.vcu.nopreference.tests;
 
 import org.junit.Test;
 
-import edu.vcu.nopreference.Objects.base.Platform;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Platform;
 import edu.vcu.nopreference.Objects.base.objectManager;
-import edu.vcu.nopreference.Objects.base.objectPause;
+import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
 import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Untitled;

@@ -43,7 +43,7 @@ public class physicsBase {
     {
         if(collision == null)
             return;
-        if(!Render.testing) Gdx.app.log("Untitled", "Collided! X: " + collision.collidedX + " Y: " + collision.collidedY);
+        //if(!Render.testing) Gdx.app.log("Untitled", "Collided! X: " + collision.collidedX + " Y: " + collision.collidedY);
         float percent = object.sprite.getBoundingRectangle().getHeight() * 0.4f;
         if(collision.collidedY < percent && velocityY <= 0)
         {

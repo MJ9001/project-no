@@ -1,8 +1,8 @@
 package edu.vcu.nopreference.Objects.physics;
 
 
-import edu.vcu.nopreference.Objects.base.Coffee;
-import edu.vcu.nopreference.Objects.base.Player;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Coffee;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
 import edu.vcu.nopreference.Objects.base.objectBase;
 
 public class physicsCoffee extends physicsBase {

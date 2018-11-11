@@ -1,8 +1,9 @@
-package edu.vcu.nopreference.Objects.base;
-
-import com.badlogic.gdx.Gdx;
+package edu.vcu.nopreference.Objects.base.inGameObjects;
 
 import java.util.Random;
+
+import edu.vcu.nopreference.Objects.base.inGameObjects.Coffee;
+import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsPlatform;
 import edu.vcu.nopreference.Objects.renders.Render;
 

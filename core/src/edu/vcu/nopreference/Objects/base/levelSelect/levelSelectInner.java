@@ -1,5 +1,7 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.Objects.base.levelSelect;
 
+import edu.vcu.nopreference.Objects.base.levelSelect.levelSelect;
+import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsGUI;
 import edu.vcu.nopreference.Objects.renders.Render;
 

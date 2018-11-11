@@ -1,5 +1,6 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.Objects.base.inGameObjects;
 
+import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Score extends objectBase {

@@ -2,8 +2,8 @@ package edu.vcu.nopreference.tests;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.base.objectManager;
-import edu.vcu.nopreference.Objects.base.objectPause;
-import edu.vcu.nopreference.Objects.base.playButton;
+import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
+import edu.vcu.nopreference.Objects.base.mainMenu.playButton;
 import edu.vcu.nopreference.Screens.levelSelectMenu;
 
 import org.junit.Test;

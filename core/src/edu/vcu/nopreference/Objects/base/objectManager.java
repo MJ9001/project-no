@@ -1,19 +1,16 @@
 package edu.vcu.nopreference.Objects.base;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
+import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
+import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
+import edu.vcu.nopreference.Objects.base.inGameObjects.objectPauseMenu;
+import edu.vcu.nopreference.Objects.base.mainMenu.playButton;
 import edu.vcu.nopreference.Objects.physics.Collision;
 import edu.vcu.nopreference.Objects.renders.Render;
-import edu.vcu.nopreference.Screens.inGame;
 
 /**
  * Created by Mark on 10/10/2018.

@@ -16,6 +16,9 @@ import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
+import edu.vcu.nopreference.Objects.base.inGameObjects.Platform;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
+
 public class platformManager extends objectBase {
     // Constants
     private int PLATFORM_POOL_SIZE = 10;

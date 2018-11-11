@@ -1,5 +1,6 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.Objects.base.inGameObjects;
 
+import edu.vcu.nopreference.Objects.base.objectMenu;
 import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Screens.mainMenu;

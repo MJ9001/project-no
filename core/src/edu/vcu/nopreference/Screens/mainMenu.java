@@ -4,18 +4,12 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import edu.vcu.nopreference.Objects.base.backgroundObject;
-import edu.vcu.nopreference.Objects.base.inputHandler;
 import edu.vcu.nopreference.Objects.base.objectManager;
-import edu.vcu.nopreference.Objects.base.playButton;
+import edu.vcu.nopreference.Objects.base.mainMenu.playButton;
 import edu.vcu.nopreference.Objects.renders.Render;
-import edu.vcu.nopreference.Untitled;
 
 public class mainMenu implements Screen
 {

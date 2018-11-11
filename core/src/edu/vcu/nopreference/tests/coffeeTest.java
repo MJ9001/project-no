@@ -3,11 +3,10 @@ package edu.vcu.nopreference.tests;
 
 import org.junit.Test;
 
-import edu.vcu.nopreference.Objects.base.Platform;
-import edu.vcu.nopreference.Objects.base.Player;
-import edu.vcu.nopreference.Objects.base.Score;
-import edu.vcu.nopreference.Objects.base.Coffee;
-import edu.vcu.nopreference.Objects.base.objectBase;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Platform;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Score;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Coffee;
 import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 

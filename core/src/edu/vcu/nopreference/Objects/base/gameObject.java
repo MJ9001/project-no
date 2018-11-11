@@ -2,6 +2,9 @@ package edu.vcu.nopreference.Objects.base;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import edu.vcu.nopreference.Objects.base.inGameObjects.Obstacle;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Platform;
+
 /**
  * Created by Mark on 10/13/2018.
  */

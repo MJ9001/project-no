@@ -3,10 +3,9 @@ package edu.vcu.nopreference.Screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import edu.vcu.nopreference.Objects.base.levelManager;
+import edu.vcu.nopreference.Objects.base.levelSelect.levelManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class levelSelectMenu implements Screen{

@@ -1,11 +1,9 @@
 package edu.vcu.nopreference.tests;
 
-import com.badlogic.gdx.utils.Logger;
-
 import org.junit.Test;
 
-import edu.vcu.nopreference.Objects.base.Platform;
-import edu.vcu.nopreference.Objects.base.Player;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Platform;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
 import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 

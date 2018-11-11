@@ -1,5 +1,7 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.Objects.base.levelSelect;
 
+import edu.vcu.nopreference.Objects.base.objectBase;
+import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.physics.Collision;
 import edu.vcu.nopreference.Objects.renders.Render;
 
