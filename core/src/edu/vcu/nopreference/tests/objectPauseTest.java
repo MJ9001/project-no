@@ -90,20 +90,9 @@ public class objectPauseTest{
         objectManager OMTest = new objectManager();
         OMTest.initializeObjects();
         OMTest.logicTick();
-        OMTest.logicTick();
-        OMTest.logicTick();
         objectPause fakePause = new objectPause();
 
-        for(objectBase obj : OMTest.objects)
-        {
-            if(obj instanceof objectPause)
-            {
-                //System.out.println(obj + "== " + obj.posX + ":" + obj.posY);
-                System.out.println(obj.render.getHeight() + ":" + obj.sprite.getHeight());
-            }
-        }
-
-        OMTest.onClick((int)(fakePause.sprite.getWidth()/2),Render.getHeight()-(int)(fakePause.sprite.getHeight()/2));//Click topleft corner.
+        OMTest.onClick((int)(50),50);//Click topleft corner.
         assertTrue(OMTest.paused);
     }
 

@@ -103,6 +103,7 @@ public class objectManager {
 
         for (objectBase obj : objects) {
             if (obj instanceof objectMenu || obj instanceof playButton) {
+                System.out.println(obj);
                 if (obj.sprite.getBoundingRectangle().contains(x, y))
                 {
                     obj.onPressed();
