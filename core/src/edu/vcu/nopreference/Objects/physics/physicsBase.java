@@ -10,6 +10,8 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class physicsBase {
+    public static final float JUMP_VELOCITY = 150;
+
     float gravity = (float) -10;
     objectBase object;
     boolean onGround = false;
@@ -55,7 +57,7 @@ public class physicsBase {
     {
         if(onGround)
         {
-            velocityY = 100 * speed;
+            velocityY = JUMP_VELOCITY * speed;
             onGround = false;
         }
     }
