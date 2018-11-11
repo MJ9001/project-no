@@ -4,6 +4,7 @@ import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.base.objectPause;
 import edu.vcu.nopreference.Objects.base.playButton;
+import edu.vcu.nopreference.Screens.inGame;
 
 import org.junit.Test;
 
@@ -40,14 +41,11 @@ public class objectMainMenuTest {
     //Given that I am in the main menu, when I press the start game button, then the game should start.
     @Test
     public void testMainMenuStart(){//tests to see if when the start button is clicked on the main menu then the menu is hidden and the game is displayed
-            Render.testing = true;
-            boolean testGood = false;
-            float x = 0;
-            float y = 0;
-            mainMenu mMenu = new mainMenu();
-            //playButton pButton = new playButton();
-            //pButton.onPressed();
-            //assertTrue(testGood);
+        Render.testing = true;
+        boolean testGood = false;
+        mainMenu mMenu = new mainMenu();
+        mMenu.objectman.onClick(800+1124/2, 300+460/2);
+        assertTrue(Untitled.newScreen instanceof inGame);
     }
 
     //Given that I am playing the game, when I press quit, then the main menu should appear

@@ -15,6 +15,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class obstacleTest {
+
+    //tests to see if colliding a player with an obstacle from the Y direction will cause the player to take damage
     @Test
     public void collideWithObstacle() {
         Render.testing = true;
@@ -49,6 +51,7 @@ public class obstacleTest {
         assertTrue(scoreEverDecreased);
     }
 
+    //tests to see if colliding a player with an obstacle from the X direction will cause the player to take damage
     @Test
     public void walkIntoObstacle() {
         Render.testing = true;
@@ -82,6 +85,7 @@ public class obstacleTest {
         assertTrue( scoreEverDecreased);
     }
 
+    //tests to see that the player will jump over an obstacle and not take any damage.
     @Test
     public void jumpOverObstacle() {
         Render.testing = true;

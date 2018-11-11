@@ -15,12 +15,13 @@ public class levelSelectMenu implements Screen{
     public static boolean hidden;
     levelManager levelman = new levelManager();
 
-    public levelSelectMenu(){
+    public levelSelectMenu() {
         hidden = false;
-        batch = new SpriteBatch();
         levelman.updateList();
 
-        Gdx.input.setInputProcessor(new InputAdapter(){
+        if (!render.testing){
+            batch = new SpriteBatch();
+        Gdx.input.setInputProcessor(new InputAdapter() {
 
             @Override
             public boolean touchDown(int screenX, int screenY, int pointer, int button) {
@@ -30,6 +31,7 @@ public class levelSelectMenu implements Screen{
             }
 
         });
+    }
 
     }
 

@@ -18,7 +18,7 @@ import static org.junit.Assert.assertTrue;
 
 public class  coffeeTest {
 
-    
+    //testing that if you are to fall into a coffee object, the object will be picked up and consumed
     @Test
     public void fallIntoCoffee() {
         Render.testing = true;
@@ -53,6 +53,7 @@ public class  coffeeTest {
         assertTrue( scoreEverIncreased);
     }
 
+    //testing that when you walk directly into a coffee object, the coffee object will be consumed
     @Test
     public void walkIntoCoffee() {
         Render.testing = true;
@@ -86,6 +87,7 @@ public class  coffeeTest {
         assertTrue( scoreEverIncreased);
     }
 
+    //testing that asserts that if a player is to jump over a coffee object, that object will not be consumed
     @Test
     public void jumpOverCoffee() {
         Render.testing = true;

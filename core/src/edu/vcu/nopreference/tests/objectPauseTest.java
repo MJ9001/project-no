@@ -58,7 +58,7 @@ public class objectPauseTest{
     //testing if the pause button will bring up the pause menu, instead of testing the inGame function,
     //the same code that runs the pause button functionality was inserted here.
     @Test
-    public void testUnpaseButton(){
+    public void testUnpauseButton(){
 
         Render.testing = true;
         objectManager OMTest = new objectManager();
