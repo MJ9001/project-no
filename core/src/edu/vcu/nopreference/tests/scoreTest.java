@@ -28,7 +28,7 @@ public class scoreTest {
     }
 
     @Test
-    public void decreseGameScore(){
+    public void decreaseGameScore(){ // Reminder that this used to be decrese. Shame on you.
         Render.testing = true;
         objectManager tempOM = new objectManager();
         Player tempPlayer = new Player();
@@ -38,7 +38,6 @@ public class scoreTest {
         tempOM.logicTick();
         tempOM.logicTick();
         float testScore = tempPlayer.getScoreObj().getScore();
-
         assertTrue(testScore<230);
     }
 
@@ -60,9 +59,8 @@ public class scoreTest {
     }
 
     @Test
-    public void testShit(){
-
-
-
+    public void testShit() {
+        int shit = 777;
+        assertEquals(777, shit);
     }
 }
