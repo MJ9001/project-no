@@ -87,17 +87,17 @@ public class obstacleTest {
         Render.testing = true;
 
         objectManager tempOM = new objectManager();
-        //Obstacle tempTacle = new Obstacle();
-        //tempOM.addObject(tempTacle);
+        Obstacle tempTacle = new Obstacle();
+        tempOM.addObject(tempTacle);
         Player tempPlayer = new Player();
         tempOM.addObject(tempPlayer);
         tempOM.addObject(tempPlayer.getScoreObj());
         tempOM.logicTick();
 
-        //tempTacle.posX = 600;
-        //tempTacle.posY = 0;
-        tempPlayer.posX = 0;
-        tempPlayer.posY = 100;
+        tempTacle.posX = 400;
+        tempTacle.posY = 0;
+        tempPlayer.posX = 100;
+        tempPlayer.posY = 0;
 
         tempOM.logicTick();
 
