@@ -45,15 +45,17 @@ public class inGame implements Screen {
     //render variable used to handle libgdx functions
     Render render = new Render();
     //bool value to be used for controlling all pause states throughout the program
-    public static Music music = Gdx.audio.newMusic(Gdx.files.internal("songFull.wav"));
+    public static Music music;
 
 
     //the next thing to implement in terms of this inGame is to have level modifiers that vary speed of things passing,
     //frequency of obstacles and frequency of power ups
     public inGame() {
         //set the visibility of the menu to false because when drawing in a sprite, there is no way to draw it in without making it visible
-
-        music.play();
+        if(!Render.testing) {
+            music = Gdx.audio.newMusic(Gdx.files.internal("songFull.wav"));
+            music.play();
+        }
         //Temporarly manually added objects here
         //declaring objects to be used for game stuff
         //background.setDrawOrder(1000);

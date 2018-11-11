@@ -16,7 +16,7 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class coffeeTest {
+public class  coffeeTest {
 
     
     @Test

@@ -3,6 +3,7 @@ package edu.vcu.nopreference.tests;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.backends.headless.HeadlessApplication;
 import com.badlogic.gdx.graphics.GL20;
 
@@ -41,12 +42,14 @@ public class objectPauseTest{
     //Testing if inGame pause returns pause and if pressing the pause button actually pauses the game
     @Test
     public void testPause(){
-        Render.testing=true;
-        objectPause tester = new objectPause();
-        objectManager tempOM = new objectManager();
-        assertFalse(tempOM.paused);
-        tempOM.onClick(53,1390);
-        assertTrue(tempOM.paused);
+        Render.testing = true;
+        objectManager OMTest = new objectManager();
+        OMTest.initializeObjects();
+        OMTest.logicTick();
+        objectPause fakePause = new objectPause();
+
+        OMTest.onClick((int)(50),50);//Click topleft corner.
+        assertTrue(OMTest.paused);
     }
 
     //Given that I am in game, when I look at the top left corner of the screen, I should
@@ -93,7 +96,10 @@ public class objectPauseTest{
         objectPause fakePause = new objectPause();
 
         OMTest.onClick((int)(50),50);//Click topleft corner.
-        assertTrue(OMTest.paused);
+        OMTest.logicTick();
+
+        OMTest.onClick(Render.getWidth()/2, Render.getHeight()/2);//Click topleft corner.
+        assertTrue(Untitled.newScreen instanceof mainMenu);
     }
 
     /*@org.junit.After
