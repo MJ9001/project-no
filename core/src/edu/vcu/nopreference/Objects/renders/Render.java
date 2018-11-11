@@ -26,11 +26,9 @@ public class Render {
     //constructor used for drawing objects to screen
     public Render(objectBase object, String asset) {
         //This garbage unit test hack will be updated and improved in next iteration, centralize libgdx functions to a few
-        if(!testing) {
             //takes object and draws the sprite given the asset passed to it.
-            this.object = object;
-            this.object.sprite = new Sprite(new Texture(Gdx.files.internal(asset)));
-        }
+        this.object = object;
+        this.object.sprite = new Sprite(new Texture(Gdx.files.internal(asset)));
     }
 
     //draws the sprite batch
