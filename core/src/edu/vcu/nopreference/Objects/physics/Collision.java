@@ -40,4 +40,9 @@ public class Collision {
     {
         return collided;
     }
+
+    public boolean isSolidCollision()
+    {
+        return object1.physics.isSolid() && object2.physics.isSolid();
+    }
 }

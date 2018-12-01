@@ -11,6 +11,7 @@ public class physicsBase {
 
     final objectBase object;
     boolean onGround = false;
+    boolean solid = false;
     public float velocityY = 0;
     public physicsBase(objectBase object)
     {
@@ -38,7 +39,7 @@ public class physicsBase {
             return;
         //if(!Render.testing) Gdx.app.log("Untitled", "Collided! X: " + collision.collidedX + " Y: " + collision.collidedY);
         float percent = object.sprite.getBoundingRectangle().getHeight() * 0.4f;
-        if(collision.collidedY < percent && velocityY <= 0)
+        if(collision.collidedY < percent && velocityY <=  0 && collision.isSolidCollision())
         {
             onGround = true;
             object.posY = collision.object2.sprite.getBoundingRectangle().getY() + collision.object2.sprite.getBoundingRectangle().getHeight();
@@ -53,5 +54,13 @@ public class physicsBase {
             velocityY = JUMP_VELOCITY * speed;
             onGround = false;
         }
+    }
+
+    public boolean isSolid() {
+        return solid;
+    }
+
+    public void setSolid(boolean solid) {
+        this.solid = solid;
     }
 }

@@ -18,7 +18,6 @@ android {
     }
     defaultConfig {
         applicationId "edu.vcu.nopreference"
-        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"

@@ -70,6 +70,7 @@ public class objectManager {
 
         for (objectBase obj : objects) {
                 obj.updateCollision();
+                obj.updatePosition();
 
         }
 

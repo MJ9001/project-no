@@ -17,6 +17,7 @@ public class Player extends objectBase {
         render = new Render(this, "player_temporary_asset.png");
         //sprite.setPosition(0,0);
         setBounds(100, 0, 200, 200);
+        physics.setSolid(true);
     }
 
     //makes it such that the players score decreases by 0.1 every tick
