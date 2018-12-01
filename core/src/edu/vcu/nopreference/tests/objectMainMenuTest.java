@@ -2,7 +2,6 @@ package edu.vcu.nopreference.tests;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.base.objectManager;
-import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
 import edu.vcu.nopreference.Objects.base.mainMenu.playButton;
 import edu.vcu.nopreference.Screens.levelSelectMenu;
 
@@ -56,10 +55,10 @@ public class objectMainMenuTest {
         OMTest.initializeObjects();
         OMTest.logicTick();
 
-        OMTest.onClick((int)(50),50);//Click topleft corner.
+        OMTest.onClick(50,50);//Click top left corner.
         OMTest.logicTick();
 
-        OMTest.onClick(Render.getWidth()/2, Render.getHeight()/2);//Click topleft corner.
+        OMTest.onClick(Render.getWidth()/2, Render.getHeight()/2);//Click top left corner.
         assertTrue(Untitled.newScreen instanceof mainMenu);
 
     }

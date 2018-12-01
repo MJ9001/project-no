@@ -8,8 +8,8 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class Player extends objectBase {
-    boolean takingDamage=false;
-    Score score = new Score();
+    private boolean takingDamage=false;
+    private final Score score = new Score();
 
     //default constructor creates player as a default image
     public Player()
@@ -44,7 +44,7 @@ public class Player extends objectBase {
         return score;
     }
 
-    int ticks = 0;
+    private int ticks = 0;
     @Override
     public void update() {
         //Gdx.app.log("Untitled", "score: "+score);

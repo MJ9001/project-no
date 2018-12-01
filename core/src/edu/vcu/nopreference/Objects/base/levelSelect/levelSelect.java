@@ -7,10 +7,10 @@ import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Untitled;
 
 public class levelSelect extends objectBase {
-    boolean levelUnlocked;
-    float insideX, insideY;
+    private boolean levelUnlocked;
+    private final float insideX;
+    private final float insideY;
     float speedModifier;
-    levelSelectInner inner;
 
     //level select will eventually have modifiers and possible different textures stored for each one,
     //which in turn will be passed via the constructor from the levelManager class. Once
@@ -41,8 +41,7 @@ public class levelSelect extends objectBase {
     public boolean getUnlocked(){ return levelUnlocked;}
 
     public levelSelectInner constructInner(String innerAsset){
-        inner = new levelSelectInner(innerAsset, insideX, insideY, this);
-        return inner;
+        return new levelSelectInner(innerAsset, insideX, insideY, this);
     }
 
     //methods used for getting the inside bounds of each level select
@@ -64,9 +63,6 @@ public class levelSelect extends objectBase {
     public void onPressed() {
         if(levelUnlocked){
             Untitled.newScreen = new inGame();
-        }
-        else{
-
         }
     }
 }

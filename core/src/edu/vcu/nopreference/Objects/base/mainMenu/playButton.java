@@ -3,7 +3,6 @@ package edu.vcu.nopreference.Objects.base.mainMenu;
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsGUI;
 import edu.vcu.nopreference.Objects.renders.Render;
-import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Screens.levelSelectMenu;
 import edu.vcu.nopreference.Screens.mainMenu;
 import edu.vcu.nopreference.Untitled;
@@ -23,7 +22,7 @@ public class playButton extends objectBase {
     }
 
     public void onPressed() {
-        if(!render.testing)
+        if(!Render.testing)
             mainMenu.music.dispose();
         Untitled.newScreen = new levelSelectMenu();
         mainMenu.hidden = true;

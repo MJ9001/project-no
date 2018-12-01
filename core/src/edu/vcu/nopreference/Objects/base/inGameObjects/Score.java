@@ -4,12 +4,12 @@ import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Score extends objectBase {
-    public final static float MAX_SCORE   = 255;
+    private final static float MAX_SCORE   = 255;
     public final static float START_SCORE = 230;
     public final static float SCORE_DECAY = 0.05f;
 
-    float score;
-    float scorePercentage;
+    private float score;
+    private float scorePercentage;
 
     public Score(){
         score = START_SCORE;
@@ -48,19 +48,17 @@ public class Score extends objectBase {
     }
 
     @Override
-    public boolean recieveIntent(String Intent, String Argument)
+    public void receiveIntent(String Intent, String Argument)
     {
-        if(Intent=="+score" && score < 1000)
+        if(Intent.equals("+score") && score < 1000)
         {
             score+= Integer.parseInt(Argument);
-            return true;
         }
-    return false;
     }
 
     @Override
     public String requestIntent(String request) {
-        if(request == "score")
+        if(request.equals("score"))
             return String.valueOf(score);
         return super.requestIntent(request);
     }

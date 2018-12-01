@@ -9,7 +9,7 @@ import edu.vcu.nopreference.Objects.physics.physicsGUI;
 
 public class objectMenu extends objectBase {//This is the pause menu for some reason
     //constructor of objectMenu
-    public objectMenu(){
+    protected objectMenu(){
         super();
 
     }

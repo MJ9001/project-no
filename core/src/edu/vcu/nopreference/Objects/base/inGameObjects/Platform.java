@@ -13,8 +13,8 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class Platform extends objectBase {
-    private static Random rand = new Random();  // Create a random number generator so that we have a random height for the height.
-    private float PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class. It's pretty wicked fast broh.
+    private static final Random rand = new Random();  // Create a random number generator so that we have a random height for the height.
+    private float PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class.
     private boolean coffeeCreated = false;
 
     public void   setPlatformSpeed(float speed) { PLATFORM_SPEED = speed; }

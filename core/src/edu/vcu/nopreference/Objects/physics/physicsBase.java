@@ -1,7 +1,5 @@
 package edu.vcu.nopreference.Objects.physics;
 
-import com.badlogic.gdx.Gdx;
-
 import edu.vcu.nopreference.Objects.base.objectBase;
 
 /**
@@ -9,19 +7,20 @@ import edu.vcu.nopreference.Objects.base.objectBase;
  */
 
 public class physicsBase {
-    public static final float JUMP_VELOCITY = 150;
+    private static final float JUMP_VELOCITY = 150;
 
-    float gravity = (float) -10;
-    objectBase object;
+    final objectBase object;
     boolean onGround = false;
-    public float velocityX = 0, velocityY = 0;
+    public float velocityY = 0;
     public physicsBase(objectBase object)
     {
         this.object = object;
     }
     public void tick() {
         onGround = false;
+        float gravity = (float) -10;
         velocityY += gravity;
+        float velocityX = 0;
         object.posX += velocityX;
         object.posY += velocityY;
         object.updatePosition();
@@ -31,11 +30,6 @@ public class physicsBase {
             velocityY = 0;
             object.posY = 0;
         }
-    }
-
-    void updatePosition()
-    {
-
     }
 
     public void onCollision(Collision collision)

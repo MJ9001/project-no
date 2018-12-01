@@ -17,7 +17,7 @@ public class objectPauseMenu extends objectMenu {//This is the pause menu for so
         render = new Render(this, "pauseMenu.jpg");
         //anything with sprites ruins unit tests, because libgdx was never designed to be unit tested, so this ugly stuff is what you get
         //until the next iteration when we centralize all sprite manipulation
-        setBounds(render.getWidth()/2-1500/2, render.getHeight()/2-750/2, 1500,750);
+        setBounds(Render.getWidth()/2-1500/2, Render.getHeight()/2-750/2, 1500,750);
 
     }
 
@@ -32,14 +32,12 @@ public class objectPauseMenu extends objectMenu {//This is the pause menu for so
     }
 
     @Override
-    public boolean recieveIntent(String Intent, String args)
+    public void receiveIntent(String Intent, String args)
     {
-        if(Intent == "togglepause")
+        if(Intent.equals("togglepause"))
         {
             render.setVisibility((manager.paused = !manager.paused));
-            return true;
         }
-            return false;
     }
 }
 

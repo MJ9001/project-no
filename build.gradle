@@ -11,7 +11,7 @@ buildscript {
     }
     dependencies {
         classpath 'org.wisepersist:gwt-gradle-plugin:1.0.6'
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:3.2.1'
         
 
     }
@@ -75,11 +75,11 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
 
-        compile "junit:junit:4.+"
-        compile "org.mockito:mockito-core:1.9.+"
+        compile "junit:junit:4.12"
+        compile "org.mockito:mockito-core:2.23.4"
 
-        testCompile "junit:junit:4.+"
-        testCompile "org.mockito:mockito-core:1.9.+"
+        testCompile "junit:junit:4.12"
+        testCompile "org.mockito:mockito-core:2.23.4"
 
         testCompile "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
         testCompile "com.badlogicgames.gdx:gdx:$gdxVersion"

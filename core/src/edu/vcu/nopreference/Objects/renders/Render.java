@@ -16,8 +16,8 @@ import edu.vcu.nopreference.Objects.base.objectBase;
 public class Render {
     //global testing variable used to disable libgdx usage during tests
     public static boolean testing = false;
-    objectBase object;
-    backgroundObject back;
+    private objectBase object;
+    private backgroundObject back;
 
     //overloaded default constructor, does nothing.
     public Render(){
@@ -36,15 +36,14 @@ public class Render {
     }
 
     //draws the sprite batch
-    public int draw(SpriteBatch batch) {
+    public void draw(SpriteBatch batch) {
         if(!testing) {
             //draws the sprite batch
             object.sprite.draw(batch);
         }
-        return 0;
     }
 
-    //seperate methods because the backgrounds are textures rather than sprites
+    //separate methods because the backgrounds are textures rather than sprites
     public void renderBackground(backgroundObject back){
         if(!testing){
             this.back = back;
@@ -52,9 +51,8 @@ public class Render {
         }
     }
 
-    public int drawBackground(SpriteBatch batch){
+    public void drawBackground(SpriteBatch batch){
         if(!testing){batch.draw(this.back.texture, 0, 0);}
-        return 0;
     }
 
     //sets the visibility of a given object

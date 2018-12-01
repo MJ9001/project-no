@@ -9,16 +9,16 @@ import edu.vcu.nopreference.Objects.base.levelSelect.levelManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class levelSelectMenu implements Screen{
-    SpriteBatch batch;
-    Render render = new Render();
-    public static boolean hidden;
-    levelManager levelman = new levelManager();
+    private SpriteBatch batch;
+    private final Render render = new Render();
+    private static boolean hidden;
+    private final levelManager levelman = new levelManager();
 
     public levelSelectMenu() {
         hidden = false;
         levelman.updateList();
 
-        if (!render.testing){
+        if (!Render.testing){
             batch = new SpriteBatch();
         Gdx.input.setInputProcessor(new InputAdapter() {
 

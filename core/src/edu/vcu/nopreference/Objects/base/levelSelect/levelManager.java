@@ -6,11 +6,11 @@ import edu.vcu.nopreference.Objects.physics.Collision;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class levelManager extends objectManager {
-    Render render = new Render();
     public levelManager(){
 
         //start x and y are just the size with which the loop will add to nextX and nextY
         //after one completed inner loop, the next  will reset
+        Render render = new Render();
         float startX = ((render.getScreenSizeX())/6);
         float startY = ((render.getScreenSizeY())/4);
         float nextX = startX;
@@ -25,12 +25,7 @@ public class levelManager extends objectManager {
 
         for(int count=1; count<3; count++){
             for(int counter=1; counter<6;counter++){
-                if(count==2){
-                    locked = true;
-                }
-                else{
-                    locked = false;
-                }
+                locked = count == 2;
 
                 levelSelect level = new levelSelect(nextX, nextY, locked);
                 addObject(level);

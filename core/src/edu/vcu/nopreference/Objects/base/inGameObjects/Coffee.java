@@ -7,13 +7,13 @@ import edu.vcu.nopreference.Objects.renders.Render;
 import java.util.Random;
 
 public class Coffee extends objectBase {
-    private static Random rand = new Random();
-    int speed = 50;
+    private static final Random rand = new Random();
+    private int speed = 50;
     public Coffee()
     {
         // Creates the renderer to draw the object at it's location
         render = new Render(this, "coffeeasset1.jpg");
-        setBounds(render.getWidth()+250, render.getHeight() * rand.nextFloat() * 1f, 100, 200);
+        setBounds(Render.getWidth()+250, Render.getHeight() * rand.nextFloat() * 1f, 100, 200);
 
     }
 
@@ -22,7 +22,7 @@ public class Coffee extends objectBase {
         render = new Render(this, "coffeeasset1.jpg");
         setBounds(0, 0, 100, 200);
         this.posX = platform.posX+250;
-        this.posY = (float)(platform.posY + sprite.getHeight());
+        this.posY = platform.posY + sprite.getHeight();
         speed = (int)platform.getPlatformSpeed();
         updatePosition();
     }

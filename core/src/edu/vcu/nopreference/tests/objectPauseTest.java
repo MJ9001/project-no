@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import edu.vcu.nopreference.Objects.base.inGameObjects.Platform;
 import edu.vcu.nopreference.Objects.base.objectManager;
-import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
 import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Untitled;
@@ -17,11 +16,6 @@ public class objectPauseTest{
     private Untitled game;
     private inGame stage;
 
-    @org.junit.Before
-    public void setUp() throws Exception {
-
-    }
-
     //Given that I am in-game, when I press the pause button, a menu should prompt
     //the user to quit the game and return to the main menu.
     //Testing if inGame pause returns pause and if pressing the pause button actually pauses the game
@@ -32,7 +26,7 @@ public class objectPauseTest{
         OMTest.initializeObjects();
         OMTest.logicTick();
 
-        OMTest.onClick((int)(50),50);//Click topleft corner.
+        OMTest.onClick(50,50);//Click top left corner.
         assertTrue(OMTest.paused);
     }
 
@@ -49,9 +43,9 @@ public class objectPauseTest{
         OMTest.initializeObjects();
         OMTest.logicTick();
 
-        OMTest.onClick((int)(50),50);//Click topleft corner.
+        OMTest.onClick(50,50);//Click topleft corner.
         assertTrue(OMTest.paused);
-        OMTest.onClick((int)(50),50);//Click topleft corner.
+        OMTest.onClick(50,50);//Click topleft corner.
         assertFalse(OMTest.paused);
     }
 
@@ -66,7 +60,7 @@ public class objectPauseTest{
         Platform tempPlat = new Platform();
         tempPlat.posX = 500;
 
-        OMTest.onClick((int)(50),50);//Click topleft corner.
+        OMTest.onClick(50,50);//Click topleft corner.
 
         OMTest.logicTick();
         OMTest.logicTick();

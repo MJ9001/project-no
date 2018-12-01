@@ -25,12 +25,12 @@ public class platformManager extends objectBase {
     private int PLATFORM_SPAWN_RATE = 30;
     private int PLATFORM_MAX_HEIGHT_CHANGE = 100;
     private float PLATFORM_SPEED = 50;
-    private Random theRandom = new Random();
+    private final Random theRandom = new Random();
 
     // Local variables
-    private ArrayList<Platform> platformPool = new ArrayList<Platform>();
+    private final ArrayList<Platform> platformPool = new ArrayList<Platform>();
     private ListIterator<Platform> poolItr = platformPool.listIterator();
-    private Player player;
+    private final Player player;
     private int screenWidth, screenHeight;
     private float lowerBound, upperBound, leftBound;
     private int tickCount = 0;

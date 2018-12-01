@@ -8,11 +8,11 @@ import edu.vcu.nopreference.Objects.renders.Render;
 
 public class backgroundObject extends objectBase {
     public Texture texture;
-    Render render = new Render();
+    private final Render render = new Render();
 
     public backgroundObject(){
         super();
-        if(!render.testing)
+        if(!Render.testing)
         {
             texture = new Texture("menu.jpg");
             render.renderBackground(this);
@@ -29,7 +29,7 @@ public class backgroundObject extends objectBase {
 
     }
 
-    //prevents the pause button object from being affected by gravity and colissions
+    //prevents the pause button object from being affected by gravity and collisions
     @Override
     protected void initializePhysics() {
         GUIAsset=true;

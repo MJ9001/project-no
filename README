@@ -1,0 +1,3 @@
+Excluded Lint Warnings:
+All Spelling Errors are intended. Either words are connected, or words are not in dictionary.
+Unused property "target=android-19" is for another IDE. It is left in case someone decides to use that IDE.

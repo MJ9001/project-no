@@ -7,11 +7,11 @@ import edu.vcu.nopreference.Objects.base.objectBase;
  */
 
 public class Collision {
-    objectBase object1; //active
-    objectBase object2; //passive
-    float collidedX = 0;//-1 left, 0 none, 1 right
-    float collidedY = 0;//-1 down, 0 none, 1 up
-    boolean collided;
+    final objectBase object1; //active
+    final objectBase object2; //passive
+    private float collidedX;//-1 left, 0 none, 1 right
+    float collidedY;//-1 down, 0 none, 1 up
+    private final boolean collided;
     public Collision(objectBase active, objectBase passive, float CollidedX, float CollidedY, boolean Collided)
     {
         object1 = active;

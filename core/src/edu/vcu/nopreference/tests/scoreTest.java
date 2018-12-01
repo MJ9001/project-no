@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
 import edu.vcu.nopreference.Objects.base.objectManager;
-import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 import static org.junit.Assert.assertEquals;
@@ -23,7 +22,7 @@ public class scoreTest {
 
     //testing that as the game goes on, the score will decrease
     @Test
-    public void decreaseGameScore(){ // Reminder that this used to be decrese. Shame on you.
+    public void decreaseGameScore(){ // Reminder that this used to be decrease. Shame on you.
         Render.testing = true;
         objectManager tempOM = new objectManager();
         Player tempPlayer = new Player();
@@ -46,7 +45,7 @@ public class scoreTest {
         Player tempPlayer = new Player();
         tempOM.initializeObjects();
 
-        tempOM.onClick((int)(50),50);//Click topleft corner.
+        tempOM.onClick(50,50);//Click top left corner.
         tempOM.logicTick();
         tempOM.logicTick();
         tempOM.logicTick();

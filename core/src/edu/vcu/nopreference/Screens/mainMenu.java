@@ -14,14 +14,11 @@ import edu.vcu.nopreference.Objects.renders.Render;
 public class mainMenu implements Screen
 {
     public static boolean hidden;
-    SpriteBatch batch;
-    //BitmapFont font = new BitmapFont();
-    playButton play ;
-    //render for controling libgdx
-    Render render = new Render();
-    backgroundObject background;
-    //manager for all sprites, backrounds and buttons
-    public objectManager objectman = new objectManager();
+    private SpriteBatch batch;
+    //render for controlling libgdx
+    private final Render render = new Render();
+    //manager for all sprites, backgrounds and buttons
+    public final objectManager objectman = new objectManager();
     public static Music music;
 
 
@@ -31,18 +28,18 @@ public class mainMenu implements Screen
     {
         if(!Render.testing)
             initalizeGdxStuff();
-        play = new playButton();
+        playButton play = new playButton();
         //setting up variables to be used
         hidden = false;
         //creating menu as a texture
-        background = new backgroundObject();
+        backgroundObject background = new backgroundObject();
         objectman.addObject(background);
         objectman.addObject(play);
         objectman.updateList();
 
     }
 
-    void initalizeGdxStuff()
+    private void initalizeGdxStuff()
     {
         //setting up batch to draw sprites
         batch = new SpriteBatch();

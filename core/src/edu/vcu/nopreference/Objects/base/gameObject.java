@@ -13,7 +13,7 @@ public class gameObject extends objectBase{
     public gameObject() {
     }
 
-    int ticks = 0;
+    private int ticks = 0;
     @Override
     public void update() {
         if((ticks % 30) == 0) {

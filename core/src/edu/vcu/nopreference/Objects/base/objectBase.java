@@ -19,11 +19,11 @@ public class objectBase {
     public boolean toBeDeleted = false; //Set to true to be removed from game.
 
     //float that determines what is drawn first, lowest to highest. by default the object is set to lowest
-    public int drawOrder = 999;
+    private int drawOrder = 999;
 
     public Render render;
     public float posX = 0, posY = 0;
-    public objectBase()
+    protected objectBase()
     {
         //Gdx.app.log("Untitled", "New object created");
         initializePhysics();
@@ -66,7 +66,7 @@ public class objectBase {
     public void setPosY(float posY_) {
         posY = posY_;
     }
-    public void setPosition(float posX_,float posY_) {   // Setter for setting X and Y position at the same time.
+    public void setPosition(float posX_, float posY_) {   // Setter for setting X and Y position at the same time.
         posX = posX_;
         posY = posY_;
     }
@@ -82,7 +82,7 @@ public class objectBase {
         physics.onCollision(manager.checkCollision(this));
     }
 
-    public void setBounds(float x, float y, float width, float height)
+    protected void setBounds(float x, float y, float width, float height)
     {
         posX = x;
         posY = y;
@@ -98,9 +98,8 @@ public class objectBase {
         return drawOrder;
     }
 
-    public boolean recieveIntent(String Intent, String args)
+    public void receiveIntent(String Intent, String args)
     {
-        return false;
     }
 
     public String requestIntent(String request) {

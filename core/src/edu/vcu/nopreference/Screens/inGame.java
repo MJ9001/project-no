@@ -16,23 +16,23 @@ import edu.vcu.nopreference.Objects.renders.Render;
 
 public class inGame implements Screen {
     //Spritebatch is the buffer for the display
-    SpriteBatch batch;
+    private final SpriteBatch batch;
     //boolean that shows whether this screen is shown or not
-    boolean hidden = true;
+    private boolean hidden;
     //the objectManager is the object that manages other objects, and draws them on the screen.
-    objectManager objectman = new objectManager();
+    private final objectManager objectman = new objectManager();
     //player object
     public Player player;
     //game object
     gameObject game;
     //current time
-    long cTime = System.currentTimeMillis();
+    private long cTime = System.currentTimeMillis();
     //fps average
-    int fps = 0;
+    private int fps = 0;
     //time used for calculating fps
-    long fpsTime = System.currentTimeMillis();
+    private long fpsTime = System.currentTimeMillis();
     //render variable used to handle libgdx functions
-    Render render = new Render();
+    private final Render render = new Render();
     //bool value to be used for controlling all pause states throughout the program
     public static Music music;
 

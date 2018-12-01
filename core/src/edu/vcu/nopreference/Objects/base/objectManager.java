@@ -19,9 +19,9 @@ import edu.vcu.nopreference.Objects.renders.Render;
 public class objectManager {
 
     public boolean paused = false;
-    public List<objectBase> objects = new ArrayList<objectBase>();
+    public final List<objectBase> objects = new ArrayList<objectBase>();
 
-    private List<objectBase> newObjects = new ArrayList<objectBase>();
+    private final List<objectBase> newObjects = new ArrayList<objectBase>();
 
     public objectManager()
     {
@@ -52,9 +52,9 @@ public class objectManager {
         addObject(player);
         addObject(player.getScoreObj());
         addObject(new gameObject());
-        objectPause objPaus = new objectPause();
-        objPaus.setDrawOrder(2);
-        addObject(objPaus);
+        objectPause objPause = new objectPause();
+        objPause.setDrawOrder(2);
+        addObject(objPause);
         objectBase pauseMenu =  new objectPauseMenu();
         pauseMenu.render.setVisibility(false);
         addObject(pauseMenu);
@@ -88,7 +88,7 @@ public class objectManager {
     public void sendIntent(String Intent, String Argument)
     {
         for (objectBase obj : objects) {
-        obj.recieveIntent(Intent, Argument);
+        obj.receiveIntent(Intent, Argument);
         }
 
     }
@@ -164,10 +164,4 @@ public class objectManager {
         }
         return null;
     }
-
-    //method that uses comparators to sort the list of objects based on draw order. Because of how large this list gets,
-    //we will probably have to introduce some garbage collection if we want this solution to continue working
-    /*public void sortObjectList(){
-        Collections.sort(objects, new objectComparator());
-    }*/
 }

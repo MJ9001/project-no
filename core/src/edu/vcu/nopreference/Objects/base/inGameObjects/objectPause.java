@@ -19,14 +19,14 @@ public class objectPause extends objectBase {
         render = new Render(this, "pause.jpg");
 
         //0, the height of the screen, minus the height of the image
-        setBounds(0, render.getHeight() - 100, 100, 100);
+        setBounds(0, Render.getHeight() - 100, 100, 100);
     }
 
     @Override
     public void update() {
     }
 
-    //prevents the pause button object from being affected by gravity and colissions
+    //prevents the pause button object from being affected by gravity and collisions
     @Override
     protected void initializePhysics() {
         GUIAsset=true;

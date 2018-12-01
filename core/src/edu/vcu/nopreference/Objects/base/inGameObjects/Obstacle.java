@@ -1,14 +1,12 @@
 package edu.vcu.nopreference.Objects.base.inGameObjects;
 
-import com.badlogic.gdx.Gdx;
-
 import java.util.Random;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsObstacle;
 import edu.vcu.nopreference.Objects.renders.Render;
 
-//My motivation to do anything is at an all time low so this hacky class is what yall get for now
+//this class is hacky
 
 public class Obstacle extends objectBase {
     private static Random rand = new Random();
@@ -16,7 +14,7 @@ public class Obstacle extends objectBase {
 
     public Obstacle(){
         render = new Render(this, "spike.png");
-        setBounds(render.getWidth(), 0, 119, 230);
+        setBounds(Render.getWidth(), 0, 119, 230);
 
     }
 
