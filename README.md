@@ -1,4 +1,4 @@
-# 'Untitled' by Team No.
+# **'Untitled'** by **Team No**.
 
 ## Iteration One:
 ### As a player in game, I want to be able to tap the screen to jump onto platforms, so that I can reach objectives and avoid obstacles.
