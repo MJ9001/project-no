@@ -56,5 +56,6 @@ c) Given there is an obstacle, when the player falls into the obstacle, then the
 
 
 ## Excluded Lint Warnings:
-All Spelling Errors are intended. Either words are connected, or words are not in dictionary.
+All Spelling Errors are intended.
+Either words are connected, or words are not in dictionary.
 Unused property "target=android-19" is for another IDE. It is left in case someone decides to use that IDE.
