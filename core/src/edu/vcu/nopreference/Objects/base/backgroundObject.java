@@ -14,7 +14,7 @@ public class backgroundObject extends objectBase {
         super();
         if(!Render.testing)
         {
-            texture = new Texture("menu.jpg");
+            texture = new Texture("Menu_Title.png");
             render.renderBackground(this);
             sprite.setPosition(0, 0);
         }
@@ -35,5 +35,4 @@ public class backgroundObject extends objectBase {
         GUIAsset=true;
         physics = new physicsGUI(this);
     }
-
 }

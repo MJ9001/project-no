@@ -13,8 +13,8 @@ public class Obstacle extends objectBase {
     private float OBSTACLE_SPEED = 50;
 
     public Obstacle(){
-        render = new Render(this, "spike.png");
-        setBounds(Render.getWidth(), 0, 119, 230);
+        render = new Render(this, "obstacletrash.png");
+        setBounds(Render.getWidth(), 0, 230, 236);
 
     }
 

@@ -1,5 +1,7 @@
 package edu.vcu.nopreference.Objects.base.mainMenu;
 
+import javax.swing.Renderer;
+
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsGUI;
 import edu.vcu.nopreference.Objects.renders.Render;
@@ -11,8 +13,8 @@ public class playButton extends objectBase {
     //object for play button on main menu
 
     public playButton(){
-        render = new Render(this, "playButton.jpg");
-        setBounds(800, 300, 1124,460);
+        render = new Render(this, "Start_button.png");
+        setBounds((render.getScreenSizeX()-700)/2, (render.getScreenSizeY()-700)/2-300, 700,700);
     }
 
     @Override
