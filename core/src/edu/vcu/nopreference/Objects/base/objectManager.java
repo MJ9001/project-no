@@ -61,10 +61,10 @@ public class objectManager {
             }
             currDraw = nextDraw;
             tempObjects.removeAll(tbdObjects);
-            System.out.println(tempObjects.size());
+            //System.out.println(tempObjects.size());
             tbdObjects.clear();
         }
-        System.out.println("Drawing!");
+        //System.out.println("Drawing!");
 
     }
     public void initializeObjects()

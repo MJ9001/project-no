@@ -16,6 +16,8 @@ public class Platform extends objectBase {
     private static final Random rand = new Random();  // Create a random number generator so that we have a random height for the height.
     private float PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class.
     private boolean coffeeCreated = false;
+    float coffeeSpawnChance = 0.5f;
+    float coffeeSpawnFloat;
 
     public void   setPlatformSpeed(float speed) { PLATFORM_SPEED = speed; }
     public float  getPlatformSpeed()          { return  PLATFORM_SPEED; }
@@ -27,6 +29,7 @@ public class Platform extends objectBase {
         setBounds(Render.getWidth(), Render.getHeight() * rand.nextFloat() * 1f, 500, 100);
         physics.setSolid(true);
         setDrawOrder(5);
+        coffeeSpawnFloat = rand.nextFloat() *1f;
     }
 
     public Platform(float platformSpeed_) {
@@ -40,12 +43,12 @@ public class Platform extends objectBase {
     public void update() {
         posX -= PLATFORM_SPEED;
         updatePosition();
-        if(!coffeeCreated && manager != null)
+        if(!coffeeCreated && manager != null && (coffeeSpawnFloat>coffeeSpawnChance))
         {
-
             Coffee coffee = new Coffee(this);
             manager.addObject(coffee);
             coffeeCreated = true;
+
         }
     }
 
