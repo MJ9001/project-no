@@ -15,6 +15,7 @@ public class Score extends objectBase {
         score = START_SCORE;
         render = new Render(this, "coffeeBar2.png");
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255, 64);
+        setDrawOrder(10);
     }
 
     @Override

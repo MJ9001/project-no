@@ -2,15 +2,15 @@ package edu.vcu.nopreference.Objects.base.inGameObjects;
 
 import edu.vcu.nopreference.Objects.base.objectMenu;
 import edu.vcu.nopreference.Objects.renders.Render;
-import edu.vcu.nopreference.Screens.inGame;
-import edu.vcu.nopreference.Screens.mainMenu;
-import edu.vcu.nopreference.Untitled;
 
 /**
  * Created by Mark on 10/14/2018.
  */
 
 public class objectPauseMenu extends objectMenu {//This is the pause menu for some reason
+    public returnButton returnBut;
+    public resumeButton resume;
+
     //constructor of objectMenu
     public objectPauseMenu(){
         super();
@@ -19,16 +19,17 @@ public class objectPauseMenu extends objectMenu {//This is the pause menu for so
         //until the next iteration when we centralize all sprite manipulation
         setBounds(Render.getWidth()/2-1800/2, Render.getHeight()/2-1275/2, 1800,1275);
 
+        returnBut = new returnButton(Render.getWidth()/2-1800/2);
+        resume = new resumeButton((Render.getWidth()/2-1800/2)+1800);
+    }
+
+    public objectMenu getResume(){
+        return returnBut;
     }
 
     @Override
     public void onPressed() {
         //if the game is paused, you can interact with the menu
-        if(manager.paused){
-            if(!Render.testing)
-            inGame.music.dispose();
-            Untitled.newScreen = new mainMenu();
-        }
     }
 
     @Override
@@ -37,8 +38,8 @@ public class objectPauseMenu extends objectMenu {//This is the pause menu for so
         if(Intent.equals("togglepause"))
         {
             render.setVisibility((manager.paused = !manager.paused));
+            returnBut.toggleVis();
+            resume.toggleVis();
         }
     }
 }
-
-

@@ -26,6 +26,7 @@ public class Platform extends objectBase {
         // TODO: do not set the bounds for the object in the constructor because then during testing we have to Render.testing = true to prevent libgdx call.
         setBounds(Render.getWidth(), Render.getHeight() * rand.nextFloat() * 1f, 500, 100);
         physics.setSolid(true);
+        setDrawOrder(5);
     }
 
     public Platform(float platformSpeed_) {

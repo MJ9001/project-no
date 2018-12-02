@@ -15,7 +15,7 @@ public class Obstacle extends objectBase {
     public Obstacle(){
         render = new Render(this, "obstacletrash.png");
         setBounds(Render.getWidth(), 0, 230, 236);
-
+        setDrawOrder(5);
     }
 
     public void setObstacleSpeed(float speed) { OBSTACLE_SPEED = speed; }

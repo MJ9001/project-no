@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.vcu.nopreference.Objects.base.inGameObjects.Background;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
 import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
 import edu.vcu.nopreference.Objects.base.inGameObjects.objectPauseMenu;
@@ -68,18 +69,22 @@ public class objectManager {
     }
     public void initializeObjects()
     {
+        Background background = new Background();
+        addObject(background);
         Player player = new Player();
-        player.setDrawOrder(1);
+        player.setDrawOrder(100);
         addObject(player);
         addObject(player.getScoreObj());
         addObject(new gameObject());
         objectPause objPause = new objectPause();
         objPause.setDrawOrder(2);
         addObject(objPause);
-        objectBase pauseMenu =  new objectPauseMenu();
+        objectPauseMenu pauseMenu =  new objectPauseMenu();
         pauseMenu.render.setVisibility(false);
         addObject(pauseMenu);
-        pauseMenu.setDrawOrder(3);
+        pauseMenu.setDrawOrder(101);
+        addObject(pauseMenu.resume);
+        addObject(pauseMenu.returnBut);
     }
     public void logicTick()
     {
@@ -131,7 +136,7 @@ public class objectManager {
         }*/
 
         for (objectBase obj : objects) {
-            if(!paused || obj instanceof objectPause) {
+            if(!paused || obj instanceof objectMenu) {
                 if (obj.sprite.getBoundingRectangle().contains(x, y)) {
                     obj.onPressed();
                 }

@@ -14,7 +14,6 @@ public class Coffee extends objectBase {
         // Creates the renderer to draw the object at it's location
         render = new Render(this, "coffee.png");
         setBounds(Render.getWidth()+250, Render.getHeight() * rand.nextFloat() * 1f, 138, 180);
-
     }
 
     public Coffee(Platform platform) {
@@ -25,6 +24,7 @@ public class Coffee extends objectBase {
         this.posY = platform.posY + sprite.getHeight();
         speed = (int)platform.getPlatformSpeed();
         updatePosition();
+        setDrawOrder(5);
     }
 
 
