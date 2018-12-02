@@ -14,10 +14,10 @@ public class objectPauseMenu extends objectMenu {//This is the pause menu for so
     //constructor of objectMenu
     public objectPauseMenu(){
         super();
-        render = new Render(this, "pauseMenu.jpg");
+        render = new Render(this, "PauseMenu.png");
         //anything with sprites ruins unit tests, because libgdx was never designed to be unit tested, so this ugly stuff is what you get
         //until the next iteration when we centralize all sprite manipulation
-        setBounds(Render.getWidth()/2-1500/2, Render.getHeight()/2-750/2, 1500,750);
+        setBounds(Render.getWidth()/2-1800/2, Render.getHeight()/2-1275/2, 1800,1275);
 
     }
 
