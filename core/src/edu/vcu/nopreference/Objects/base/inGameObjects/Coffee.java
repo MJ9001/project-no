@@ -12,15 +12,15 @@ public class Coffee extends objectBase {
     public Coffee()
     {
         // Creates the renderer to draw the object at it's location
-        render = new Render(this, "coffeeasset1.jpg");
-        setBounds(Render.getWidth()+250, Render.getHeight() * rand.nextFloat() * 1f, 100, 200);
+        render = new Render(this, "coffee.png");
+        setBounds(Render.getWidth()+250, Render.getHeight() * rand.nextFloat() * 1f, 138, 180);
 
     }
 
     public Coffee(Platform platform) {
         // Creates the renderer to draw the object at it's location
-        render = new Render(this, "coffeeasset1.jpg");
-        setBounds(0, 0, 100, 200);
+        render = new Render(this, "coffee.png");
+        setBounds(0, 0, 138, 180);
         this.posX = platform.posX+250;
         this.posY = platform.posY + sprite.getHeight();
         speed = (int)platform.getPlatformSpeed();

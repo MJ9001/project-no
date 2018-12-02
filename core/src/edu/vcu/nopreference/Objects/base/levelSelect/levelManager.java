@@ -29,7 +29,7 @@ public class levelManager extends objectManager {
 
                 levelSelect level = new levelSelect(nextX, nextY, locked);
                 addObject(level);
-                levelSelectInner inner = level.constructInner("unlock.jpg");
+                levelSelectInner inner = level.constructInner("unlock.png");
                 addObject(inner);
 
                 nextX += startX;

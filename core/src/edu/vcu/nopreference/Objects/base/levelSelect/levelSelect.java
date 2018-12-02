@@ -20,7 +20,7 @@ public class levelSelect extends objectBase {
     //changes to the main game mechanics.
 
     public levelSelect(float posX, float posY, boolean unlocked/*, float speed*/){
-        render = new Render(this, "levelSelectOutline.jpg");
+        render = new Render(this, "levelSelectOutline.png");
         setBounds(posX, posY, 306, 306);
 
         //info used for drawing the inside of the level select icon

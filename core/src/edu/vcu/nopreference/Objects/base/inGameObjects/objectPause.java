@@ -16,7 +16,7 @@ public class objectPause extends objectBase {
     public objectPause() {
         super();
         //renders the pause icon in the top corner of the screen
-        render = new Render(this, "pause.jpg");
+        render = new Render(this, "pause.png");
 
         //0, the height of the screen, minus the height of the image
         setBounds(0, Render.getHeight() - 100, 100, 100);
