@@ -40,10 +40,31 @@ public class objectManager {
         objects.addAll(newObjects);
     }
 
-    public void drawObjects(SpriteBatch batch) {
-        for (objectBase obj : objects) {
-            obj.Draw(batch);
+    public void drawObjects(SpriteBatch batch) {//Items with a higher draw order are drawn last.
+        List<objectBase> tempObjects = new ArrayList<objectBase>();
+        tempObjects.addAll(objects);
+        List<objectBase> tbdObjects = new ArrayList<objectBase>();
+        int currDraw = 0;
+        int nextDraw = Integer.MAX_VALUE;
+        while(!tempObjects.isEmpty()) {
+            nextDraw = Integer.MAX_VALUE;
+            for (objectBase obj : tempObjects) {
+                if(obj.getDrawOrder() == currDraw) {
+                    obj.Draw(batch);
+                    tbdObjects.add(obj);
+                } else
+                if(nextDraw > obj.getDrawOrder())
+                {
+                    nextDraw = obj.getDrawOrder();
+                }
+            }
+            currDraw = nextDraw;
+            tempObjects.removeAll(tbdObjects);
+            System.out.println(tempObjects.size());
+            tbdObjects.clear();
         }
+        System.out.println("Drawing!");
+
     }
     public void initializeObjects()
     {
@@ -99,7 +120,7 @@ public class objectManager {
         int origY = y;
         y = Render.getHeight() - y;
 
-        for (objectBase obj : objects) {
+        /*for (objectBase obj : objects) {
             if (obj instanceof objectMenu || obj instanceof playButton) {
                 if (obj.sprite.getBoundingRectangle().contains(x, y))
                 {
@@ -107,7 +128,7 @@ public class objectManager {
                     return;
                 }
             }
-        }
+        }*/
 
         for (objectBase obj : objects) {
             if(!paused || obj instanceof objectPause) {

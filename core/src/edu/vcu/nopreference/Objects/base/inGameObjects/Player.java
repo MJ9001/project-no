@@ -18,6 +18,7 @@ public class Player extends objectBase {
         //sprite.setPosition(0,0);
         setBounds(100, 0, 200, 200);
         physics.setSolid(true);
+        setDrawOrder(10);
     }
 
     //makes it such that the players score decreases by 0.1 every tick

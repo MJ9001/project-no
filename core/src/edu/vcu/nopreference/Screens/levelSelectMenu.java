@@ -20,7 +20,7 @@ public class levelSelectMenu implements Screen{
 
         if (!Render.testing){
             batch = new SpriteBatch();
-        Gdx.input.setInputProcessor(new InputAdapter() {
+        Gdx.input.setInputProcessor( new InputAdapter() {
 
             @Override
             public boolean touchDown(int screenX, int screenY, int pointer, int button) {

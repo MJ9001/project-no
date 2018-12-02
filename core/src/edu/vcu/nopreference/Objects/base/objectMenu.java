@@ -20,7 +20,7 @@ public class objectMenu extends objectBase {//This is the pause menu for some re
     @Override
     protected void initializePhysics() {
         //line of code that prevents object from falling
-        GUIAsset=true;
+        GUIAsset = true;
         physics = new physicsGUI(this);
     }
 }

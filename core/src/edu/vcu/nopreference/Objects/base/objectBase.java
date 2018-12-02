@@ -18,8 +18,8 @@ public class objectBase {
     public boolean GUIAsset=false;
     public boolean toBeDeleted = false; //Set to true to be removed from game.
 
-    //float that determines what is drawn first, lowest to highest. by default the object is set to lowest
-    private int drawOrder = 999;
+    //lower draw the number the more background the object
+    private int drawOrder = 0;
 
     public Render render;
     public float posX = 0, posY = 0;

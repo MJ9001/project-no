@@ -38,7 +38,7 @@ public class physicsBase {
         if(collision == null)
             return;
         //if(!Render.testing) Gdx.app.log("Untitled", "Collided! X: " + collision.collidedX + " Y: " + collision.collidedY);
-        float percent = object.sprite.getBoundingRectangle().getHeight() * 0.4f;
+        float percent = object.sprite.getBoundingRectangle().getHeight() * 0.8f;
         if(collision.collidedY < percent && velocityY <=  0 && collision.isSolidCollision())
         {
             onGround = true;
