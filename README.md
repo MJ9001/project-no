@@ -3,7 +3,9 @@
 ## Iteration One:
 ### As a player in game, I want to be able to tap the screen to jump onto platforms, so that I can reach objectives and avoid obstacles.
 a) Given that I am in game moving towards a platform, when I tap the screen, then I should move upwards and then fall towards a platform, and when it looks like I should fall to rest on a platform, then I should land on that platform.
+
 b) Given that I am in game moving towards a platform, when I tap the screen, then I should move upwards and then fall towards a platform, and when it looks like I shouldn’t fall to rest on a platform, then I should fall back to the ground.
+
 c) Given that I am in game and a platform is above me, when I tap the screen, then I should move upwards and will land on the platform
 
 ### As a player, I want to be able to quickly pause the game while playing to quit.
