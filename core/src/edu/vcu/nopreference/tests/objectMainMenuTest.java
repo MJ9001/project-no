@@ -56,9 +56,10 @@ public class objectMainMenuTest {
         OMTest.logicTick();
 
         OMTest.onClick(50,50);//Click top left corner.
+        assertTrue(OMTest.paused);
         OMTest.logicTick();
 
-        OMTest.onClick(Render.getWidth()/2, Render.getHeight()/2);//Click top left corner.
+        OMTest.pauseMenu.returnBut.onPressed();//Click top left corner.
         assertTrue(Untitled.newScreen instanceof mainMenu);
 
     }
