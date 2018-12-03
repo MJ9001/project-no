@@ -18,7 +18,8 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class objectManager {
-
+    gameObject game;
+    backgroundManager background;
     public boolean paused = false;
     public final List<objectBase> objects = new ArrayList<objectBase>();
 
@@ -69,15 +70,16 @@ public class objectManager {
     }
     public void initializeObjects()
     {
-        Background background = new Background();
+        game = new gameObject();
+        background = new backgroundManager();
         addObject(background);
         Player player = new Player();
         player.setDrawOrder(100);
         addObject(player);
         addObject(player.getScoreObj());
-        addObject(new gameObject());
+        addObject(game);
         objectPause objPause = new objectPause();
-        objPause.setDrawOrder(2);
+        objPause.setDrawOrder(4);
         addObject(objPause);
         objectPauseMenu pauseMenu =  new objectPauseMenu();
         pauseMenu.render.setVisibility(false);
