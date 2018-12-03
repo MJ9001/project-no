@@ -74,7 +74,7 @@ public class objectBase {
     public void updatePosition()//Sets sprites position to local position
     {
         sprite.setPosition(posX, posY);
-        if(posX + sprite.getWidth() < -10)
+        if(posX + sprite.getWidth() < -200)
             toBeDeleted = true;
     }
     public void updateCollision()//Check collision
