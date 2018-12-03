@@ -23,10 +23,7 @@ public class returnButton extends objectMenu {
     public void onPressed() {
         //if the game is paused, you can interact with the menu
         if(manager.paused){
-            if(!Render.testing) {
-                inGame.music.dispose();
-                Untitled.newScreen = new mainMenu();
-            }
+            Untitled.newScreen = new mainMenu();
         }
     }
 }
