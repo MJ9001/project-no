@@ -19,7 +19,7 @@ public class  coffeeTest {
     //testing that if you are to fall into a coffee object, the object will be picked up and consumed
     @Test
     public void fallIntoCoffee() {
-        Render.testing = false;
+        Render.testing = true;
         objectManager tempOM = new objectManager();
         Platform tempPlat = new Platform();
         tempPlat.setPlatformSpeed(0);

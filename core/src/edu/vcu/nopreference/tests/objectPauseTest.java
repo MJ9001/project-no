@@ -45,7 +45,7 @@ public class objectPauseTest{
 
         OMTest.onClick(50,50);//Click topleft corner.
         assertTrue(OMTest.paused);
-        OMTest.onClick(50,50);//Click topleft corner.
+        OMTest.onClick(377,33);//Click topleft corner.
         assertFalse(OMTest.paused);
     }
 

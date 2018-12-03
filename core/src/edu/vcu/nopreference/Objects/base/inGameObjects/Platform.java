@@ -43,7 +43,7 @@ public class Platform extends objectBase {
     public void update() {
         posX -= PLATFORM_SPEED;
         updatePosition();
-        if(!coffeeCreated && manager != null && (coffeeSpawnFloat>coffeeSpawnChance))
+        if(!coffeeCreated && manager != null)
         {
             Coffee coffee = new Coffee(this);
             manager.addObject(coffee);
