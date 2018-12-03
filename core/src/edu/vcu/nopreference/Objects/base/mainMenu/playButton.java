@@ -14,7 +14,7 @@ public class playButton extends objectBase {
 
     public playButton(){
         render = new Render(this, "Start_button.png");
-        setBounds((render.getScreenSizeX()-700)/2, (render.getScreenSizeY()-700)/2-300, 700,700);
+        setBounds((render.getScreenSizeX()-700)/2, (render.getScreenSizeY()/15), 700,700);
     }
 
     @Override
