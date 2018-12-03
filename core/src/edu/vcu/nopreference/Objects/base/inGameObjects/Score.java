@@ -41,7 +41,7 @@ public class Score extends objectBase {
     //we could add different types of damage dealers, pass an int value to this and then switch statement
     //such that different amounts of damage is done.
     public void takeDamage(){
-        score-=5;
+        score-=50;
     }
 
     public void getCoffee(){
