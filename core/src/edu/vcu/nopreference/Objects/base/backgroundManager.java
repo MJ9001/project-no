@@ -53,7 +53,6 @@ public class backgroundManager extends objectBase{
         }
         if(firstOne.getPosX() < (20 - render.getScreenSizeX())){
             firstOne.setBounds(render.getScreenSizeX(),0, render.getScreenSizeX(), render.getScreenSizeY()/8.5f);
-            System.out.println("waaaaaaaaaaaat");
         }
         if(firstTwo.getPosX() < (20 - render.getScreenSizeX())){
             firstTwo.setBounds(render.getScreenSizeX(), 0, render.getScreenSizeX(), (render.getScreenSizeY()/8.5f));

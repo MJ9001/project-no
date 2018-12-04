@@ -83,7 +83,7 @@ public class objectBase {
     }
 
     public void updateSpeed(float modifier){
-        speedValue = speedValue * modifier;
+        speedValue = originalSpeed * modifier;
         speedModifier = modifier;
     }
 

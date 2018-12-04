@@ -24,6 +24,12 @@ public class Score extends objectBase {
         if(score < 0){score=0;}
         scorePercentage = score/ MAX_SCORE;
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255*scorePercentage, 128);
+        if(scorePercentage>0.8){
+            manager.modifySpeed(1.25f);
+        }
+        else{
+            manager.resetSpeed();
+        }
     }
 
     public float getScore(){
