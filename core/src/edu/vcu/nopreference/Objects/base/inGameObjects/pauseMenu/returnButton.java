@@ -2,6 +2,7 @@ package edu.vcu.nopreference.Objects.base.inGameObjects.pauseMenu;
 
 import edu.vcu.nopreference.Objects.base.objectMenu;
 import edu.vcu.nopreference.Objects.renders.Render;
+import edu.vcu.nopreference.Screens.gameOverScreen;
 import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Screens.mainMenu;
 import edu.vcu.nopreference.Untitled;
@@ -22,7 +23,7 @@ public class returnButton extends objectMenu {
     @Override
     public void onPressed() {
         //if the game is paused, you can interact with the menu
-        if(manager.paused){
+        if(manager.paused || Untitled.newScreen instanceof gameOverScreen){
             if(!render.testing){
                 inGame.music.dispose();
             }

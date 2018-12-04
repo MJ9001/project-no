@@ -20,7 +20,6 @@ public class backgroundManager extends objectBase{
     }
 
     private boolean firstTick = true;
-    //(-1*render.getScreenSizeX())
     @Override
     public void update() {
         if (firstTick) {
