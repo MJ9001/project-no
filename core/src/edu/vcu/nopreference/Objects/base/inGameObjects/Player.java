@@ -60,7 +60,16 @@ public class Player extends objectBase {
                 takingDamage=false;
             }
         }
+
+
+
+
+
+
+
+
         physics.tick();
+
     }
 
     @Override

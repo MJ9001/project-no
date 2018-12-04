@@ -32,6 +32,8 @@ public class Score extends objectBase {
         }
         scorePercentage = score/ MAX_SCORE;
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255*scorePercentage, 128);
+
+        //coffee run
         if(scorePercentage>0.8){
             manager.modifySpeed(1.25f);
         }
