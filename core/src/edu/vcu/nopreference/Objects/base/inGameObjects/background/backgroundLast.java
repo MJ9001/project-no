@@ -1,4 +1,4 @@
-package edu.vcu.nopreference.Objects.base.inGameObjects;
+package edu.vcu.nopreference.Objects.base.inGameObjects.background;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.renders.Render;

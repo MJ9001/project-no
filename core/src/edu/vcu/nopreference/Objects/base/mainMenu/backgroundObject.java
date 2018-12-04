@@ -1,8 +1,9 @@
-package edu.vcu.nopreference.Objects.base;
+package edu.vcu.nopreference.Objects.base.mainMenu;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsGUI;
 import edu.vcu.nopreference.Objects.renders.Render;
 

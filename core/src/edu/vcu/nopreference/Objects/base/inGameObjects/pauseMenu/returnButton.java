@@ -1,4 +1,4 @@
-package edu.vcu.nopreference.Objects.base.inGameObjects;
+package edu.vcu.nopreference.Objects.base.inGameObjects.pauseMenu;
 
 import edu.vcu.nopreference.Objects.base.objectMenu;
 import edu.vcu.nopreference.Objects.renders.Render;
@@ -23,6 +23,9 @@ public class returnButton extends objectMenu {
     public void onPressed() {
         //if the game is paused, you can interact with the menu
         if(manager.paused){
+            if(!render.testing){
+                inGame.music.dispose();
+            }
             Untitled.newScreen = new mainMenu();
         }
     }

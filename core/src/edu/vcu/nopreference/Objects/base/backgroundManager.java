@@ -2,9 +2,9 @@ package edu.vcu.nopreference.Objects.base;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import edu.vcu.nopreference.Objects.base.inGameObjects.backgroundFirst;
-import edu.vcu.nopreference.Objects.base.inGameObjects.backgroundLast;
-import edu.vcu.nopreference.Objects.base.inGameObjects.backgroundMid;
+import edu.vcu.nopreference.Objects.base.inGameObjects.background.backgroundFirst;
+import edu.vcu.nopreference.Objects.base.inGameObjects.background.backgroundLast;
+import edu.vcu.nopreference.Objects.base.inGameObjects.background.backgroundMid;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class backgroundManager extends objectBase{

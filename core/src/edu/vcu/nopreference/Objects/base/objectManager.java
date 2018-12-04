@@ -5,11 +5,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.vcu.nopreference.Objects.base.inGameObjects.Background;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
-import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
-import edu.vcu.nopreference.Objects.base.inGameObjects.objectPauseMenu;
-import edu.vcu.nopreference.Objects.base.mainMenu.playButton;
+import edu.vcu.nopreference.Objects.base.inGameObjects.pauseMenu.objectPause;
+import edu.vcu.nopreference.Objects.base.inGameObjects.pauseMenu.objectPauseMenu;
 import edu.vcu.nopreference.Objects.physics.Collision;
 import edu.vcu.nopreference.Objects.renders.Render;
 
