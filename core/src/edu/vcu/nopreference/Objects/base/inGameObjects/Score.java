@@ -2,6 +2,9 @@ package edu.vcu.nopreference.Objects.base.inGameObjects;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.renders.Render;
+import edu.vcu.nopreference.Screens.gameOverScreen;
+import edu.vcu.nopreference.Screens.inGame;
+import edu.vcu.nopreference.Untitled;
 
 public class Score extends objectBase {
     private final static float MAX_SCORE   = 255;
@@ -21,9 +24,20 @@ public class Score extends objectBase {
     @Override
     public void update() {
         score -= SCORE_DECAY;
-        if(score < 0){score=0;}
+        if(score < 0){
+            if(!render.testing){
+                inGame.music.dispose();
+            }
+            Untitled.newScreen = new gameOverScreen();
+        }
         scorePercentage = score/ MAX_SCORE;
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255*scorePercentage, 128);
+        if(scorePercentage>0.8){
+            manager.modifySpeed(1.25f);
+        }
+        else{
+            manager.resetSpeed();
+        }
     }
 
     public float getScore(){

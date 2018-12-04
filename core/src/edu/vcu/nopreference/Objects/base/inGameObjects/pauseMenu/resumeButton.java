@@ -1,4 +1,4 @@
-package edu.vcu.nopreference.Objects.base.inGameObjects;
+package edu.vcu.nopreference.Objects.base.inGameObjects.pauseMenu;
 
 import edu.vcu.nopreference.Objects.base.objectMenu;
 import edu.vcu.nopreference.Objects.renders.Render;

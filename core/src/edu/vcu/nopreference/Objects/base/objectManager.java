@@ -5,11 +5,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.vcu.nopreference.Objects.base.inGameObjects.Background;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
-import edu.vcu.nopreference.Objects.base.inGameObjects.objectPause;
-import edu.vcu.nopreference.Objects.base.inGameObjects.objectPauseMenu;
-import edu.vcu.nopreference.Objects.base.mainMenu.playButton;
+import edu.vcu.nopreference.Objects.base.inGameObjects.pauseMenu.objectPause;
+import edu.vcu.nopreference.Objects.base.inGameObjects.pauseMenu.objectPauseMenu;
 import edu.vcu.nopreference.Objects.physics.Collision;
 import edu.vcu.nopreference.Objects.renders.Render;
 
@@ -71,6 +69,7 @@ public class objectManager {
     }
     public void initializeObjects()
     {
+        objectBase.speedModifier = 1f;
         game = new gameObject();
         background = new backgroundManager();
         addObject(background);
@@ -157,6 +156,18 @@ public class objectManager {
         }
 
         return null;
+    }
+
+    public void modifySpeed(float modifier){
+        for(objectBase obj : objects){
+            obj.updateSpeed(modifier);
+        }
+    }
+
+    public void resetSpeed(){
+        for(objectBase obj : objects){
+            obj.resetSpeed();
+        }
     }
 
     //This method is a mess, we'll have to fix it up later. --Mark

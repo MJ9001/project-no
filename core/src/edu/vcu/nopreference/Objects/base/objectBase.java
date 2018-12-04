@@ -17,6 +17,10 @@ public class objectBase {
     public boolean visible=true;
     public boolean GUIAsset=false;
     public boolean toBeDeleted = false; //Set to true to be removed from game.
+    //variables used to set initial speed
+    public static float speedModifier;//MUST SET IN objectManager.initializeObjects() OTHERWISE PROGRAM BREAKS
+    public float speedValue=(50f * speedModifier);
+    public float originalSpeed=50f;
 
     //lower draw the number the more background the object
     private int drawOrder = 0;
@@ -77,6 +81,17 @@ public class objectBase {
         if(posX + sprite.getWidth() < -200)
             toBeDeleted = true;
     }
+
+    public void updateSpeed(float modifier){
+        speedValue = originalSpeed * modifier;
+        speedModifier = modifier;
+    }
+
+    public void resetSpeed(){
+        speedValue = originalSpeed;
+        speedModifier = 1f;
+    }
+
     public void updateCollision()//Check collision
     {
         physics.onCollision(manager.checkCollision(this));

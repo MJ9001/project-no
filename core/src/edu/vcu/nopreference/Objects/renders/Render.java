@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import edu.vcu.nopreference.Objects.base.backgroundObject;
+import edu.vcu.nopreference.Objects.base.mainMenu.backgroundObject;
 import edu.vcu.nopreference.Objects.base.objectBase;
 
 /**

@@ -2,9 +2,9 @@ package edu.vcu.nopreference.Objects.base;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import edu.vcu.nopreference.Objects.base.inGameObjects.backgroundFirst;
-import edu.vcu.nopreference.Objects.base.inGameObjects.backgroundLast;
-import edu.vcu.nopreference.Objects.base.inGameObjects.backgroundMid;
+import edu.vcu.nopreference.Objects.base.inGameObjects.background.backgroundFirst;
+import edu.vcu.nopreference.Objects.base.inGameObjects.background.backgroundLast;
+import edu.vcu.nopreference.Objects.base.inGameObjects.background.backgroundMid;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class backgroundManager extends objectBase{
@@ -20,7 +20,6 @@ public class backgroundManager extends objectBase{
     }
 
     private boolean firstTick = true;
-    //(-1*render.getScreenSizeX())
     @Override
     public void update() {
         if (firstTick) {
@@ -53,7 +52,6 @@ public class backgroundManager extends objectBase{
         }
         if(firstOne.getPosX() < (20 - render.getScreenSizeX())){
             firstOne.setBounds(render.getScreenSizeX(),0, render.getScreenSizeX(), render.getScreenSizeY()/8.5f);
-            System.out.println("waaaaaaaaaaaat");
         }
         if(firstTwo.getPosX() < (20 - render.getScreenSizeX())){
             firstTwo.setBounds(render.getScreenSizeX(), 0, render.getScreenSizeX(), (render.getScreenSizeY()/8.5f));

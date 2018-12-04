@@ -1,10 +1,10 @@
-package edu.vcu.nopreference.Objects.base.inGameObjects;
+package edu.vcu.nopreference.Objects.base.inGameObjects.background;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class backgroundFirst extends objectBase {
-    private float PARALAX_SPEED=50;
+    //private float PARALAX_SPEED=50;
 
     public backgroundFirst(){
         render = new Render(this, "ground.png");
@@ -22,7 +22,7 @@ public class backgroundFirst extends objectBase {
     }
     @Override
     public void update(){
-        posX-=PARALAX_SPEED;
+        posX-=speedValue;
         updatePosition();
     }
 

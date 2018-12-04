@@ -3,48 +3,37 @@ package edu.vcu.nopreference.Screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import edu.vcu.nopreference.Objects.base.mainMenu.backgroundObject;
+import edu.vcu.nopreference.Objects.base.inGameObjects.gameOverBackground;
+import edu.vcu.nopreference.Objects.base.inGameObjects.pauseMenu.returnButton;
 import edu.vcu.nopreference.Objects.base.objectManager;
-import edu.vcu.nopreference.Objects.base.mainMenu.playButton;
 import edu.vcu.nopreference.Objects.renders.Render;
 
-public class mainMenu implements Screen
-{
+public class gameOverScreen implements Screen {
     public static boolean hidden;
     private SpriteBatch batch;
     //render for controlling libgdx
     private final Render render = new Render();
     //manager for all sprites, backgrounds and buttons
     public final objectManager objectman = new objectManager();
-    public static Music music;
 
-
-
-
-    public mainMenu()
-    {
+    public gameOverScreen(){
         if(!Render.testing)
             initalizeGdxStuff();
-        playButton play = new playButton();
-        //setting up variables to be used
+        returnButton mainMenuReturn = new returnButton(render.getScreenSizeX()/2);
+        mainMenuReturn.toggleVis();
+        gameOverBackground background = new gameOverBackground();
         hidden = false;
-        //creating menu as a texture
-        backgroundObject background = new backgroundObject();
+        objectman.addObject(mainMenuReturn);
         objectman.addObject(background);
-        objectman.addObject(play);
         objectman.updateList();
-
     }
 
     private void initalizeGdxStuff()
     {
         //setting up batch to draw sprites
         batch = new SpriteBatch();
-        music = Gdx.audio.newMusic(Gdx.files.internal("songIntro.wav"));
-        music.play();
 
         Gdx.input.setInputProcessor(new InputAdapter(){
 
@@ -57,6 +46,7 @@ public class mainMenu implements Screen
 
         });
     }
+
     @Override
     public void show() {
         hidden = false;
@@ -65,7 +55,6 @@ public class mainMenu implements Screen
     @Override
     public void render(float delta)
     {
-        //if the screen is hidden, then no render will occur.
         if(hidden) return;
         //using batch to draw the assets
 
@@ -99,14 +88,5 @@ public class mainMenu implements Screen
     @Override
     public void dispose() {
 
-    }
-
-    public boolean isShown() {
-        return hidden;
-    }
-
-
-    public void fakePress(){
-        hidden = true;
     }
 }

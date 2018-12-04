@@ -32,7 +32,7 @@ public class Coffee extends objectBase {
     // The updates that happen per tick. Update() is called by the object manager.
     public void update()
     {
-        posX -= speed;
+        posX -= speedValue;
         updatePosition();
     }
 
