@@ -41,7 +41,7 @@ public class Platform extends objectBase {
     @Override
     // The updates that happen per tick. Update() is called by the object manager.
     public void update() {
-        posX -= PLATFORM_SPEED;
+        posX -= speedValue;
         updatePosition();
         if(!coffeeCreated && manager != null)
         {
