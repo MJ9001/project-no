@@ -98,4 +98,6 @@ Unused property "target=android-19" is for another IDE. It is left in case someo
 ### Spelling
 All Spelling Errors are intended (probably). Usually, either words are connected or words are not in dictionary.
 
+## Test Notes
+powerUp test works within its own file but seems to be incompatible with certain elements of other test. Run file on its own.
 
