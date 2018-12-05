@@ -20,7 +20,7 @@ public class obstacleTest {
         Render.testing = true;
         objectManager tempOM = new objectManager();
         Obstacle tempObs = new Obstacle();
-        tempObs.setObstacleSpeed(0);
+        tempObs.speedValue = 0;
         tempOM.addObject(tempObs);
         tempObs.posX = 500;
         tempObs.posY = 100;

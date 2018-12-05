@@ -9,7 +9,7 @@ import edu.vcu.nopreference.Objects.renders.Render;
 
     public class CoffeePowerUp extends objectBase {
         private static final Random rand = new Random();
-        private int speed = 50;
+        // private int speed = 50;
 
         public CoffeePowerUp()
         {
@@ -18,13 +18,13 @@ import edu.vcu.nopreference.Objects.renders.Render;
             setBounds(Render.getWidth()+250, Render.getHeight() * rand.nextFloat() * 1f, 138, 180);
         }
 
-        public CoffeePowerUp(Platform platform) {
+        CoffeePowerUp(Platform platform) {
             // Creates the renderer to draw the object at it's location
             render = new Render(this, "powerup2.png");
             setBounds(0, 0, 138, 180);
             this.posX = platform.posX+250;
             this.posY = platform.posY + sprite.getHeight();
-            speed = (int)platform.getPlatformSpeed();
+            // speed = (int)platform.getPlatformSpeed();
             updatePosition();
             setDrawOrder(5);
         }

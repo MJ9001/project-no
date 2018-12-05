@@ -10,7 +10,7 @@ import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Obstacle extends objectBase {
     private static Random rand = new Random();
-    private float OBSTACLE_SPEED = 50;
+
 
     public Obstacle(){
         render = new Render(this, "obstacletrash.png");
@@ -18,7 +18,7 @@ public class Obstacle extends objectBase {
         setDrawOrder(5);
     }
 
-    public void setObstacleSpeed(float speed) { OBSTACLE_SPEED = speed; }
+
     @Override
     // The updates that happen per tick. Update() is called by the object manager.
     public void update() {

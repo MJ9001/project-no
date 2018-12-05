@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Coffee extends objectBase {
     private static final Random rand = new Random();
-    private int speed = 50;
+    // private int speed = 50;
     public Coffee()
     {
         // Creates the renderer to draw the object at it's location
@@ -22,7 +22,7 @@ public class Coffee extends objectBase {
         setBounds(0, 0, 138, 180);
         this.posX = platform.posX+250;
         this.posY = platform.posY + sprite.getHeight();
-        speed = (int)platform.getPlatformSpeed();
+        // speed = (int)platform.getPlatformSpeed();
         updatePosition();
         setDrawOrder(5);
     }
