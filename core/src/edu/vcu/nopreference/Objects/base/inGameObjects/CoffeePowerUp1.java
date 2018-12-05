@@ -7,18 +7,18 @@ import edu.vcu.nopreference.Objects.physics.physicsCoffee;
 import edu.vcu.nopreference.Objects.physics.physicsPowerUp;
 import edu.vcu.nopreference.Objects.renders.Render;
 
-    public class CoffeePowerup extends objectBase {
+    public class CoffeePowerUp1 extends objectBase {
         private static final Random rand = new Random();
         private int speed = 50;
 
-        public CoffeePowerup()
+        public CoffeePowerUp1()
         {
             // Creates the renderer to draw the object at it's location
             render = new Render(this, "powerup2.png");
             setBounds(Render.getWidth()+250, Render.getHeight() * rand.nextFloat() * 1f, 138, 180);
         }
 
-        public CoffeePowerup(Platform platform) {
+        public CoffeePowerUp1(Platform platform) {
             // Creates the renderer to draw the object at it's location
             render = new Render(this, "powerup2.png");
             setBounds(0, 0, 138, 180);
@@ -38,7 +38,7 @@ import edu.vcu.nopreference.Objects.renders.Render;
             //System.out.println("ticks: " + ticks);
         }
 
-        public void coffeePowerupGrabbed()
+        public void CoffeePowerUp1Grabbed()
         {
             Player.poweredUp = true;
             toBeDeleted = true;
