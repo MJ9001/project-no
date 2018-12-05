@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import edu.vcu.nopreference.Objects.base.inGameObjects.Obstacle;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
-import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Score;

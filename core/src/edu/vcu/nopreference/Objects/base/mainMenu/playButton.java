@@ -1,6 +1,5 @@
 package edu.vcu.nopreference.Objects.base.mainMenu;
 
-import javax.swing.Renderer;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsGUI;

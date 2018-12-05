@@ -3,7 +3,6 @@ package edu.vcu.nopreference.Objects.base.inGameObjects;
 import java.util.Random;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
-import edu.vcu.nopreference.Objects.physics.physicsCoffee;
 import edu.vcu.nopreference.Objects.physics.physicsPowerUp;
 import edu.vcu.nopreference.Objects.renders.Render;
 
