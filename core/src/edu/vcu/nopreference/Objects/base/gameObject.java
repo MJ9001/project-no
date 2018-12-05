@@ -11,7 +11,7 @@ import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
  */
 
 public class gameObject extends objectBase{
-    private Player player;
+    private final Player player;
 
     gameObject(Player player_) {
         player = player_;

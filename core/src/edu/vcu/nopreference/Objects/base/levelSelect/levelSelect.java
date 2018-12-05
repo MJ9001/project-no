@@ -7,7 +7,7 @@ import edu.vcu.nopreference.Screens.inGame;
 import edu.vcu.nopreference.Untitled;
 
 public class levelSelect extends objectBase {
-    private boolean levelUnlocked;
+    private final boolean levelUnlocked;
     private final float insideX;
     private final float insideY;
 

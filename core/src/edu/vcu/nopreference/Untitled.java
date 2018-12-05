@@ -6,7 +6,6 @@ import com.badlogic.gdx.Screen;
 import edu.vcu.nopreference.Screens.*;
 
 public class Untitled extends Game {
-	private Screen activeScreen;
 	public static Screen newScreen;
 	@Override
 	public void create () {
@@ -15,10 +14,7 @@ public class Untitled extends Game {
 	@Override
 	public void render ()
 	{
-		if(activeScreen != newScreen)
-		{
-			setScreen(newScreen);
-		}
+		setScreen(newScreen);
 		super.render();
 	}
 

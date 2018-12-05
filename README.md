@@ -88,9 +88,11 @@ c) Given that I am on a platform, and I fall from the platform, the next platfor
 Basically, Google wants us to use newer versions of the API, but our project uses older versions, so we say, "no!"
 ### Java
 #### Class Structure
-Even though these could be local variables, it makes sense to explicitly keep track of the game and background in the object manager for direct access.
+The collision class has a lot of unused functionality that we've decided to keep.
+#### Declaration Redundancy
+Again, the collision class has a lot of unused functionality that we've decided to keep.
 #### Probable Bugs
-IDEA Annotations are temperamental.
+IDEA Annotations are temperamental. I've tried to resolve it, but it will not comply.
 ### Properties Files
 Unused property "target=android-19" is for another IDE. It is left in case someone decides to use that IDE.
 ### Spelling
