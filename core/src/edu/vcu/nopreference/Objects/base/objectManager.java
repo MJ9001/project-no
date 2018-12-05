@@ -43,11 +43,11 @@ public class objectManager {
     }
 
     public void drawObjects(SpriteBatch batch) {//Items with a higher draw order are drawn last.
-        List<objectBase> tempObjects = new ArrayList<objectBase>();
-        tempObjects.addAll(objects);
+        List<objectBase> tempObjects = new ArrayList<objectBase>(objects);
+        // tempObjects.addAll(objects);
         List<objectBase> tbdObjects = new ArrayList<objectBase>();
         int currDraw = 0;
-        int nextDraw = Integer.MAX_VALUE;
+        int nextDraw;
         while(!tempObjects.isEmpty()) {
             nextDraw = Integer.MAX_VALUE;
             for (objectBase obj : tempObjects) {
