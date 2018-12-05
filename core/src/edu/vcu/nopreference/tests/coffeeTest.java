@@ -22,6 +22,7 @@ public class  coffeeTest {
         Render.testing = true;
         objectManager tempOM = new objectManager();
         Platform tempPlat = new Platform();
+        tempPlat.powerUpSpawnChance = 0;
         tempPlat.setPlatformSpeed(0);
         tempOM.addObject(tempPlat);
         tempPlat.posX = 500;
