@@ -16,11 +16,11 @@ public class objectBase {
     public physicsBase physics;
     public boolean visible=true;
     public boolean GUIAsset=false;
-    public boolean toBeDeleted = false; //Set to true to be removed from game.
+    protected boolean toBeDeleted = false; //Set to true to be removed from game.
     //variables used to set initial speed
     public static float speedModifier;//MUST SET IN objectManager.initializeObjects() OTHERWISE PROGRAM BREAKS
     public float speedValue=(50f * speedModifier);
-    public float originalSpeed=50f;
+    protected float originalSpeed=50f;
 
     //lower draw the number the more background the object
     private int drawOrder = 0;

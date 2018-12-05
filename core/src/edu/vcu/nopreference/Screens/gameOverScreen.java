@@ -11,12 +11,12 @@ import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class gameOverScreen implements Screen {
-    public static boolean hidden;
+    private static boolean hidden;
     private SpriteBatch batch;
     //render for controlling libgdx
     private final Render render = new Render();
     //manager for all sprites, backgrounds and buttons
-    public final objectManager objectman = new objectManager();
+    private final objectManager objectman = new objectManager();
 
     public gameOverScreen(){
         if(!Render.testing)

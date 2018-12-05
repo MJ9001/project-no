@@ -12,7 +12,7 @@ public class physicsBase {
 
     final objectBase object;
     boolean onGround = false;
-    boolean solid = false;
+    private boolean solid = false;
     public float velocityY = 0;
     public physicsBase(objectBase object)
     {

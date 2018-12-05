@@ -18,7 +18,7 @@ public class Platform extends objectBase {
     private boolean coffeeCreated = false;
     float coffeeSpawnChance = 0.5f;
     public float powerUpSpawnChance = 0.9f;
-    float coffeeSpawnFloat;
+    private float coffeeSpawnFloat;
 
     public void   setPlatformSpeed(float speed) { PLATFORM_SPEED = speed; }
     public float  getPlatformSpeed()          { return  PLATFORM_SPEED; }

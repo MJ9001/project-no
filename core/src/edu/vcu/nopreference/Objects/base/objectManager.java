@@ -16,8 +16,8 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class objectManager {
-    gameObject game;
-    backgroundManager background;
+    private gameObject game;
+    private backgroundManager background;
     public Player player;
     public objectPauseMenu pauseMenu;
     public boolean paused = false;

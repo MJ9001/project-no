@@ -8,14 +8,14 @@ import edu.vcu.nopreference.Objects.base.inGameObjects.background.backgroundMid;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class backgroundManager extends objectBase{
-    backgroundLast lastOne;
-    backgroundLast lastTwo;
-    backgroundFirst firstOne;
-    backgroundFirst firstTwo;
-    backgroundMid midOne;
-    backgroundMid midTwo;
+    private backgroundLast lastOne;
+    private backgroundLast lastTwo;
+    private backgroundFirst firstOne;
+    private backgroundFirst firstTwo;
+    private backgroundMid midOne;
+    private backgroundMid midTwo;
 
-    public backgroundManager(){
+    backgroundManager(){
         render = new Render();
     }
 
