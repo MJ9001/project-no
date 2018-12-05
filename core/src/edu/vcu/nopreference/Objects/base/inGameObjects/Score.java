@@ -26,7 +26,7 @@ public class Score extends objectBase {
     public void update() {
         score -= SCORE_DECAY;
         if(score < 0){
-            if(!render.testing){
+            if(!Render.testing){
                 inGame.music.dispose();
             }
             Untitled.newScreen = new gameOverScreen();

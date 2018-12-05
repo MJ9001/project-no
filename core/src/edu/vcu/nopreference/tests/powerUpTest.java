@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import edu.vcu.nopreference.Objects.base.inGameObjects.CoffeePowerUp;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Obstacle;
+import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Score;
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.base.objectManager;
@@ -94,9 +95,9 @@ public class powerUpTest {
         int i=0;
         while(50>i++){
             tempOM.logicTick();
-            assertTrue(tempOM.player.poweredUp);
+            assertTrue(Player.poweredUp);
         }
         tempOM.logicTick();
-        assertTrue(!(tempOM.player.poweredUp));
+        assertTrue(!(Player.poweredUp));
     }
 }
