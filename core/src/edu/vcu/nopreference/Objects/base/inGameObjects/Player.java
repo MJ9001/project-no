@@ -76,7 +76,7 @@ public class Player extends objectBase {
     }
 
     @Override
-    public void onClick(int x, int y)
+    public void onClick()
     {
         physics.Jump(score.getModifier());
     }

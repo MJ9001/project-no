@@ -9,7 +9,6 @@ import edu.vcu.nopreference.Objects.renders.Render;
 //this class is hacky
 
 public class Obstacle extends objectBase {
-    private static Random rand = new Random();
 
 
     public Obstacle(){

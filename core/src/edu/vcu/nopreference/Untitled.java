@@ -22,18 +22,9 @@ public class Untitled extends Game {
 		}
 		super.render();
 	}
-	public void setActiveScreen()
-	{
-		Gdx.app.log("Untitled", "Setting screen to " + newScreen.toString());
-		activeScreen = newScreen;
-		this.setScreen(newScreen);
-	}
 
-	@Override
+    @Override
 	public void dispose () {
 	}
 
-	public Screen getActiveScreen(){
-		return activeScreen;
-	}
 }

@@ -142,7 +142,7 @@ public class objectManager {
                 if (obj.sprite.getBoundingRectangle().contains(x, y)) {
                     obj.onPressed();
                 }
-                obj.onClick(x, y);
+                obj.onClick();
             }
         }
     }

@@ -33,23 +33,16 @@ public class objectBase {
         initializePhysics();
     }
 
-    public objectBase(int setDrawNum){
-        drawOrder=setDrawNum;
-        initializePhysics();
-    }
     protected void initializePhysics()
     {
         physics = new physicsBase(this);
     }
-    objectBase(Render r)
-    {
 
-    }
     public void Draw(SpriteBatch batch) {
         render.draw(batch);
     }
 
-    public void onClick(int x, int y)
+    public void onClick()
     {
 
     }
@@ -62,17 +55,6 @@ public class objectBase {
         physics.tick();
         //posX+= 0.01f;
         //updatePosition();
-    }
-
-    public void setPosX(float posX_) {
-        posX = posX_;
-    }
-    public void setPosY(float posY_) {
-        posY = posY_;
-    }
-    public void setPosition(float posX_, float posY_) {   // Setter for setting X and Y position at the same time.
-        posX = posX_;
-        posY = posY_;
     }
 
     public void updatePosition()//Sets sprites position to local position

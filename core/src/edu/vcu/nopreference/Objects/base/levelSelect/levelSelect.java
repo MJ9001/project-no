@@ -10,7 +10,6 @@ public class levelSelect extends objectBase {
     private boolean levelUnlocked;
     private final float insideX;
     private final float insideY;
-    float speedModifier;
 
     //level select will eventually have modifiers and possible different textures stored for each one,
     //which in turn will be passed via the constructor from the levelManager class. Once
@@ -29,28 +28,10 @@ public class levelSelect extends objectBase {
         levelUnlocked = unlocked;
     }
 
-    //methods used to lock and unlock levels, will be used in levelManager
-    public void levelLocked(){
-        levelUnlocked = false;
-    }
-
-    public void levelUnlocked(){
-        levelUnlocked = true;
-    }
-
     public boolean getUnlocked(){ return levelUnlocked;}
 
     public levelSelectInner constructInner(String innerAsset){
         return new levelSelectInner(innerAsset, insideX, insideY, this);
-    }
-
-    //methods used for getting the inside bounds of each level select
-    public float getInsideX(){
-        return insideX;
-    }
-
-    public float getInsideY(){
-        return insideY;
     }
 
     //prevents the object from being affected by gravity and collisions

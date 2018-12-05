@@ -4,7 +4,6 @@ import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class backgroundMid extends objectBase {
-    private float PARALLAX_SPEED=20;
 
     public backgroundMid(){
         render = new Render(this, "bgbuildings.png");

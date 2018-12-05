@@ -29,18 +29,6 @@ public class Collision {
         return object2;
     }
 
-    public float getCollidedX() {
-        return collidedX;
-    }
-
-    public float getCollidedY() {
-        return collidedY;
-    }
-    public boolean getCollided()
-    {
-        return collided;
-    }
-
     public boolean isSolidCollision()
     {
         return object1.physics.isSolid() && object2.physics.isSolid();

@@ -51,10 +51,6 @@ public class Score extends objectBase {
     }
 
 
-    public float getMaxScore(){
-        return MAX_SCORE;
-    }
-
     public float getModifier(){
         return scorePercentage;
     }
@@ -63,10 +59,6 @@ public class Score extends objectBase {
     //such that different amounts of damage is done.
     public void takeDamage(){
         score-=50;
-    }
-
-    public void getCoffee(){
-        score +=15;
     }
 
     @Override

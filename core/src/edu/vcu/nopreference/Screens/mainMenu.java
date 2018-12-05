@@ -101,12 +101,5 @@ public class mainMenu implements Screen
 
     }
 
-    public boolean isShown() {
-        return hidden;
-    }
 
-
-    public void fakePress(){
-        hidden = true;
-    }
 }

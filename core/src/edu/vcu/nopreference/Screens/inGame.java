@@ -21,10 +21,6 @@ public class inGame implements Screen {
     //private final boolean hidden;
     //the objectManager is the object that manages other objects, and draws them on the screen.
     private final objectManager objectMan = new objectManager();
-    //player object
-    public Player player;
-    //game object
-    gameObject game;
     //current time
     private long cTime = System.currentTimeMillis();
     //fps average
