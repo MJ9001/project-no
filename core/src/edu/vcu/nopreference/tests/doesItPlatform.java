@@ -63,7 +63,7 @@ public class doesItPlatform {
 
     /* Scenario: Given that I am in game moving towards a platform, when I tap the screen, then I
     should move upwards and then fall towards a platform, and when it looks like I
-    shouldn’t fall to rest on a platform, then I should fall back to the ground. */
+    should not fall to rest on a platform, then I should fall back to the ground. */
     @Test
     public void canIMiss() {
         Render.testing = true;

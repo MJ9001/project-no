@@ -4,7 +4,7 @@ import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 public class Background extends objectBase {
-    private float PARALAX_SPEED=10;
+    private float PARALLAX_SPEED=10;
 
     public Background(){
         render = new Render(this, "background.png");
