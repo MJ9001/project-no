@@ -48,11 +48,11 @@ public class physicsBase {
         }
     }
 
-    public void Jump(float speed)
+    public void Jump(float modifier)
     {
         if(onGround)
         {
-            velocityY = JUMP_VELOCITY + (speed * JUMP_VARIATION) - JUMP_VARIATION;
+            velocityY = JUMP_VELOCITY + (modifier * JUMP_VARIATION) - JUMP_VARIATION;
             onGround = false;
         }
     }
