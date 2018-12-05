@@ -1,15 +1,11 @@
 package edu.vcu.nopreference.tests;
 
 import org.junit.Test;
-
-import edu.vcu.nopreference.Objects.base.inGameObjects.Platform;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
 import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Screens.gameOverScreen;
 import edu.vcu.nopreference.Untitled;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class gameoverTest {
