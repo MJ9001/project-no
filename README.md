@@ -57,7 +57,7 @@ c) Given there is an obstacle, when the player falls into the obstacle, then the
 
 ## Iteration 3:
 
-###As a player, I want to be able to be able to die, so that the game can end.
+### As a player, I want to be able to be able to die, so that the game can end.
 
 a) Given I am in game and at high enough coffee, when I take damage but not enough to die, then I should continue playing.
 
