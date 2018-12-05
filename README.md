@@ -83,9 +83,15 @@ b) Given that I am on a platform, when a new platform spawns, it should be withi
 
 c) Given that I am on a platform, and I fall from the platform, the next platform that spawns should be reachable by a jump from the ground.
 
-## Excluded Lint Warnings:
-All Spelling Errors are intended.
-
-Either words are connected, or words are not in dictionary.
-
+## Excluded Warnings:
+### Android
+Basically, Google wants us to use newer versions of the API, but our project uses older versions, so we say, "no!"
+### Java
+#### Probable Bugs
+IDEA Annotations are temperamental.
+### Properties Files
 Unused property "target=android-19" is for another IDE. It is left in case someone decides to use that IDE.
+### Spelling
+All Spelling Errors are intended (probably). Usually, either words are connected or words are not in dictionary.
+
+
