@@ -29,11 +29,11 @@ public class Player extends objectBase {
         physics.onCollision(manager.checkCollision(this));
     }
 
-    //for possible future character selection support
+    /** for possible future character selection support
     public Player(String characterModel, float modelWidth, float modelHeight, float modelX, float modelY){
         render = new Render(this, characterModel);
         setBounds(modelX, modelY, modelWidth, modelHeight);
-    }
+    }*/
 
     public void takeDamage(){
         //this makes the player invincible after taking the initial hit of damage

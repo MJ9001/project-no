@@ -67,10 +67,10 @@ public class Render {
         }
     }
 
-    //returns the visibility of a given object
+    /*returns the visibility of a given object
     public boolean getVisibility(){
         return object.visible;
-    }
+    }*/
 
     //toggles the visibility back and forth of a given object
     public void toggleVisibility(){
