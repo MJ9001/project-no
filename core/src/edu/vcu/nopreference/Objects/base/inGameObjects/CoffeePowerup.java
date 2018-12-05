@@ -14,13 +14,13 @@ import edu.vcu.nopreference.Objects.renders.Render;
         public CoffeePowerup()
         {
             // Creates the renderer to draw the object at it's location
-            render = new Render(this, "coffeeasset3.png");
+            render = new Render(this, "powerup2.png");
             setBounds(Render.getWidth()+250, Render.getHeight() * rand.nextFloat() * 1f, 138, 180);
         }
 
         public CoffeePowerup(Platform platform) {
             // Creates the renderer to draw the object at it's location
-            render = new Render(this, "coffeeasset3.png");
+            render = new Render(this, "powerup2.png");
             setBounds(0, 0, 138, 180);
             this.posX = platform.posX+250;
             this.posY = platform.posY + sprite.getHeight();
