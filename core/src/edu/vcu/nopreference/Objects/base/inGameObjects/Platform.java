@@ -47,7 +47,7 @@ public class Platform extends objectBase {
         if(!coffeeCreated && manager != null)
         {
             if(coffeeSpawnFloat>powerUpSpawnChance){
-                CoffeePowerup coffeePower = new CoffeePowerup(this);
+                CoffeePowerUp1 coffeePower = new CoffeePowerUp1(this);
                 manager.addObject(coffeePower);
                 coffeeCreated=true;
             }
