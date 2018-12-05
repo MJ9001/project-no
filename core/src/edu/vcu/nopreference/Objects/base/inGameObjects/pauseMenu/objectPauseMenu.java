@@ -27,10 +27,6 @@ public class objectPauseMenu extends objectMenu {//This is the pause menu for so
         return returnBut;
     }
 
-    @Override
-    public void onPressed() {
-        //if the game is paused, you can interact with the menu
-    }
 
     @Override
     public void receiveIntent(String Intent, String args)

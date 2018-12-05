@@ -30,13 +30,11 @@ public class gameoverTest {
 
         tempOM.logicTick();
         int i = 0;
-        boolean scoreEverDecreased = false;
         while (1000 > i++) {
             float prevScore = Float.parseFloat(tempOM.requestIntent("score"));
             tempOM.logicTick();
             float newScore = Float.parseFloat(tempOM.requestIntent("score"));
             if (newScore < prevScore) {
-                scoreEverDecreased = true;
                 passed = !(Untitled.newScreen instanceof gameOverScreen);
                 break;
             }
@@ -68,13 +66,11 @@ public class gameoverTest {
 
         tempOM.logicTick();
         int i = 0;
-        boolean scoreEverDecreased = false;
         while (1000 > i++) {
             float prevScore = Float.parseFloat(tempOM.requestIntent("score"));
             tempOM.logicTick();
             float newScore = Float.parseFloat(tempOM.requestIntent("score"));
             if (newScore < prevScore) {
-                scoreEverDecreased = true;
                 passed = !(Untitled.newScreen instanceof gameOverScreen);
                 System.out.println(i);
                 break;

@@ -16,8 +16,6 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class objectManager {
-    private gameObject game;
-    private backgroundManager background;
     public Player player;
     public objectPauseMenu pauseMenu;
     public boolean paused = false;
@@ -71,8 +69,8 @@ public class objectManager {
     public void initializeObjects()
     {
         objectBase.speedModifier = 1f;
-        game = new gameObject();
-        background = new backgroundManager();
+        gameObject game = new gameObject();
+        backgroundManager background = new backgroundManager();
         addObject(background);
         player = new Player();
         game = new gameObject(player);
