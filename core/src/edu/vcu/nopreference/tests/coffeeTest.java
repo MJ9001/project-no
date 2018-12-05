@@ -22,8 +22,9 @@ public class  coffeeTest {
         Render.testing = true;
         objectManager tempOM = new objectManager();
         Platform tempPlat = new Platform();
-        tempPlat.powerUpSpawnChance = 0;
+        tempPlat.powerUpSpawnChance = 1;
         tempPlat.setPlatformSpeed(0);
+        tempPlat.speedValue=50;
         tempOM.addObject(tempPlat);
         tempPlat.posX = 500;
         tempPlat.posY = 100;
@@ -33,37 +34,6 @@ public class  coffeeTest {
         Player tempPlayer = new Player();
         tempPlayer.posX = 750;
         tempPlayer.posY = 300;
-        tempOM.addObject(tempPlayer);
-        tempOM.addObject(tempPlayer.getScoreObj());
-
-        tempOM.logicTick();
-        int i = 0;
-        boolean scoreEverIncreased = false;
-        while(1000 > i++){
-            float prevScore = Float.parseFloat(tempOM.requestIntent("score"));
-            tempOM.logicTick();
-            float newScore = Float.parseFloat(tempOM.requestIntent("score"));
-            if(newScore > prevScore)
-                scoreEverIncreased = true;
-        }
-        assertTrue( scoreEverIncreased);
-    }
-
-    //testing that when you walk directly into a coffee object, the coffee object will be consumed
-    @Test
-    public void walkIntoCoffee() {
-        Render.testing = true;
-        objectManager tempOM = new objectManager();
-        Coffee tmpCoffee = new Coffee();
-        tempOM.addObject(tmpCoffee);
-        tmpCoffee.posX = 700;
-        tmpCoffee.posY = 5;
-
-        tmpCoffee.update();
-
-        Player tempPlayer = new Player();
-        tempPlayer.posX = 100;
-        tempPlayer.posY = 0;
         tempOM.addObject(tempPlayer);
         tempOM.addObject(tempPlayer.getScoreObj());
 
@@ -107,5 +77,36 @@ public class  coffeeTest {
             tempOM.logicTick();
         }
         assertEquals(Score.START_SCORE - (1001 * Score.SCORE_DECAY), tempPlayer.getScoreObj().getScore(), 0.01);
+    }
+
+    //testing that when you walk directly into a coffee object, the coffee object will be consumed
+    @Test
+    public void walkIntoCoffee() {
+        Render.testing = true;
+        objectManager tempOM = new objectManager();
+        Coffee tmpCoffee = new Coffee();
+        tempOM.addObject(tmpCoffee);
+        tmpCoffee.posX = 700;
+        tmpCoffee.posY = 5;
+
+        tmpCoffee.update();
+
+        Player tempPlayer = new Player();
+        tempPlayer.posX = 100;
+        tempPlayer.posY = 0;
+        tempOM.addObject(tempPlayer);
+        tempOM.addObject(tempPlayer.getScoreObj());
+
+        tempOM.logicTick();
+        int i = 0;
+        boolean scoreEverIncreased = false;
+        while(1000 > i++){
+            float prevScore = Float.parseFloat(tempOM.requestIntent("score"));
+            tempOM.logicTick();
+            float newScore = Float.parseFloat(tempOM.requestIntent("score"));
+            if(newScore > prevScore)
+                scoreEverIncreased = true;
+        }
+        assertTrue( scoreEverIncreased);
     }
 }
