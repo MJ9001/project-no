@@ -75,13 +75,13 @@ b) Given I am in game, when I pick up a power up, then I should not take damage 
 c) Given I am in game, when I pick up a power up, then its effects should only last a short amount of time.
 
 
-### As a player, I want to be able to run when I have a lot of coffee, so that I can ????????????????.
+### As a player, so that I can be challenged appropriately, I want platforms to spawn within reach of my jump. 
 
-a) 
+a) Given that I am on the ground, when a new platform spawns, it should be easily reachable with a jump.
 
-b) 
+b) Given that I am on a platform, when a new platform spawns, it should be within half of the screen height of my player.
 
-c)
+c) Given that I am on a platform, and I fall from the platform, the next platform that spawns should be reachable by a jump from the ground.
 
 ## Excluded Lint Warnings:
 All Spelling Errors are intended.
