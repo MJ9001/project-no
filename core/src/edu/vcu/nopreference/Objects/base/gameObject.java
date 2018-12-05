@@ -21,7 +21,7 @@ public class gameObject extends objectBase{
     private int ticks = 0;
     @Override
     public void update() {
-        if((ticks % 30) == 0) {
+        if((ticks % 27) == 0) {
             manager.addObject(new Platform(player));
         }
         if(((ticks % 120) == 0)||((ticks % 90) == 0)){
