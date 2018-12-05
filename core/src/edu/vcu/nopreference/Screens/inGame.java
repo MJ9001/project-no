@@ -18,9 +18,9 @@ public class inGame implements Screen {
     //Spritebatch is the buffer for the display
     private final SpriteBatch batch;
     //boolean that shows whether this screen is shown or not
-    private boolean hidden;
+    //private final boolean hidden;
     //the objectManager is the object that manages other objects, and draws them on the screen.
-    private final objectManager objectman = new objectManager();
+    private final objectManager objectMan = new objectManager();
     //player object
     public Player player;
     //game object
@@ -45,15 +45,15 @@ public class inGame implements Screen {
             music = Gdx.audio.newMusic(Gdx.files.internal("songFull.wav"));
             music.play();
         }
-        objectman.initializeObjects();
+        objectMan.initializeObjects();
         batch = new SpriteBatch();
-        hidden = false;
+        //hidden = false;
         //tests for user input, if input, then call object manager, which then goes through all objects and tests their input.
         Gdx.input.setInputProcessor(new InputAdapter(){
 
             @Override
             public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-                objectman.onClick(screenX, screenY);
+                objectMan.onClick(screenX, screenY);
 
                 return true;
             }
@@ -62,11 +62,11 @@ public class inGame implements Screen {
 
     }
 
-    //returns the boolean hidden which describes whether this screen is hidden or not
+    /** returns the boolean hidden which describes whether this screen is hidden or not
     public boolean isHidden()
     {
         return hidden;
-    }
+    }*/
 
     @Override
     public void show() {
@@ -79,7 +79,7 @@ public class inGame implements Screen {
         {
             //cTime is the current time, this will update it
             cTime = System.currentTimeMillis();
-            objectman.logicTick();
+            objectMan.logicTick();
         }
         if(System.currentTimeMillis() >= fpsTime + 1000)
         {
@@ -92,7 +92,7 @@ public class inGame implements Screen {
         render.clearScreen();
 
         batch.begin();
-        objectman.drawObjects(batch); //Draws every object in the game.
+        objectMan.drawObjects(batch); //Draws every object in the game.
         batch.end();
     }
 
