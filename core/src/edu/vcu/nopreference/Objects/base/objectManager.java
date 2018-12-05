@@ -70,10 +70,10 @@ public class objectManager {
     public void initializeObjects()
     {
         objectBase.speedModifier = 1f;
-        game = new gameObject();
         background = new backgroundManager();
         addObject(background);
         Player player = new Player();
+        game = new gameObject(player);
         player.setDrawOrder(100);
         addObject(player);
         addObject(player.getScoreObj());
