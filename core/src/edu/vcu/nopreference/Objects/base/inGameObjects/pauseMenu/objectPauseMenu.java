@@ -23,9 +23,9 @@ public class objectPauseMenu extends objectMenu {//This is the pause menu for so
         resume = new resumeButton((Render.getWidth()/2-1800/2)+1800);
     }
 
-    public objectMenu getResume(){
+    /*public objectMenu getResume(){
         return returnBut;
-    }
+    }*/
 
 
     @Override

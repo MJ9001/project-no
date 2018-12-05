@@ -123,18 +123,7 @@ public class objectManager {
 
     public void onClick(int x, int y)
     {
-        int origY = y;
         y = Render.getHeight() - y;
-
-        /*for (objectBase obj : objects) {
-            if (obj instanceof objectMenu || obj instanceof playButton) {
-                if (obj.sprite.getBoundingRectangle().contains(x, y))
-                {
-                    obj.onPressed();
-                    return;
-                }
-            }
-        }*/
 
         for (objectBase obj : objects) {
             if(!paused || obj instanceof objectMenu) {
@@ -169,7 +158,6 @@ public class objectManager {
         }
     }
 
-    //This method is a mess, we'll have to fix it up later. --Mark
     public Collision checkCollision(objectBase object)
     {
         for (objectBase obj : objects) {
