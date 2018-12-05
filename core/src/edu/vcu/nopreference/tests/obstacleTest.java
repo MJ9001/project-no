@@ -97,7 +97,6 @@ public class obstacleTest {
         tempPlayer.posY = 0;
 
         tempObjMan.logicTick();
-
         tempPlayer.physics.Jump(tempPlayer.getScoreObj().getModifier());
 
         int i = 0;
