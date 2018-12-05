@@ -13,6 +13,7 @@ public class Score extends objectBase {
 
     private float score;
     private float scorePercentage;
+    private boolean speedToBeReset = false;
 
     public Score(){
         score = START_SCORE;
@@ -34,11 +35,14 @@ public class Score extends objectBase {
         setBounds(render.getScreenSizeX()-350, render.getScreenSizeY()-100, 255*scorePercentage, 128);
 
         //coffee run
-        if(scorePercentage>0.8){
+        if(scorePercentage>0.8 && !Player.poweredUp){
             manager.modifySpeed(1.25f);
+            speedToBeReset = true;
+
         }
-        else{
+        if(scorePercentage<0.8 && speedToBeReset && !Player.poweredUp){
             manager.resetSpeed();
+            speedToBeReset = false;
         }
     }
 

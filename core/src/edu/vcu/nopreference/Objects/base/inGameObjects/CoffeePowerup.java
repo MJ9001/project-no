@@ -4,11 +4,13 @@ import java.util.Random;
 
 import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.physics.physicsCoffee;
+import edu.vcu.nopreference.Objects.physics.physicsPowerUp;
 import edu.vcu.nopreference.Objects.renders.Render;
 
     public class CoffeePowerup extends objectBase {
         private static final Random rand = new Random();
         private int speed = 50;
+
         public CoffeePowerup()
         {
             // Creates the renderer to draw the object at it's location
@@ -33,20 +35,20 @@ import edu.vcu.nopreference.Objects.renders.Render;
         {
             posX -= speedValue;
             updatePosition();
+            //System.out.println("ticks: " + ticks);
         }
 
         public void coffeePowerupGrabbed()
         {
-            manager.sendIntent("+score", "5");
+            Player.poweredUp = true;
             toBeDeleted = true;
-            System.out.println("Coffee Grabbed!");
         }
 
         @Override
         // This sets up the physics for the platform to be of type physicsPlatform
         protected void initializePhysics()
         {
-            physics = new physicsCoffee(this);
+            physics = new physicsPowerUp(this);
         }
     }
 

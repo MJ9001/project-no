@@ -10,6 +10,7 @@ import edu.vcu.nopreference.Objects.renders.Render;
 public class Player extends objectBase {
     private boolean takingDamage=false;
     private final Score score = new Score();
+    public static boolean poweredUp = false;
 
     //default constructor creates player as a default image
     public Player()
@@ -47,6 +48,7 @@ public class Player extends objectBase {
     }
 
     private int ticks = 0;
+    private int powerCount = 0;
     @Override
     public void update() {
         //Gdx.app.log("Untitled", "score: "+score);
@@ -60,16 +62,17 @@ public class Player extends objectBase {
                 takingDamage=false;
             }
         }
-
-
-
-
-
-
-
-
+        if(poweredUp){
+            manager.modifySpeed(2);
+            powerCount++;
+            if(powerCount==50){
+                System.out.println("it should be fuggin reseting");
+                manager.resetSpeed();
+                poweredUp = false;
+                powerCount=0;
+            }
+        }
         physics.tick();
-
     }
 
     @Override

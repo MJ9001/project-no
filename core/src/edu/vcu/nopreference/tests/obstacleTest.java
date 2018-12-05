@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import edu.vcu.nopreference.Objects.base.inGameObjects.Obstacle;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
+import edu.vcu.nopreference.Objects.base.objectBase;
 import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.renders.Render;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Score;
@@ -81,27 +82,28 @@ public class obstacleTest {
     public void jumpOverObstacle() {
         Render.testing = true;
 
-        objectManager tempOM = new objectManager();
+        objectManager tempObjMan = new objectManager();
         Obstacle tempTacle = new Obstacle();
-        tempOM.addObject(tempTacle);
+        tempObjMan.addObject(tempTacle);
         Player tempPlayer = new Player();
-        tempOM.addObject(tempPlayer);
-        tempOM.addObject(tempPlayer.getScoreObj());
-        tempOM.logicTick();
+        objectBase.speedModifier = 1f;
+        tempObjMan.addObject(tempPlayer);
+        tempObjMan.addObject(tempPlayer.getScoreObj());
+        tempObjMan.logicTick();
 
         tempTacle.posX = 400;
         tempTacle.posY = 0;
         tempPlayer.posX = 100;
         tempPlayer.posY = 0;
 
-        tempOM.logicTick();
+        tempObjMan.logicTick();
 
         tempPlayer.physics.Jump(tempPlayer.getScoreObj().getModifier());
 
         int i = 0;
-        while(i++ < 1000) {
-            tempOM.logicTick();
+        while(i++ < 100) {
+            tempObjMan.logicTick();
         }
-        assertEquals(Score.START_SCORE - (1001 * Score.SCORE_DECAY), tempPlayer.getScoreObj().getScore(), 0.01);
+        assertEquals(Score.START_SCORE - (101 * Score.SCORE_DECAY), tempPlayer.getScoreObj().getScore(), 0.01);
     }
 }

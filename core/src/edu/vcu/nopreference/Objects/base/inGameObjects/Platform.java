@@ -17,6 +17,7 @@ public class Platform extends objectBase {
     private float PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class.
     private boolean coffeeCreated = false;
     float coffeeSpawnChance = 0.5f;
+    float powerUpSpawnChance = 0.1f;
     float coffeeSpawnFloat;
 
     public void   setPlatformSpeed(float speed) { PLATFORM_SPEED = speed; }
@@ -45,9 +46,17 @@ public class Platform extends objectBase {
         updatePosition();
         if(!coffeeCreated && manager != null)
         {
-            Coffee coffee = new Coffee(this);
-            manager.addObject(coffee);
-            coffeeCreated = true;
+            if(coffeeSpawnFloat>powerUpSpawnChance){
+                CoffeePowerup coffeePower = new CoffeePowerup(this);
+                manager.addObject(coffeePower);
+                coffeeCreated=true;
+            }
+            else{
+                Coffee coffee = new Coffee(this);
+                manager.addObject(coffee);
+                coffeeCreated = true;
+            }
+
 
         }
     }
