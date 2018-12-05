@@ -17,7 +17,7 @@ public class Platform extends objectBase {
     private float PLATFORM_SPEED = 50;     //  The platform speed can be set here and referenced using the getter if needed outside of the class.
     private boolean coffeeCreated = false;
     public float powerUpSpawnChance = 0.9f;
-    private float coffeeSpawnFloat;
+    private final float coffeeSpawnFloat;
 
     public void   setPlatformSpeed(float speed) { PLATFORM_SPEED = speed; }
     public float  getPlatformSpeed()          { return  PLATFORM_SPEED; }

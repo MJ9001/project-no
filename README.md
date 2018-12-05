@@ -87,6 +87,8 @@ c) Given that I am on a platform, and I fall from the platform, the next platfor
 ### Android
 Basically, Google wants us to use newer versions of the API, but our project uses older versions, so we say, "no!"
 ### Java
+#### Class Structure
+Even though these could be local variables, it makes sense to explicitly keep track of the game and background in the object manager for direct access.
 #### Probable Bugs
 IDEA Annotations are temperamental.
 ### Properties Files

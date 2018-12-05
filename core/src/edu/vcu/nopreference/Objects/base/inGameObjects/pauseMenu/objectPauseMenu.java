@@ -8,8 +8,8 @@ import edu.vcu.nopreference.Objects.renders.Render;
  */
 
 public class objectPauseMenu extends objectMenu {//This is the pause menu for some reason
-    public returnButton returnBut;
-    public resumeButton resume;
+    public final returnButton returnBut;
+    public final resumeButton resume;
 
     //constructor of objectMenu
     public objectPauseMenu(){
