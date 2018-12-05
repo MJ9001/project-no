@@ -7,7 +7,6 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import edu.vcu.nopreference.Objects.base.*;
-import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
 import edu.vcu.nopreference.Objects.renders.Render;
 
 /**

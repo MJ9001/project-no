@@ -69,11 +69,10 @@ public class objectManager {
     public void initializeObjects()
     {
         objectBase.speedModifier = 1f;
-        gameObject game = new gameObject();
         backgroundManager background = new backgroundManager();
         addObject(background);
         player = new Player();
-        game = new gameObject(player);
+        gameObject game = new gameObject(player);
         player.setDrawOrder(100);
         addObject(player);
         addObject(player.getScoreObj());

@@ -5,8 +5,6 @@ import org.junit.Test;
 import edu.vcu.nopreference.Objects.base.inGameObjects.Platform;
 import edu.vcu.nopreference.Objects.base.objectManager;
 import edu.vcu.nopreference.Objects.renders.Render;
-import edu.vcu.nopreference.Screens.inGame;
-import edu.vcu.nopreference.Untitled;
 
 
 import static org.junit.Assert.*;

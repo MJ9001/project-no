@@ -13,9 +13,7 @@ import edu.vcu.nopreference.Objects.base.inGameObjects.Player;
 public class gameObject extends objectBase{
     private Player player;
 
-    public gameObject() {
-    }
-    public gameObject(Player player_) {
+    gameObject(Player player_) {
         player = player_;
     }
     private int ticks = 0;

@@ -21,7 +21,7 @@ public class levelManager extends objectManager {
         boolean locked;
         //String levelName will also be an array. This one holds the names of the assets for the
         //graphics inside of the little boxes.
-        String levelName;
+        //String levelName;
 
         for(int count=1; count<3; count++){
             for(int counter=1; counter<6;counter++){

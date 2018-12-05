@@ -1,7 +1,6 @@
 package edu.vcu.nopreference;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 
 import edu.vcu.nopreference.Screens.*;
