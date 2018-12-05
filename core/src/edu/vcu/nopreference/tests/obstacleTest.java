@@ -91,7 +91,7 @@ public class obstacleTest {
         tempObjMan.addObject(tempPlayer.getScoreObj());
         tempObjMan.logicTick();
 
-        tempTacle.posX = 400;
+        tempTacle.posX = 450;
         tempTacle.posY = 0;
         tempPlayer.posX = 100;
         tempPlayer.posY = 0;

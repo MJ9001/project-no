@@ -40,6 +40,19 @@ public class Platform extends objectBase {
         coffeeSpawnFloat = rand.nextFloat() *1f;
     }
 
+    public Platform(Player player) {
+        // Creates the renderer to draw the object at it's location
+        render = new Render(this, "platformfloat.png");
+        // Platforms should only spawn near the player's height.
+        float temp = rand.nextFloat() * 500f + player.posY - 250f;
+        if (temp < 400f) temp = 400f;
+        else if (temp > Render.getHeight() - 400f) temp = Render.getHeight() - 400f;
+        setBounds(Render.getWidth(), temp, 500, 100);
+        physics.setSolid(true);
+        setDrawOrder(5);
+        coffeeSpawnFloat = rand.nextFloat() *1f;
+    }
+
     @Override
     // The updates that happen per tick. Update() is called by the object manager.
     public void update() {

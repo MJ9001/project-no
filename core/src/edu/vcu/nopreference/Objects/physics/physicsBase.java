@@ -7,7 +7,8 @@ import edu.vcu.nopreference.Objects.base.objectBase;
  */
 
 public class physicsBase {
-    private static final float JUMP_VELOCITY = 150;
+    private static final float JUMP_VELOCITY = 120f;
+    private static final float JUMP_VARIATION = 25f;
 
     final objectBase object;
     boolean onGround = false;
@@ -51,7 +52,7 @@ public class physicsBase {
     {
         if(onGround)
         {
-            velocityY = JUMP_VELOCITY * speed;
+            velocityY = JUMP_VELOCITY + (speed * JUMP_VARIATION) - JUMP_VARIATION;
             onGround = false;
         }
     }
