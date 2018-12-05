@@ -40,7 +40,7 @@ public class Coffee extends objectBase {
     {
         manager.sendIntent("+score", "5");
         toBeDeleted = true;
-        System.out.println("Coffee Grabbed!");
+        //System.out.println("Coffee Grabbed!");
     }
 
     @Override
