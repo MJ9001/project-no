@@ -21,6 +21,7 @@ public class gameoverTest {
 
         Player tempPlayer = new Player();
         tempOM.addObject(tempPlayer);   // Add player to object manager.
+        tempOM.addObject(tempPlayer.getScoreObj());
 
         boolean passed = false;
         for(int i = 0; 1000000 > i; i++) {

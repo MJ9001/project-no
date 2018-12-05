@@ -71,7 +71,12 @@ public class Score extends objectBase {
     @Override
     public void receiveIntent(String Intent, String Argument)
     {
-        if(Intent.equals("+score") && score < 1000)
+        if(Intent.equals("+score"))
+        {
+            score+= Integer.parseInt(Argument);
+            if(score > 1000) score = 1000;
+        }
+        if(Intent.equals("setscore"))
         {
             score+= Integer.parseInt(Argument);
         }
