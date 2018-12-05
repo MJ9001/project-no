@@ -66,13 +66,13 @@ b) Given I am in game and at a low coffee, when I take enough damage to die, the
 c) Given I am in game, at a low coffee level, when the coffee bar 'ticks' to zero, then I should see the game over screen.
 
 
-### As a player, I want to be able to collect powerups, so that I can run faster and jump higher.
+### As a player, I want to be able to collect powerups, so that I can run faster and be invincible.
 
-a) 
+a) Given I am in game, when I pickup a power up, then I should increase speed.
 
-b) 
+b) Given I am in game, when I pick up a power up, then I should not take damage from obstacles.
 
-c) 
+c) Given I am in game, when I pick up a power up, then its effects should only last a short amount of time.
 
 
 ### As a player, I want to be able to run when I have a lot of coffee, so that I can ????????????????.
