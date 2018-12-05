@@ -66,7 +66,7 @@ public class Player extends objectBase {
             manager.modifySpeed(2);
             powerCount++;
             if(powerCount==50){
-                System.out.println("it should be fuggin reseting");
+                //System.out.println("it should be fuggin reseting");
                 manager.resetSpeed();
                 poweredUp = false;
                 powerCount=0;

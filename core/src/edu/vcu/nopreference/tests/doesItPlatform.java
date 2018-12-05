@@ -19,6 +19,7 @@ public class doesItPlatform {
         Render.testing = true;
         Platform tempPlat = new Platform();
         tempPlat.setPlatformSpeed(50);
+        tempPlat.speedValue=50;
         tempPlat.posX = 500;
         tempPlat.update();
         assertEquals(500 - tempPlat.getPlatformSpeed(), tempPlat.posX, 1.0);
@@ -72,6 +73,7 @@ public class doesItPlatform {
         tempPlat.posX = 500;
         tempPlat.posY = 100;
         tempOM.addObject(tempPlat);     // Add platform to objectManager
+        tempPlat.speedValue=50;
 
         Player tempPlayer = new Player();
         tempPlayer.posX = 950;          // Player is currently 50 units overlapping at end of platform
@@ -99,6 +101,7 @@ public class doesItPlatform {
         objectManager tempOM = new objectManager();
 
         Platform tempPlat = new Platform();
+        tempPlat.speedValue=0;
         tempPlat.posX = 500;
         tempPlat.posY = 100;
         tempPlat.setPlatformSpeed(0);

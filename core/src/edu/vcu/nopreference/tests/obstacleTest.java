@@ -86,7 +86,7 @@ public class obstacleTest {
         Obstacle tempTacle = new Obstacle();
         tempObjMan.addObject(tempTacle);
         Player tempPlayer = new Player();
-        objectBase.speedModifier = 1f;
+        tempTacle.speedValue=0;
         tempObjMan.addObject(tempPlayer);
         tempObjMan.addObject(tempPlayer.getScoreObj());
         tempObjMan.logicTick();

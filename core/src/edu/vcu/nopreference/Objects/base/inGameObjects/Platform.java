@@ -37,6 +37,7 @@ public class Platform extends objectBase {
         render = new Render(this, "platformfloat.png");
         setBounds(0,-1000, 500, 100);
         PLATFORM_SPEED = platformSpeed_;
+        coffeeSpawnFloat = rand.nextFloat() *1f;
     }
 
     @Override
