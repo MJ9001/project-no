@@ -37,7 +37,7 @@ public class Player extends objectBase {
 
     public void takeDamage(){
         //this makes the player invincible after taking the initial hit of damage
-        if(!takingDamage){
+        if(!takingDamage && !poweredUp){
             score.takeDamage();
         }
         takingDamage=true;
@@ -53,7 +53,7 @@ public class Player extends objectBase {
     public void update() {
         //Gdx.app.log("Untitled", "score: "+score);
         if(takingDamage){
-            if((ticks%2)==0){
+            if(((ticks%2)==0) && !poweredUp){
                 render.toggleVisibility();
             }
             ticks++;

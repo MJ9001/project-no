@@ -50,6 +50,7 @@ public class Score extends objectBase {
         return score;
     }
 
+
     public float getMaxScore(){
         return MAX_SCORE;
     }

@@ -19,6 +19,7 @@ public class objectManager {
     gameObject game;
     backgroundManager background;
     public objectPauseMenu pauseMenu;
+    public Player player;
     public boolean paused = false;
     public final List<objectBase> objects = new ArrayList<objectBase>();
 
@@ -73,7 +74,7 @@ public class objectManager {
         game = new gameObject();
         background = new backgroundManager();
         addObject(background);
-        Player player = new Player();
+        player = new Player();
         player.setDrawOrder(100);
         addObject(player);
         addObject(player.getScoreObj());
