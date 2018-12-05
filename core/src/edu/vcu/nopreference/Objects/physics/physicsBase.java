@@ -52,7 +52,7 @@ public class physicsBase {
     {
         if(onGround)
         {
-            velocityY = JUMP_VELOCITY + (speed * JUMP_VARIATION);
+            velocityY = JUMP_VELOCITY + (speed * JUMP_VARIATION) - JUMP_VARIATION;
             onGround = false;
         }
     }
